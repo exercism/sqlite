@@ -1,0 +1,32 @@
+{
+  "docs": [
+    {
+      "uuid": "63b8cc5a-6645-4d25-812b-3108e068772c",
+      "slug": "installation",
+      "path": "docs/INSTALLATION.md",
+      "title": "Installing SQLite locally",
+      "blurb": "Learn how to install SQLite locally to solve Exercism's exercises on your own machine"
+    },
+    {
+      "uuid": "770f7217-1f34-43a9-b890-37ea902ff59f",
+      "slug": "learning",
+      "path": "docs/LEARNING.md",
+      "title": "How to learn SQLite",
+      "blurb": "An overview of how to get started from scratch with SQLite"
+    },
+    {
+      "uuid": "ed7d26fd-8488-419e-8475-0dfc1c73c2dc",
+      "slug": "tests",
+      "path": "docs/TESTS.md",
+      "title": "Testing on the SQLite track",
+      "blurb": "Learn how to test your SQLite exercises on Exercism"
+    },
+    {
+      "uuid": "0eb32787-eb8d-44f7-9380-4e5c8cf11cc4",
+      "slug": "resources",
+      "path": "docs/RESOURCES.md",
+      "title": "Useful SQLite resources",
+      "blurb": "A collection of useful resources to help you master SQLite"
+    }
+  ]
+}
