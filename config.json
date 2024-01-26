@@ -26,5 +26,15 @@
   },
   "concepts": [],
   "key_features": [],
-  "tags": []
+  "tags": [
+    "typing/weak",
+    "execution_mode/interpreted",
+    "platform/windows",
+    "platform/mac",
+    "platform/linux",
+    "runtime/language_specific",
+    "used_for/backends",
+    "used_for/cross_platform_development",
+    "used_for/web_development"
+  ]
 }
