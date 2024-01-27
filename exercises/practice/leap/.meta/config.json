@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "vaeng"
+  ],
+  "files": {
+    "solution": [
+      "leap.sql"
+    ],
+    "test": [
+      "leap_test.sql"
+    ],
+    "example": [
+      ".meta/example.sql"
+    ],
+    "editor": [
+      "data.csv",
+      "create_fixture.sql"
+    ]
+  },
+  "blurb": "Determine whether a given year is a leap year.",
+  "source": "CodeRanch Cattle Drive, Assignment 3",
+  "source_url": "https://coderanch.com/t/718816/Leap"
+}
