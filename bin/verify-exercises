@@ -21,15 +21,19 @@
 # Verify the Concept Exercises
 for concept_exercise_dir in ./exercises/concept/*/; do
     if [ -d $concept_exercise_dir ]; then
-        echo "Checking $(basename "${concept_exercise_dir}") exercise..."
-        # TODO: run command to verify that the exemplar solution passes the tests
+        slug=$(basename "${practice_exercise_dir}"
+        echo "Checking ${slug} exercise..."
+        cp "${practice_exercise_dir}"/.meta/exemplar.sql "${practice_exercise_dir}/${slug}".sql
+        bin/run.sh "${slug}" "${practice_exercise_dir}" "${practice_exercise_dir}"
     fi
 done
 
 # Verify the Practice Exercises
 for practice_exercise_dir in ./exercises/practice/*/; do
     if [ -d $practice_exercise_dir ]; then
-        echo "Checking $(basename "${practice_exercise_dir}") exercise..."
-        # TODO: run command to verify that the example solution passes the tests
+        slug=$(basename "${practice_exercise_dir}"
+        echo "Checking ${slug} exercise..."
+        cp "${practice_exercise_dir}"/.meta/example.sql "${practice_exercise_dir}/${slug}".sql
+        ./bin/run.sh "${slug}" "${practice_exercise_dir}" "${practice_exercise_dir}"
     fi
 done
