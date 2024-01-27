@@ -15,10 +15,18 @@
     "indent_size": 4
   },
   "files": {
-    "solution": [],
-    "test": [],
-    "example": [],
-    "exemplar": []
+    "solution": [
+      "%{kebab_slug}.sql"
+    ],
+    "test": [
+      "%{kebab_slug}_test.sql"
+    ],
+    "example": [
+      ".meta/example.sql"
+    ],
+    "exemplar": [
+      ".meta/exemplar.sql"
+    ]
   },
   "exercises": {
     "concept": [],
@@ -27,6 +35,14 @@
         "slug": "hello-world",
         "name": "Hello World",
         "uuid": "f3bab368-b048-42d0-984a-8b9102d56cb6",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
+        "slug": "leap",
+        "name": "Leap",
+        "uuid": "edfe7d3b-cba7-4fb9-9120-c316576e4164",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
