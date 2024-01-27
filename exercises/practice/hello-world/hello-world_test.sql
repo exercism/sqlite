@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS main.tests (
     uuid TEXT PRIMARY KEY,
 	name TEXT NOT NULL,
     -- The following section is needed by the online test-runner
-    status TEXT DEFAULT "fail",
+    status TEXT DEFAULT 'fail',
     message TEXT,
     output TEXT,
     test_code TEXT,
@@ -25,18 +25,18 @@ CREATE TABLE IF NOT EXISTS main.tests (
 INSERT INTO tests (name, uuid, result)
     VALUES
         -- Every test case from the .meta/tests.toml file gets its own row:
-        ("Say Hi!", "af9ffe10-dc13-42d8-a742-e7bdafac449d", "Hello, World!");
+        ('Say Hi!', 'af9ffe10-dc13-42d8-a742-e7bdafac449d', 'Hello, World!');
 
 -- Comparison of user input and the tests updates the status for each test:
 UPDATE tests
-SET status = "pass"
+SET status = 'pass'
 FROM (SELECT greeting FROM hello_world) AS h
 WHERE h.greeting = tests.result;
 -- Upadte message for failed tests to give helpful information:
 UPDATE tests
-SET message = "Greeting is: '" || h.greeting || "', but should be: '" || tests.result ||"'"
+SET message = 'Greeting is: '' || h.greeting || '', but should be: '' || tests.result ||'''
 FROM (SELECT greeting FROM hello_world) AS h
-WHERE  tests.status = "fail";
+WHERE  tests.status = 'fail';
 -- Save results to ./output.json (needed by the online test-runner)
 .mode json
 .once './output.json'
