@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Create CSV data.
+# Usage: .meta/create_data -p /path/to/problem-specifications > data.csv
+
+while getopts p: opt; do
+    case "$opt" in
+        p)
+	    problem_spec=$OPTARG
+	    ;;
+	*)
+	    echo "Invalid flag"
+	    ;;
+    esac
+done
+shift "$((OPTIND-1))"
+if [[ -z ${problem_spec-} ]]; then
+    echo "Usage: $0 -p /path/to/problem-specifications"
+    exit 1
+fi
+
+jq -r '.cases[]|[.input.number, ""] | @csv' "${problem_spec}/exercises/raindrops/canonical-data.json"

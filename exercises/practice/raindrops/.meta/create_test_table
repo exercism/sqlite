@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# Create test data.
+# Usage: .meta/create_test_table -p /path/to/problem-specifications > create_test_table.sql
+
+while getopts p: opt; do
+    case "$opt" in
+        p)
+	    problem_spec=$OPTARG
+	    ;;
+	*)
+	    echo "Invalid flag"
+	    ;;
+    esac
+done
+shift "$((OPTIND-1))"
+if [[ -z ${problem_spec-} ]]; then
+    echo "Usage: $0 -p /path/to/problem-specifications"
+    exit 1
+fi
+
+cat << EOF
+DROP TABLE IF EXISTS tests;
+CREATE TABLE IF NOT EXISTS tests (
+    -- uuid and description are taken from the test.toml file
+    uuid TEXT PRIMARY KEY,
+    description TEXT NOT NULL,
+    -- The following section is needed by the online test-runner
+    status TEXT DEFAULT 'fail',
+    message TEXT,
+    output TEXT,
+    test_code TEXT,
+    task_id INTEGER DEFAULT NULL,
+    -- Here are columns for the actual tests
+    number INT NOT NULL,
+    result TEXT NOT NULL
+);
+
+INSERT INTO tests (uuid, description, number, result)
+    VALUES
+        -- Every test case from the .meta/tests.toml file gets its own row:
+EOF
+
+jq -r '.cases[] | [.uuid, .description, .input.number, .expected] | @csv' "${problem_spec}/exercises/raindrops/canonical-data.json" \
+| sed "
+    s/.*/        (&),/;  # Indent and wrap lines in (...),
+    s/\"/'/g;            # Convert double quotes to single quotes
+    s/,\([^ ]\)/, \1/g;  # Add spaces after commas
+    $ s/,$/;/;           # On final line, replace trailing . with ;
+"

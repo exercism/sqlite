@@ -14,14 +14,7 @@
     "indent_style": "space",
     "indent_size": 4
   },
-  "files": {
-    "solution": [],
-    "test": [],
-    "example": [],
-    "exemplar": []
-  },
   "exercises": {
-    "concept": [],
     "practice": [
       {
         "slug": "hello-world",
@@ -30,18 +23,24 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
+      },
+      {
+        "slug": "raindrops",
+        "name": "Raindrops",
+        "uuid": "6a5f9c87-4c99-4fc0-88f1-25d517d4b074",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
       }
     ]
   },
-  "concepts": [],
-  "key_features": [],
   "tags": [
-    "typing/weak",
     "execution_mode/interpreted",
-    "platform/windows",
-    "platform/mac",
     "platform/linux",
+    "platform/mac",
+    "platform/windows",
     "runtime/language_specific",
+    "typing/weak",
     "used_for/backends",
     "used_for/cross_platform_development",
     "used_for/web_development"

@@ -1,0 +1,2 @@
+-- Schema: CREATE TABLE "raindrops" ("number" INT, "sound" TEXT);
+-- Task: update the raindrops table and set the sound based on the number.
