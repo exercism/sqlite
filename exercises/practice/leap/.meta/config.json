@@ -11,6 +11,10 @@
     ],
     "example": [
       ".meta/example.sql"
+    ],
+    "editor": [
+      "data.csv",
+      "create_fixture.sql"
     ]
   },
   "blurb": "Determine whether a given year is a leap year.",
