@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Synopsis:
-# Run the test runner on the example/exemplar solution.
+# Run all available tests on the example/exemplar solution.
 
 # Arguments:
 # $1: exercise slug
@@ -44,8 +44,8 @@ if [ $? -ne 0 ]; then
 fi
 rm ./user_output.md || true
 
-# check if all tests were succesfull
-failed_results=$(jq '.[] | select(.status=="fail") | {name, message}' ./output.json)
+# Check if all tests were succesfull
+failed_results=$(jq '.[] | select(.status=="fail") | {name, message}' ./output.json || exit)
 rm ./output.json
 if [ -n "${failed_results}" ]; then
     echo "Test failed for ${slug} - failing tests:"
