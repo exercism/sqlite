@@ -21,7 +21,7 @@
 # Verify the Concept Exercises
 for concept_exercise_dir in ./exercises/concept/*/; do
     if [ -d "$concept_exercise_dir" ]; then
-        slug=$(basename "${practice_exercise_dir}"
+        slug=$(basename "${practice_exercise_dir}")
         echo "Checking ${slug} exercise..."
         cp "${concept_exercise_dir}"/.meta/exemplar.sql "${concept_exercise_dir}/${slug}".sql
         bin/verify-exercise-example "${slug}" "${concept_exercise_dir}" "${concept_exercise_dir}"
