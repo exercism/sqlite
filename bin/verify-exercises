@@ -30,8 +30,8 @@ done
 
 # Verify the Practice Exercises
 for practice_exercise_dir in ./exercises/practice/*/; do
-    iif [ -d "$practice_exercise_dir" ]; then
-        slug=$(basename "${practice_exercise_dir}"
+    if [ -d "$practice_exercise_dir" ]; then
+        slug=$(basename "${practice_exercise_dir}")
         echo "Checking ${slug} exercise..."
         cp "${practice_exercise_dir}"/.meta/example.sql "${practice_exercise_dir}/${slug}".sql
         ./bin/verify-exercise-example "${slug}" "${practice_exercise_dir}" "${practice_exercise_dir}"
