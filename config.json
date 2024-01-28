@@ -14,6 +14,20 @@
     "indent_style": "space",
     "indent_size": 4
   },
+  "files": {
+    "solution": [
+      "%{kebab_slug}.sql"
+    ],
+    "test": [
+      "%{kebab_slug}_test.sql"
+    ],
+    "example": [
+      ".meta/example.sql"
+    ],
+    "exemplar": [
+      ".meta/exemplar.sql"
+    ]
+  },
   "exercises": {
     "practice": [
       {
@@ -28,6 +42,14 @@
         "slug": "raindrops",
         "name": "Raindrops",
         "uuid": "6a5f9c87-4c99-4fc0-88f1-25d517d4b074",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
+        "slug": "leap",
+        "name": "Leap",
+        "uuid": "edfe7d3b-cba7-4fb9-9120-c316576e4164",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
