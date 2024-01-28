@@ -20,20 +20,20 @@
 
 # Verify the Concept Exercises
 for concept_exercise_dir in ./exercises/concept/*/; do
-    if [ -d $concept_exercise_dir ]; then
+    if [ -d "$concept_exercise_dir" ]; then
         slug=$(basename "${practice_exercise_dir}"
         echo "Checking ${slug} exercise..."
-        cp "${practice_exercise_dir}"/.meta/exemplar.sql "${practice_exercise_dir}/${slug}".sql
-        bin/run.sh "${slug}" "${practice_exercise_dir}" "${practice_exercise_dir}"
+        cp "${concept_exercise_dir}"/.meta/exemplar.sql "${concept_exercise_dir}/${slug}".sql
+        bin/verify-exercise-example "${slug}" "${concept_exercise_dir}" "${concept_exercise_dir}"
     fi
 done
 
 # Verify the Practice Exercises
 for practice_exercise_dir in ./exercises/practice/*/; do
-    if [ -d $practice_exercise_dir ]; then
+    iif [ -d "$practice_exercise_dir" ]; then
         slug=$(basename "${practice_exercise_dir}"
         echo "Checking ${slug} exercise..."
         cp "${practice_exercise_dir}"/.meta/example.sql "${practice_exercise_dir}/${slug}".sql
-        ./bin/run.sh "${slug}" "${practice_exercise_dir}" "${practice_exercise_dir}"
+        ./bin/verify-exercise-example "${slug}" "${practice_exercise_dir}" "${practice_exercise_dir}"
     fi
 done
