@@ -23,8 +23,10 @@ for concept_exercise_dir in ./exercises/concept/*/; do
     if [ -d "$concept_exercise_dir" ]; then
         slug=$(basename "${practice_exercise_dir}")
         echo "Checking ${slug} exercise..."
-        cp "${concept_exercise_dir}"/.meta/exemplar.sql "${concept_exercise_dir}/${slug}".sql || exit
+        mv "${concept_exercise_dir}/${slug}".sql "${concept_exercise_dir}/${slug}"_backup.sql
+        cp "${concept_exercise_dir}"/.meta/exemplar.sql "${concept_exercise_dir}/${slug}".sql
         bin/verify-exercise-example "${slug}" "${concept_exercise_dir}" "${concept_exercise_dir}"
+        mv -f "${concept_exercise_dir}/${slug}"_backup.sql "${concept_exercise_dir}/${slug}".sql
     fi
 done
 
@@ -33,7 +35,9 @@ for practice_exercise_dir in ./exercises/practice/*/; do
     if [ -d "$practice_exercise_dir" ]; then
         slug=$(basename "${practice_exercise_dir}")
         echo "Checking ${slug} exercise..."
-        cp "${practice_exercise_dir}"/.meta/example.sql "${practice_exercise_dir}/${slug}".sql || exit
+        mv "${practice_exercise_dir}/${slug}".sql "${practice_exercise_dir}/${slug}"_backup.sql
+        cp "${practice_exercise_dir}"/.meta/example.sql "${practice_exercise_dir}/${slug}".sql
         ./bin/verify-exercise-example "${slug}" "${practice_exercise_dir}" "${practice_exercise_dir}"
+        mv -f "${practice_exercise_dir}/${slug}"_backup.sql "${practice_exercise_dir}/${slug}".sql
     fi
 done
