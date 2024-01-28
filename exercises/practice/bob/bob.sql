@@ -1,0 +1,2 @@
+-- Schema: CREATE TABLE "heyBob" ("input" TEXT, "reply" TEXT);
+-- Task: update the heyBob table and set the reply based on the input.
