@@ -34,7 +34,7 @@ FROM (SELECT greeting FROM hello_world) AS h
 WHERE h.greeting = tests.result;
 -- Upadte message for failed tests to give helpful information:
 UPDATE tests
-SET message = 'Greeting is: '' || h.greeting || '', but should be: '' || tests.result ||'''
+SET message = 'Greeting is: ''' || h.greeting || ''', but should be: ''' || tests.result ||''''
 FROM (SELECT greeting FROM hello_world) AS h
 WHERE  tests.status = 'fail';
 -- Save results to ./output.json (needed by the online test-runner)
