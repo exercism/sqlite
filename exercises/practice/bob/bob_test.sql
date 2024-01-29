@@ -13,13 +13,13 @@
 -- Comparison of user input and the tests updates the status for each test:
 UPDATE tests
 SET status = 'pass'
-FROM (SELECT input, reply FROM heyBob) AS actual
+FROM (SELECT input, reply FROM bob) AS actual
 WHERE (actual.input, actual.reply) = (tests.input, tests.expected);
 
 -- Update message for failed tests to give helpful information:
 UPDATE tests
 SET message = 'Result for "' || tests.input || '" is "' || actual.reply || '", but should be "' || tests.expected || '"'
-FROM (SELECT input, reply FROM heyBob) AS actual
+FROM (SELECT input, reply FROM bob) AS actual
 WHERE actual.input = tests.input AND tests.status = 'fail';
 
 -- Save results to ./output.json (needed by the online test-runner)

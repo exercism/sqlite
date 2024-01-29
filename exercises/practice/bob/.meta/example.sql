@@ -1,7 +1,7 @@
 WITH trimmed AS (
     SELECT input
          , RTRIM(input, CHAR(32, 9, 10, 13)) AS trimmed
-    FROM heyBob
+    FROM bob
 )
 , bools AS (
     SELECT input
@@ -10,7 +10,7 @@ WITH trimmed AS (
          , trimmed GLOB '*[a-zA-Z]*' AND trimmed = UPPER(trimmed) AS is_yelling
     FROM trimmed
 )
-UPDATE heyBob
+UPDATE bob
 SET reply =
     CASE
         WHEN bools.is_silence
@@ -24,4 +24,4 @@ SET reply =
         ELSE 'Whatever.'
     END
 FROM bools
-WHERE heyBob.input = bools.input;
+WHERE bob.input = bools.input;

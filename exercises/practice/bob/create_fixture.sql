@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS heyBob;
-CREATE TABLE "heyBob" (
+DROP TABLE IF EXISTS bob;
+CREATE TABLE "bob" (
     "input" TEXT,
     "reply" TEXT
 );
@@ -7,4 +7,4 @@ CREATE TABLE "heyBob" (
 -- Note: the CSV file contain literal tab, newline, carriage returns.
 
 .mode csv
-.import ./data.csv heyBob
+.import ./data.csv bob
