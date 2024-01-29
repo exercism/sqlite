@@ -2,9 +2,9 @@
 
 [SQLite][sqlite] is an open-source lightweight, serverless, and self-contained relational database management system.
 It is known for its simplicity, ease of use, and zero configuration requirements.
-SQLite is embedded within applications, making it an ideal choice for apps, embedded systems, and small to medium-scale projects.
+SQLite is can be embedded within applications, making it an ideal choice for apps, embedded systems, and small to medium-scale projects.
 
-Created by [D. Richard Hipp][hipp], SQLite follows the ACID properties, ensuring reliable transactions.
+Created by [D. Richard Hipp][hipp], SQLite follows the [ACID][acid] properties, intended to facilitate reliable transactions.
 It is widely used in various industries thanks to its minimal footprint and efficient performance.
 
 SQLite employs a straightforward and SQL-based syntax for defining and interacting with databases.
@@ -23,6 +23,7 @@ Additionally, the community provides resources such as tutorials, FAQs, and more
 
 [sqlite]: https://www.sqlite.org/
 [hipp]: https://ghostarchive.org/archive/wpteG
+[acid]: https://en.wikipedia.org/wiki/ACID
 [sqlite docs]: https://www.sqlite.org/docs.html
 [sqlite quickstart]: https://www.sqlite.org/quickstart.html
 [sqlite language reference]: https://www.sqlite.org/lang.html
