@@ -16,7 +16,7 @@
 # ./bin/verify-exercise-example two-fer path/to/solution/folder/ path/to/output/directory/
 
 # If any required arguments is missing, print the usage and exit
-if [ $# -ne 3 ]; then
+if (( $# != 3 )); then
     echo "Usage: $0 exercise-slug path/to/solution/folder/ path/to/output/directory/"
     exit 1
 fi
@@ -37,17 +37,17 @@ echo "${solution_dir}"
 test_output=$(sqlite3 '' --init "${slug}_test.sql" -bail  '.exit' 2>&1)
 
 # Check if sqlite ran withour errors:
-if [ $? -ne 0 ]; then
+if (( $? != 0 )); then
     echo "Test failed for ${slug} - sqlite3 error:"
     echo "${test_output}"
     exit 1
 fi
-rm ./user_output.md || true
+[[ -e ./user_output.md ]] && rm ./user_output.md
 
 # Check if all tests were succesfull
-failed_results=$(jq '.[] | select(.status=="fail") | {name, message}' ./output.json || exit)
+failed_results=$(jq '.[] | select(.status=="fail") | {name, message}' ./output.json) || exit
 rm ./output.json
-if [ -n "${failed_results}" ]; then
+if [[ -n "${failed_results}" ]]; then
     echo "Test failed for ${slug} - failing tests:"
     echo "$failed_results"
     exit 1
