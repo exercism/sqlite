@@ -21,8 +21,8 @@
 
     ```sh
     #!/usr/bin/env bash
-
-    cat > create_test_table.sql << '--END-SQL--'
+    {
+    cat << '--END-SQL--'
     DROP TABLE IF EXISTS tests;
     CREATE TABLE IF NOT EXISTS tests (
         -- uuid and description are taken from the test.toml file
@@ -45,14 +45,15 @@
         VALUES
     --END-SQL--
 
-    jq -r '
+    jq -r --arg q "'" '
         .cases[]
         | [.uuid, .description, .input.heyBob, .expected]
         | @csv
-        | "        (\(.)),"
-    ' canonical-data.json >> create_test_table.sql
-
-    sed -i -E '$s/,$/;/' create_test_table.sql
+        | gsub($q; $q+$q)
+        | gsub("\""; $q)
+        | "        (" + . + "),"
+    ' canonical-data.json | sed -E '$s/,$/;/'
+    } > create_test_table.sql
     ```
 
 3. create the create_fixture.sql file
