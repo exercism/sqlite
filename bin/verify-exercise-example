@@ -6,7 +6,7 @@
 # Arguments:
 # $1: exercise slug
 # $2: path to solution folder
-# $3: path to output directory
+# $3: path to output directory      ** unused
 
 # Output:
 # Writes the test results to a results.json file in the passed-in output directory.
@@ -23,10 +23,8 @@ fi
 
 slug="$1"
 solution_dir=$(realpath "${2%/}")
-output_dir=$(realpath "${3%/}")
-
-# Create the output directory if it doesn't exist
-mkdir -p "${output_dir}"
+# shellcheck disable=SC2034
+output_dir=$(realpath "${3%/}")     ## unused
 
 echo "${slug}: testing..."
 
@@ -35,15 +33,20 @@ echo "${slug}: testing..."
 cd "${solution_dir}" || exit
 echo "${solution_dir}"
 
+cleanup() { rm -f ./user_output.md ./output.json; }
+trap cleanup EXIT
+
+# Perform tests
 if ! test_output=$(sqlite3 '' --init "${slug}_test.sql" -bail  '.exit' 2>&1); then
     echo "Test failed for ${slug} - sqlite3 error:"
     echo "${test_output}"
     exit 1
 fi
-rm -f ./user_output.md
 
-# Check if all tests were succesfull
-failed_results=$(jq '.[] | select(.status=="fail") | {name, message}' "${output_dir}"/output.json) || exit
+# Check for failed tests
+# The exercise's test script creates output.json in the current directory
+failed_results=$(jq '.[] | select(.status=="fail") | {name, message}' ./output.json) || exit
+
 if [[ -n "${failed_results}" ]]; then
     echo "Test failed for ${slug} - failing tests:"
     echo "$failed_results"
