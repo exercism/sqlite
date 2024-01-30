@@ -21,6 +21,11 @@
 
 verify_one_exercise () {
     local dir=$1
+    if [[ ! -f "${dir}/.meta/config.json" ]]; then
+        echo "Missing .meta/config.json in ${dir}" >&2
+        (( failures++ ))
+        return
+    fi
     local example=$(jq -r '.files | (.example? + .exemplar?)[0]' "${dir}/.meta/config.json")
     local slug=$(basename "${dir}")
     echo "Checking ${slug} exercise..."
@@ -35,14 +40,17 @@ failures=0
 if (( $# > 0 )); then
     # Test only the given directories
     for dir in "$@"; do
-        if [[ -d "${dir}" ]]; then
-            verify_one_exercise "${dir}"
+        if [[ ! -d "${dir}" ]]; then
+            echo "No such directory: ${dir}" >&2
+            continue
         fi
+        verify_one_exercise "${dir}"
     done
 
 else
     # Test them all
-    for dir in ./exercises/{concept,practice}/*/; do
+    shopt -s nullglob
+    for dir in ./exercises/concept/*/ ./exercises/practice/*/; do
         verify_one_exercise "${dir}"
     done
 fi
