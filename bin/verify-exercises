@@ -21,15 +21,13 @@
 
 verify_one_exercise () {
     local dir=$1
-    if [[ -d "${dir}" ]]; then
-        example=$(jq -r '.files | (.example? + .exemplar?)[0]' "${dir}/.meta/config.json")
-        slug=$(basename "${dir}")
-        echo "Checking ${slug} exercise..."
-        mv "${dir}/${slug}".sql "${dir}/${slug}"_backup.sql
-        cp "${dir}/${example}" "${dir}/${slug}".sql
-        bin/verify-exercise-example "${slug}" "${dir}" "${dir}" || (( failures++ ))
-        mv -f "${dir}/${slug}"_backup.sql "${dir}/${slug}".sql
-    fi
+    local example=$(jq -r '.files | (.example? + .exemplar?)[0]' "${dir}/.meta/config.json")
+    local slug=$(basename "${dir}")
+    echo "Checking ${slug} exercise..."
+    mv "${dir}/${slug}".sql "${dir}/${slug}"_backup.sql
+    cp "${dir}/${example}" "${dir}/${slug}".sql
+    bin/verify-exercise-example "${slug}" "${dir}" "${dir}" || (( failures++ ))
+    mv -f "${dir}/${slug}"_backup.sql "${dir}/${slug}".sql
 }
 
 failures=0
