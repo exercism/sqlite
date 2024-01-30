@@ -13,23 +13,23 @@
 -- Comparison of user input and the tests updates the status for each test:
 UPDATE "test_color_code"
 SET status = 'pass'
-FROM (SELECT color, result FROM color_code) AS l
-WHERE (l.color, l.result) = (test_color_code.color, test_color_code.result);
+FROM (SELECT color, result FROM color_code) AS got
+WHERE (got.color, got.result) = (test_color_code.color, test_color_code.result);
 -- Update message for failed tests to give helpful information:
 UPDATE test_color_code
-SET message = 'Result for ' || l.color || ' is "' || l.result || '", but should be: "' || test_color_code.result || '"'
-FROM (SELECT color, result FROM color_code) AS l
-WHERE l.color = test_color_code.color AND test_color_code.status = 'fail';
+SET message = 'Result for ' || got.color || ' is "' || got.result || '", but should be: "' || test_color_code.result || '"'
+FROM (SELECT color, result FROM color_code) AS got
+WHERE got.color = test_color_code.color AND test_color_code.status = 'fail';
 
 -- Comparison of user input and the tests updates the status for each test:
 UPDATE test_colors
 SET status = 'pass'
-FROM (SELECT GROUP_CONCAT("color" ORDER BY "index") as "result" FROM "colors") AS l
-WHERE l.result = test_colors.result;
+FROM (SELECT GROUP_CONCAT("color" ORDER BY "index") as "result" FROM "colors") AS got
+WHERE got.result = test_colors.result;
 -- Update message for failed tests to give helpful information:
 UPDATE test_colors
-SET message = 'Result for Colors is "' || l.result || '", but should be: "' || test_colors.result || '"'
-FROM (SELECT GROUP_CONCAT("color" ORDER BY "index") as "result" FROM "colors") AS l
+SET message = 'Result for Colors is "' || got.result || '", but should be: "' || test_colors.result || '"'
+FROM (SELECT GROUP_CONCAT("color" ORDER BY "index") as "result" FROM "colors") AS got
 WHERE test_colors.status = 'fail';
 
 INSERT INTO test_results (uuid, description, test_name, status, message, output, test_code, task_id)
