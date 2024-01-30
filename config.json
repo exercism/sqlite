@@ -61,6 +61,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 5
+      },
+      {
+        "slug": "gigasecond",
+        "name": "Gigasecond",
+        "uuid": "20b149ad-3bf5-40cb-afa9-f58424caca49",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
       }
     ]
   },
