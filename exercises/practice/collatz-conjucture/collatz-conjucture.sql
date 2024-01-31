@@ -1,0 +1,2 @@
+-- Schema: CREATE TABLE "collatz" ("number" INTEGER, "steps" INTEGER);
+-- Task: update the collatz table and set the steps based on the number.
