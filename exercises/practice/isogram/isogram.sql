@@ -1,0 +1,2 @@
+-- Schema: CREATE TABLE "isogram" ("phrase" TEXT, "is_isogram" INT);
+-- Task: Given a phrase, determine if it is an isogram.
