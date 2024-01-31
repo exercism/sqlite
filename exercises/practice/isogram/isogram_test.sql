@@ -32,4 +32,3 @@ FROM tests;
 .mode table
 SELECT description, status, message
 FROM tests;
-
