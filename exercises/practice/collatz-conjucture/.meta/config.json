@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "vaeng"
+  ],
+  "files": {
+    "solution": [
+      "collatz-conjucture.sql"
+    ],
+    "test": [
+      "collatz-conjucture_test.sql"
+    ],
+    "example": [
+      ".meta/example.sql"
+    ]
+  },
+  "blurb": ""
+}
