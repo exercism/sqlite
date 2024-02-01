@@ -88,6 +88,38 @@
       }
     ]
   },
+  "key_features": [
+    {
+      "title": "Public domain",
+      "content": "The SQLite source code is in the public domain and doesn't require a license for use.",
+      "icon": "community"
+    },
+    {
+      "title": "Extensible",
+      "content": "SQLite provides APIs for extending the the database system, including new functionality.",
+      "icon": "extensible"
+    },
+    {
+      "title": "Serverless",
+      "content": "There is no server process to manage access so processes can write directly to a SQLite database.",
+      "icon": "productive"
+    },
+    {
+      "title": "Reliable",
+      "content": "Transactions are ACID-compliant so all changes are applied or not at all, increasing reliability.",
+      "icon": "safe"
+    },
+    {
+      "title": "Portable",
+      "content": "SQLite doesn't require installation or configuration before use and can be used almost everywhere.",
+      "icon": "portable"
+    },
+    {
+      "title": "Compact",
+      "content": "The official SQLite library is less than a single megabyte.",
+      "icon": "small"
+    }
+  ],
   "tags": [
     "execution_mode/interpreted",
     "platform/linux",
