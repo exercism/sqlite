@@ -4,10 +4,10 @@
   ],
   "files": {
     "solution": [
-      "collatz-conjucture.sql"
+      "collatz-conjecture.sql"
     ],
     "test": [
-      "collatz-conjucture_test.sql"
+      "collatz-conjecture_test.sql"
     ],
     "example": [
       ".meta/example.sql"

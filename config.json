@@ -79,8 +79,8 @@
         "difficulty": 1
       },
       {
-        "slug": "collatz-conjucture",
-        "name": "collatz-conjucture",
+        "slug": "collatz-conjecture",
+        "name": "collatz-conjecture",
         "uuid": "b2644e1e-aa52-4503-80e6-cbac1c5b0f06",
         "practices": [],
         "prerequisites": [],

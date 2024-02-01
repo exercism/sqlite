@@ -4,7 +4,7 @@
 -- Read user student solution and save any output as markdown in user_output.md:
 .mode markdown
 .output user_output.md
-.read ./collatz-conjucture.sql
+.read ./collatz-conjecture.sql
 .output
 
 -- Create a clean testing environment:
