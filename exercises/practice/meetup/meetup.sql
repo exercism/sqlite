@@ -1,0 +1,2 @@
+-- Schema: CREATE TABLE "meetup" ( "year" INTEGER, "month" INTEGER, "week" TEXT, "dayofweek" TEXT, "result" TEXT);
+-- Task: update the meetup table and set the result based on the other fields.
