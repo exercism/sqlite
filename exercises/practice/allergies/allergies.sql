@@ -1,0 +1,4 @@
+-- Schema: CREATE TABLE "allergies" ("task" TEXT, "item" TEXT, "score" INT NOT NULL, "result" TEXT);
+-- Task: update the bob allergies and set the result based on the task.
+--       - The `allergicTo` task expects `true` or `false` based on the `score` and the `item` fields.
+--       - For the `list` task you have to write corresponding items to the result field
