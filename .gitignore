@@ -4,3 +4,4 @@ bin/configlet
 bin/configlet.exe
 output.json
 user_output.json
+user_output.md
