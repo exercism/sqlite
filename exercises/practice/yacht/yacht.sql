@@ -1,0 +1,2 @@
+-- Schema: CREATE TABLE "yacht" ("dice_results" TEXT, "category" TEXT, "result" INT);
+-- Task: update the yacht table and set the result based on the dice_results and category fields.
