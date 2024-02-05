@@ -8,11 +8,12 @@
     "representer": false,
     "analyzer": false
   },
-  "blurb": "TODO: add blurb",
+  "blurb": "SQLite is a lightweight, serverless relational database with a straightforward SQL syntax. It's tailored for simplicity and efficiency, making it perfect for mobile, embedded systems, and small to medium-scale projects. The self-contained engine eliminates the need for a separate server, emphasizing ease of use and practicality.",
   "version": 3,
   "online_editor": {
     "indent_style": "space",
-    "indent_size": 4
+    "indent_size": 4,
+    "highlightjs_language": "pgsql"
   },
   "files": {
     "solution": [
