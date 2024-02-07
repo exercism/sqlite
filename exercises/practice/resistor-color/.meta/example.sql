@@ -1,17 +1,20 @@
--- CREATE TABLE "colors" ("index" INT, "color" TEXT);
 -- CREATE TABLE "color_code" ("color" TEXT, "result" INT);
+
+DROP TABLE IF EXISTS "colors";
+CREATE TABLE "colors" ("index" INT, "color" TEXT);
+
 INSERT INTO "colors" ("index", "color")
     VALUES
-        (6, 'blue'),
-        (3, 'orange'),
-        (7, 'violet'),
-        (2, 'red'),
-        (1, 'brown'),
         (0, 'black'),
-        (9, 'white'),
-        (5, 'green'),
+        (1, 'brown'),
+        (2, 'red'),
+        (3, 'orange'),
         (4, 'yellow'),
-        (8, 'grey')
+        (5, 'green'),
+        (6, 'blue'),
+        (7, 'violet'),
+        (8, 'grey'),
+        (9, 'white')
 ;
 
 UPDATE color_code
@@ -20,3 +23,5 @@ UPDATE color_code
         WHERE colors.color = color_code.color
     )
 ;
+
+DROP TABLE IF EXISTS "colors";

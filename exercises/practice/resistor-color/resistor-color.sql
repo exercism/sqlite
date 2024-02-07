@@ -1,5 +1,1 @@
--- Task one: Populate "colors" table with colors and index/value.
--- Schema: CREATE TABLE "colors" ("index" INT, "color" TEXT);
---
--- Task two: Update "color_code" with the correct value/result based on the color.
--- Schema: CREATE TABLE "color_code" ("color" TEXT, "result" INT);
+-- CREATE TABLE "color_code" ("color" TEXT, "result" INT);

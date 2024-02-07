@@ -21,27 +21,13 @@ SET message = 'Result for ' || got.color || ' is "' || got.result || '", but sho
 FROM (SELECT color, result FROM color_code) AS got
 WHERE got.color = test_color_code.color AND test_color_code.status = 'fail';
 
--- Comparison of user input and the tests updates the status for each test:
-UPDATE test_colors
-SET status = 'pass'
-FROM (SELECT GROUP_CONCAT("color" ORDER BY "index") as "result" FROM "colors") AS got
-WHERE got.result = test_colors.result;
--- Update message for failed tests to give helpful information:
-UPDATE test_colors
-SET message = 'Result for Colors is "' || got.result || '", but should be: "' || test_colors.result || '"'
-FROM (SELECT GROUP_CONCAT("color" ORDER BY "index") as "result" FROM "colors") AS got
-WHERE test_colors.status = 'fail';
 
-INSERT INTO test_results (uuid, description, test_name, status, message, output, test_code, task_id)
-SELECT uuid, description, 'color', status, message, '', '', '' FROM test_colors;
-INSERT INTO test_results (uuid, description, test_name, status, message, output, test_code, task_id)
-SELECT uuid, description, 'color code', status, message, '', '', '' FROM test_color_code;
 .mode json
 .once './output.json'
 SELECT description, status, message, output, test_code, task_id
-FROM test_results;
+FROM "test_color_code";
 
 -- Display test results in readable form for the student:
 .mode table
 SELECT description, status, message
-FROM test_results;
+FROM "test_color_code";
