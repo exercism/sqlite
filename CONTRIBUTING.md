@@ -6,18 +6,34 @@
 
     ```sh
     bin/fetch-configlet
-    bin/configlet create --practice-exercise bob
+    slug=bob
+    bin/configlet create --practice-exercise $slug
     ```
 
 2. create the data.csv file from canonical data
 
     ```sh
-    cd exercises/practice/bob
-    cp ~/.cache/exercism/configlet/problem-specifications/exercises/bob/canonical-data.json .
+    cd exercises/practice/$slug
+    cp "${XDG_CACHE_DIR:-$HOME/.cache}"/exercism/configlet/problem-specifications/exercises/$slug/canonical-data.json .
+
+    # This needs to be custom crafted per exercise.
+    # for exaple, for "bob"
     jq -r '.cases[] | [.input.heyBob, ""] | @csv' canonical-data.json > data.csv
+
+    # and for "high-scores", the canonical data has nested cases
+    jq -r '
+      ( .cases
+        | map(select(has("uuid")))
+        + map(select(has("cases")) | .cases)[]
+      )[]
+      | .uuid as $u
+      | .input.scores[]
+      | [$u, .]
+      | @csv
+    ' canonical-data.json > data.csv
     ```
 
-3. create the create_test_table.sql from canonical data
+3. create the `create_test_table.sql` from canonical data
 
     ```sh
     #!/usr/bin/env bash
@@ -35,19 +51,30 @@
         test_code TEXT,
         task_id INTEGER DEFAULT NULL,
         -- Here are columns for the actual tests
+        property TEST NOT NULL,
         input INT NOT NULL,
         expected TEXT NOT NULL
     );
 
-    -- Note: the strings below contain literal tab, newline, carriage returns.
+    -- Note: the strings below _may_ literal tab, newline, carriage returns.
 
-    INSERT INTO tests (uuid, description, input, expected)
+    INSERT INTO tests (uuid, description, property, input, expected)
         VALUES
     --END-SQL--
 
+    # The following may need to be custom crafted per exercise (this is high-scores)
     jq -r --arg q "'" '
-        .cases[]
-        | [.uuid, .description, .input.heyBob, .expected]
+        ( .cases
+          | map(select(has("uuid")))
+          + map(select(has("cases")) | .cases)[]
+        )[]
+        | [
+            .uuid,
+            .description,
+            .property,
+            (.input.scores | join(",")),
+            (.expected | if type == "array" then join(",") else . end)
+        ]
         | @csv
         | gsub($q; $q+$q)
         | gsub("\""; $q)
@@ -56,8 +83,8 @@
     } > create_test_table.sql
     ```
 
-3. create the create_fixture.sql file
-4. create the bob_test.sql file based on the test script from another exercise.
-5. create the example.sql
+3. create the `create_fixture.sql` file
+4. create the `${slug}_test.sql` file based on the test script from another exercise.
+5. create `.meta/example.sql`
 6. set the stub file.
 7. test it.
