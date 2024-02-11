@@ -1,12 +1,12 @@
 DROP TABLE IF EXISTS "scores";
 CREATE TABLE "scores" (
-    "uuid" TEXT,
+    "game_id" TEXT,
     "score" INT
 );
 
 DROP TABLE IF EXISTS "results";
 CREATE TABLE "results" (
-    "uuid" TEXT,
+    "game_id" TEXT,
     "property" TEXT,
     "result" TEXT
 );

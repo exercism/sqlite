@@ -13,14 +13,14 @@
 -- Update the status for each test:
 UPDATE tests
 SET status = 'pass'
-FROM (SELECT uuid, result FROM results) AS actual
-WHERE (actual.uuid, actual.result) = (tests.uuid, tests.expected);
+FROM (SELECT game_id, result FROM results) AS actual
+WHERE (actual.game_id, actual.result) = (tests.uuid, tests.expected);
 
 -- Update message for failed tests to give helpful information:
 UPDATE tests
 SET message = 'Result for "' || tests.description || '" is "' || actual.result || '", but should be "' || tests.expected || '"'
-FROM (SELECT uuid, result FROM results) AS actual
-WHERE actual.uuid = tests.uuid AND tests.status = 'fail';
+FROM (SELECT game_id, result FROM results) AS actual
+WHERE actual.game_id = tests.uuid AND tests.status = 'fail';
 
 -- Save results to ./output.json (needed by the online test-runner)
 .mode json
