@@ -7,14 +7,14 @@
     ```sh
     bin/fetch-configlet
     slug=bob
-    bin/configlet create --practice-exercise $slug
+    bin/configlet create --practice-exercise "$slug"
     ```
 
 2. create the data.csv file from canonical data
 
     ```sh
-    cd exercises/practice/$slug
-    cp "${XDG_CACHE_DIR:-$HOME/.cache}"/exercism/configlet/problem-specifications/exercises/$slug/canonical-data.json .
+    cd "exercises/practice/$slug"
+    cp "${XDG_CACHE_DIR:-$HOME/.cache}/exercism/configlet/problem-specifications/exercises/$slug/canonical-data.json" .
 
     # This needs to be custom crafted per exercise.
     # for exaple, for "bob"
@@ -56,7 +56,7 @@
         expected TEXT NOT NULL
     );
 
-    -- Note: the strings below _may_ literal tab, newline, carriage returns.
+    -- Note: the strings below _may_ contain literal tab, newline, or carriage returns.
 
     INSERT INTO tests (uuid, description, property, input, expected)
         VALUES
