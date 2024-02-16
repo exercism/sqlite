@@ -1,1 +1,0 @@
--- Table has to be created by user including check constraints
