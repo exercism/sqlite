@@ -1,0 +1,1 @@
+-- CREATE TABLE "color_code" ("color" TEXT, "result" INT);
