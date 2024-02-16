@@ -104,6 +104,14 @@
         "difficulty": 5
       },
       {
+        "slug": "two-fer",
+        "name": "Two-Fer",
+        "uuid": "c69f301c-126d-4f88-b301-626499f56a7c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "yacht",
         "name": "Yacht",
         "uuid": "fe0f434b-dcf8-46ec-924a-09e47348f22d",
@@ -118,6 +126,30 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
+      },
+      {
+        "slug": "resistor-color",
+        "name": "Resistor Color",
+        "uuid": "a90a01fd-aa8c-45ee-a191-2898434fcf10",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
+        "slug": "high-scores",
+        "name": "High Scores",
+        "uuid": "7ab3b905-bfaa-4d21-a665-7dcf2701cb3e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "darts",
+        "name": "Darts",
+        "uuid": "53ab1f3e-62ad-4d2a-a97d-cd2fac9b9187",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
       }
     ]
   },
