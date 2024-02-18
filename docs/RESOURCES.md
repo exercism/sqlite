@@ -1,21 +1,14 @@
 # Resources
 
-Here are some useful resources to help you learn more about SQLite and enhance your skills:
+<!-- TODO: write document
 
-- The [official SQLite documentation][sqlite-docs] provides comprehensive guides, tutorials, and references for SQLite.
+  This document should link to useful resources.
 
-- [SQLite Command-Line Shell][sqlite-shell]: Documentation for SQLite's command-line shell, allowing you to interact with SQLite databases using SQL commands.
+  Feel free to link to any good resources you know, whether they
+  be websites, videos, mailing lists, etc.
 
-- [SQLite FAQ][sqlite-faq]: Frequently asked questions about SQLite, covering topics from installation to troubleshooting.
+  The contents of this document are displayed on the track's documentation
+  page at `https://exercism.org/docs/tracks/<track>/resources`.
 
-- [SQLite Forum][sqlite-forum]: The SQLite forum is for asking questions, reporting bugs, suggesting improvements, seeking instruction, and discussing software related to SQLite.
-
-- [SQLite Browser][sqlite-browser]: A visual tool to create, design, and manage SQLite databases, allowing you to browse and edit SQLite database files.
-
-Explore these resources to deepen your understanding of SQLite and improve your proficiency in using this powerful database management system.
-
-[sqlite-docs]: https://www.sqlite.org/docs.html
-[sqlite-shell]: https://www.sqlite.org/cli.html
-[sqlite-faq]: https://www.sqlite.org/faq.html
-[sqlite-forum]: https://sqlite.org/forum/forum
-[sqlite-browser]: https://sqlitebrowser.org/
+  See https://exercism.org/docs/building/tracks/docs for more information. -->
+  
