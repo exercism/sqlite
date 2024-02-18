@@ -1,15 +1,10 @@
 # Tests
 
-<!-- TODO: write document
+Navigate to the directory containing the appropriate `${slug}_test.sql` file, where `${slug}` is the name of the exercise, using hyphens instead of spaces and all lowercase (e.g. `hello-world_test.sql` for the `Hello World` exercise).
 
-  This document should contain instructions on how to run the exercise's tests.
+```bash
+sqlite3 -bail < ${slug}_test.sql
+```
 
-  The instructions should be short and to the point.
-
-  The docs/TESTS.md file can contain a more verbose description on how to run tests.
-
-  When a student downloads an exercise via the CLI, this file's contents are
-  included into the HELP.md file.
-
-  See https://exercism.org/docs/building/tracks/shared-files for more information.
--->
+You can find more information in the [sqlite track docs about testing](https://exercism.org/docs/tracks/sqlite/tests
+).
