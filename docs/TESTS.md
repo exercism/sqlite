@@ -3,20 +3,20 @@
 To run the tests for your SQLite exercises, follow these steps:
 
 1. Open your preferred terminal.
-2. Navigate to the directory containing the appropriate `STUB_test.sql` file, where `STUB` is the name of the exercise, using hyphens instead of spaces and all lowercase.
+2. Navigate to the directory containing the appropriate `${slug}_test.sql` file, where `${slug}` is the name of the exercise, using hyphens instead of spaces and all lowercase.
 3. Execute the following command: 
 ```bash
-sqlite3 -bail < STUB_test.sql
+sqlite3 -bail < ${slug}_test.sql
 ```
   
-This command initializes SQLite with an empty database, runs the tests specified in STUB_test.sql, and exits afterward.
+This command initializes SQLite with an empty database, runs the tests specified in `${slug}_test.sql`, and exits afterward.
 `-bail` will make sure the code execution stops for invalid code.
 
 The test results will be displayed in the console as a table, showing the description of each test, its status (e.g., "pass"), and a message if the status is "fail."
 
 ## Execution Details
 
-The test file (STUB_test.sql) is a pretty complex script.
+The test file (`${slug}_test.sql`) is a pretty complex script.
 Here is an overview of what it does.
 
 1. Sets up tables by reading `create_fixture.sql`.
