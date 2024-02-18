@@ -22,7 +22,7 @@ To install SQLite on Windows, follow these steps:
 ## macOS
 
 On macOS, SQLite is pre-installed.
-However, if you need a newer version, you can use Homebrew:
+However, if you need a newer version, you can use [Homebrew][homebrew]:
 
 ```bash
 brew install sqlite
@@ -62,4 +62,5 @@ The `Build Product Names and Info` section has the naming template for different
 [version-history]: https://www.sqlite.org/changes.html
 [windows-11-install]: https://windowsloop.com/how-to-add-to-windows-path/
 [windows-10-install]: https://helpdeskgeek.com/windows-10/add-windows-path-environment-variable/
+[homebrew]: https://brew.sh
 [sqlite-download]: https://www.sqlite.org/download.html
