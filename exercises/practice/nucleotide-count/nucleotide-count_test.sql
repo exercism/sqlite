@@ -22,10 +22,26 @@ SET message = 'Result is ' || actual.result || ', but should be ' || tests.expec
 FROM (SELECT strand, result  FROM nucleotide_count) AS actual
 WHERE actual.strand = tests.input AND tests.status = 'fail';
 
--- Process test cases that should fail from error_data.csv:
-.system ./error-checking nucleotide-count
-.import --csv ./check_errors.csv tests
-.system rm ./check_errors.csv
+-- Process test cases that should fail:
+-- All error tests should pass, updated to fail if invalid entry is possible
+UPDATE tests
+SET status = 'pass'
+WHERE expected = 'error';
+
+-- Only triggered if insert is successful
+CREATE TRIGGER IF NOT EXISTS error_checker 
+    AFTER INSERT
+    ON nucleotide_count
+BEGIN
+    UPDATE tests
+    SET status = 'fail',
+        message = NEW.strand || ' should be restricted from insertion'
+    WHERE tests.input = NEW.strand;
+END;
+
+INSERT OR IGNORE INTO nucleotide_count (strand)
+SELECT input FROM tests
+WHERE expected = 'error';
 
 -- Save results to ./output.json (needed by the online test-runner)
 .mode json

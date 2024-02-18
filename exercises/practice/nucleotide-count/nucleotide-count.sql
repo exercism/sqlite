@@ -4,10 +4,10 @@
 DROP TABLE IF EXISTS nucleotide_count;
 CREATE TABLE "nucleotide_count" (
     "strand" TEXT,
-    "result" TEXT,
+    "result" TEXT
 );
 
--- Please don't change those import lines:
+-- Please don't change the following two import lines:
 .mode csv
 .import ./data.csv nucleotide_count
 

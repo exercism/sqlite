@@ -8,7 +8,7 @@ CREATE TABLE "nucleotide_count" (
     CHECK  (1 >  LENGTH(REPLACE(REPLACE(REPLACE(REPLACE(strand, 'A', ''), 'C', ''), 'G', ''), 'T', '')))
 );
 
--- Please don't change those import lines:
+-- Please don't change the following two import lines:
 .mode csv
 .import ./data.csv nucleotide_count
 
@@ -28,4 +28,4 @@ SET result = (
     SELECT json(' { "A": ' || a || ', "C": ' || c || ', "G": ' || g || ', "T": ' || t || ' } ')
     FROM counts
     WHERE nucleotide_count.strand == counts.strand
-        );
+);
