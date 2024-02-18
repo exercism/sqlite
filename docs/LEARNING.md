@@ -11,4 +11,3 @@
   page at `https://exercism.org/docs/tracks/<track>/learning`.
 
   See https://exercism.org/docs/building/tracks/docs for more information. -->
-  

@@ -13,4 +13,3 @@
   page at `https://exercism.org/docs/tracks/<track>/tests`.
 
   See https://exercism.org/docs/building/tracks/docs for more information. -->
-  
