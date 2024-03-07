@@ -26,4 +26,4 @@ INSERT INTO tests (uuid, name, task, square, expected)
         ("c50acc89-8535-44e4-918f-b848ad2817d4", "grains on square 16", "single-square", 16, 32768),
         ("acd81b46-c2ad-4951-b848-80d15ed5a04f", "grains on square 32", "single-square", 32, 2147483648),
         ("c73b470a-5efb-4d53-9ac6-c5f6487f227b", "grains on square 64", "single-square", 64, 9223372036854775808),
-        ("6eb07385-3659-4b45-a6be-9dc474222750", "returns the total number of grains on the board", "total", "", 18446744073709551615);
+        ("6eb07385-3659-4b45-a6be-9dc474222750", "returns the total number of grains on the board", "total", 0, 18446744073709551615);
