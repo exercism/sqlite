@@ -120,6 +120,14 @@
         "difficulty": 1
       },
       {
+        "slug": "nucleotide-count",
+        "name": "Nucleotide Count",
+        "uuid": "5291aa5f-b3b8-4c28-b30a-ca006dbaadb0",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
         "slug": "resistor-color",
         "name": "Resistor Color",
         "uuid": "a90a01fd-aa8c-45ee-a191-2898434fcf10",
