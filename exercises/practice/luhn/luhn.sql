@@ -1,0 +1,2 @@
+-- Schema: CREATE TABLE "luhn" ("value" TEXT "result" Boolean);
+-- Task: update the luhn table and set the result based on the value field.
