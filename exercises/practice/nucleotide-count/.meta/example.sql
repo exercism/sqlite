@@ -1,8 +1,8 @@
--- Task:  - Update the nucleotide_count table and set the result based on the input field.
+-- Task:  - Update the "nucleotide-count" table and set the result based on the input field.
 --        - Update table creation with constraints.
 
-DROP TABLE IF EXISTS nucleotide_count;
-CREATE TABLE "nucleotide_count" (
+DROP TABLE IF EXISTS "nucleotide-count";
+CREATE TABLE "nucleotide-count" (
     "strand" TEXT,
     "result" TEXT,
     CHECK  (1 >  LENGTH(REPLACE(REPLACE(REPLACE(REPLACE(strand, 'A', ''), 'C', ''), 'G', ''), 'T', '')))
@@ -10,7 +10,7 @@ CREATE TABLE "nucleotide_count" (
 
 -- Please don't change the following two import lines:
 .mode csv
-.import ./data.csv nucleotide_count
+.import ./data.csv "nucleotide-count"
 
 -- Write your code below:
 CREATE VIEW counts (strand, a, c, g, t)
@@ -21,11 +21,11 @@ AS
         LENGTH(strand) - LENGTH(REPLACE(strand, 'C', '')),
         LENGTH(strand) - LENGTH(REPLACE(strand, 'G', '')),
         LENGTH(strand) - LENGTH(REPLACE(strand, 'T', ''))
-    FROM nucleotide_count;
+    FROM "nucleotide-count";
 
-UPDATE nucleotide_count
+UPDATE "nucleotide-count"
 SET result = (
     SELECT json(' { "A": ' || a || ', "C": ' || c || ', "G": ' || g || ', "T": ' || t || ' } ')
     FROM counts
-    WHERE nucleotide_count.strand == counts.strand
+    WHERE "nucleotide-count".strand == counts.strand
 );

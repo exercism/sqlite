@@ -13,13 +13,13 @@
 -- Comparison of user input and the tests updates the status for each test:
 UPDATE tests
 SET status = 'pass'
-FROM (SELECT strand, result FROM nucleotide_count) AS actual
+FROM (SELECT strand, result FROM "nucleotide-count") AS actual
 WHERE (actual.strand, actual.result) = (tests.input, tests.expected);
 
 -- Update message for failed tests to give helpful information:
 UPDATE tests
 SET message = 'Result is ' || actual.result || ', but should be ' || tests.expected
-FROM (SELECT strand, result  FROM nucleotide_count) AS actual
+FROM (SELECT strand, result  FROM "nucleotide-count") AS actual
 WHERE actual.strand = tests.input AND tests.status = 'fail';
 
 -- Process test cases that should fail:
@@ -31,7 +31,7 @@ WHERE expected = 'error';
 -- Only triggered if insert is successful
 CREATE TRIGGER IF NOT EXISTS error_checker 
     AFTER INSERT
-    ON nucleotide_count
+    ON "nucleotide-count"
 BEGIN
     UPDATE tests
     SET status = 'fail',
@@ -39,7 +39,7 @@ BEGIN
     WHERE tests.input = NEW.strand;
 END;
 
-INSERT OR IGNORE INTO nucleotide_count (strand)
+INSERT OR IGNORE INTO "nucleotide-count" (strand)
 SELECT input FROM tests
 WHERE expected = 'error';
 
