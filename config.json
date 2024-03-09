@@ -152,12 +152,20 @@
         "difficulty": 2
       },
       {
+        "slug": "grains",
+        "name": "Grains",
+        "uuid": "1885a049-6075-4619-914f-28a0ebc00a2b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
         "slug": "luhn",
         "name": "Luhn",
         "uuid": "bde990ef-fb37-4b75-a3b1-a659b7f69f59",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1
+        "difficulty": 4
       }
     ]
   },

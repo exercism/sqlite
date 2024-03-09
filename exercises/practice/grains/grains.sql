@@ -1,0 +1,2 @@
+-- Schema: CREATE TABLE "grains" ("task" TEXT, "square" INT, "result" INT);
+-- Task: update the grains table and set the result based on the task (and square fields).
