@@ -1,0 +1,2 @@
+-- Schema: CREATE TABLE "eliuds-eggs" ("number" INT, "result" INT);
+-- Task: update the eliuds-eggs table and set the result based on the number field.
