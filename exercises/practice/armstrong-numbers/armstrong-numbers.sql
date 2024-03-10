@@ -1,0 +1,2 @@
+-- Schema: CREATE TABLE "armstrong-numbers" ("number" INT, "result" BOOLEAN);
+-- Task: update the armstrong-numbers table and set the result based on the number field.
