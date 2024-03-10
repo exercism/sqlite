@@ -4,7 +4,7 @@ CREATE TABLE "eliuds-eggs" (
     "result" INT
 );
 
--- Note: the CSV file contain literal tab, newline, carriage returns.
+-- Note: the CSV file may contain literal tab, newline, carriage returns.
 
 .mode csv
 .import ./data.csv eliuds-eggs

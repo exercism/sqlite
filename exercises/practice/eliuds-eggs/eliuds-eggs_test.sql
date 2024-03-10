@@ -19,7 +19,7 @@ WHERE (actual.number, actual.result) = (tests.number, tests.expected);
 -- Update message for failed tests to give helpful information:
 UPDATE tests
 SET message = 'Result for ' || tests.number || ' is ' || actual.result || ', but should be ' || tests.expected
-FROM (SELECT  number, result FROM "eliuds-eggs") AS actual
+FROM (SELECT number, result FROM "eliuds-eggs") AS actual
 WHERE actual.number = tests.number AND tests.status = 'fail';
 
 -- Save results to ./output.json (needed by the online test-runner)
