@@ -1,0 +1,2 @@
+-- Schema: CREATE TABLE "color_code" ("color1" TEXT, "color2" TEXT, "result" INT);
+-- Task: update the color_code table and set the result based on the two colors.
