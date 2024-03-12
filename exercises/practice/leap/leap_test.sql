@@ -40,13 +40,13 @@ INSERT INTO tests (name, uuid, year, result)
 -- Comparison of user input and the tests updates the status for each test:
 UPDATE tests
 SET status = 'pass'
-FROM (SELECT year, is_leap FROM leap) AS l
-WHERE (l.year, l.is_leap) = (tests.year, tests.result);
+FROM (SELECT year, is_leap FROM leap) AS actual
+WHERE (actual.year, actual.is_leap) = (tests.year, tests.result);
 -- Upadte message for failed tests to give helpful information:
 UPDATE tests
-SET message = 'Result for ' || l.year || ' is: ' || l.is_leap || ', but should be: ' || tests.result
-FROM (SELECT year, is_leap FROM leap) AS l
-WHERE l.year = tests.year AND tests.status = 'fail';
+SET message = 'Result for ' || actual.year || ' is: ' || actual.is_leap || ', but should be: ' || tests.result
+FROM (SELECT year, is_leap FROM leap) AS actual
+WHERE actual.year = tests.year AND tests.status = 'fail';
 -- Save results to ./output.json (needed by the online test-runner)
 .mode json
 .once './output.json'

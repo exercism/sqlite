@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS "leap";
 CREATE TABLE "leap" (
     "year" INT,
-    "result" INT
+    "is_leap" BOOL
 );
 
 .mode csv
