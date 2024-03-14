@@ -9,6 +9,10 @@
     ],
     "example": [
       ".meta/example.sql"
+    ],
+    "editor": [
+      "data.csv",
+      "create_test_table.sql"
     ]
   },
   "blurb": "Convert a resistor band's color to its numeric representation.",

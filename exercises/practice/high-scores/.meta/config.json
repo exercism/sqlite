@@ -11,6 +11,10 @@
     ],
     "example": [
       ".meta/example.sql"
+    ],
+    "editor": [
+      "data.csv",
+      "create_test_table.sql"
     ]
   },
   "blurb": "Manage a player's High Score list.",

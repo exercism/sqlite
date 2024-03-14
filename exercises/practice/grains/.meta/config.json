@@ -11,6 +11,10 @@
     ],
     "example": [
       ".meta/example.sql"
+    ],
+    "editor": [
+      "data.csv",
+      "create_test_table.sql"
     ]
   },
   "blurb": "Calculate the number of grains of wheat on a chessboard given that the number on each square doubles.",

@@ -1,5 +1,7 @@
 {
-  "authors": [],
+  "authors": [
+    "vaeng"
+  ],
   "files": {
     "solution": [
       "nucleotide-count.sql"
@@ -9,6 +11,10 @@
     ],
     "example": [
       ".meta/example.sql"
+    ],
+    "editor": [
+      "data.csv",
+      "create_test_table.sql"
     ]
   },
   "blurb": "Given a DNA string, compute how many times each nucleotide occurs in the string.",
