@@ -13,7 +13,9 @@
       ".meta/example.sql"
     ],
     "editor": [
-      "data.csv",
+      "create_fixture.sql",
+      "data_results.csv",
+      "data_scores.csv",
       "create_test_table.sql"
     ]
   },
