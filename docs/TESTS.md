@@ -14,6 +14,11 @@ This command initializes SQLite with an empty database, runs the tests specified
 
 The test results will be displayed in the console as a table, showing the description of each test, its status (e.g., "pass"), and a message if the status is "fail."
 
+## Debugging
+
+You can use `SELECT` statements for debugging.
+The output will be forwarded to `user_output.md` and shown in the web-editor if tests fail.
+
 ## Execution Details
 
 The test file (`${slug}_test.sql`) is a pretty complex script.
