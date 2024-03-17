@@ -11,6 +11,10 @@
     ],
     "example": [
       ".meta/example.sql"
+    ],
+    "editor": [
+      "data.csv",
+      "create_test_table.sql"
     ]
   },
   "blurb": "Given a number determine whether or not it is valid per the Luhn formula.",
