@@ -1,5 +1,7 @@
 {
-  "authors": [],
+  "authors": [
+    "vaeng"
+  ],
   "files": {
     "solution": [
       "nucleotide-count.sql"
