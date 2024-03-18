@@ -3,8 +3,7 @@
 
 -- Test cases:
 -- Note: the strings below contain literal tab, newline, carriage returns.
-INSERT INTO tests (uuid, description,
-                    input, expected)
+INSERT INTO tests (uuid, description, input, expected)
     VALUES
         ('e162fead-606f-437a-a166-d051915cea8e','stating something','Tom-ay-to, tom-aaaah-to.','Whatever.'),
         ('73a966dc-8017-47d6-bb32-cf07d1a5fcd9','shouting','WATCH OUT!','Whoa, chill out!'),
@@ -32,6 +31,7 @@ No.','Whatever.'),
         ('5371ef75-d9ea-4103-bcfa-2da973ddec1b','starting with whitespace','         hmmmmmmm...','Whatever.'),
         ('05b304d6-f83b-46e7-81e0-4cd3ca647900','ending with whitespace','Okay if like my  spacebar  quite a bit?   ','Sure.'),
         ('72bd5ad3-9b2f-4931-a988-dce1f5771de2','other whitespace','
+
  	','Fine. Be that way!'),
         ('12983553-8601-46a8-92fa-fcaa3bc4a2a0','non-question ending with whitespace','This is a statement ending with whitespace      ','Whatever.');
 

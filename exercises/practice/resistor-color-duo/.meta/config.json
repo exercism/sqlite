@@ -14,6 +14,9 @@
     ],
     "example": [
       ".meta/example.sql"
+    ],
+    "editor": [
+      "data.csv"
     ]
   },
   "blurb": "Convert color codes, as used on resistors, to a numeric value.",

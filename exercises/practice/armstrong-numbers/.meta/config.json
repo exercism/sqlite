@@ -11,6 +11,9 @@
     ],
     "example": [
       ".meta/example.sql"
+    ],
+    "editor": [
+      "data.csv"
     ]
   },
   "blurb": "Determine if a number is an Armstrong number.",

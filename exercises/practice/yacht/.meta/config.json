@@ -11,6 +11,9 @@
     ],
     "example": [
       ".meta/example.sql"
+    ],
+    "editor": [
+      "data.csv"
     ]
   },
   "blurb": "Score a single throw of dice in the game Yacht.",
