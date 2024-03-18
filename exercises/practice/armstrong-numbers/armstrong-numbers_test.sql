@@ -32,3 +32,6 @@ UPDATE tests
 SET status = 'pass'
 FROM (SELECT number, result FROM "armstrong-numbers") AS actual
 WHERE (actual.number, actual.result) = (tests.number, tests.expected);
+
+-- Write results and debug info:
+.read ./test_reporter.sql

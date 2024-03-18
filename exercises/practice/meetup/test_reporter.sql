@@ -1,4 +1,4 @@
-Update message for failed tests to give helpful information:
+-- Update message for failed tests to give helpful information:
 UPDATE tests
 SET message = 'Result is ' || actual.result || ', but should be ' || tests.expected
 FROM (SELECT year, month, week, dayofweek, result  FROM meetup) AS actual

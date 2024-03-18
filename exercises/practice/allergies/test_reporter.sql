@@ -1,4 +1,4 @@
-Udate message for failed tests to give helpful information:
+Update message for failed tests to give helpful information:
 UPDATE tests
 SET message = 'Result for ' || tests.task || ' ' || tests.item || ' ' || tests.score || ' is ' || actual.result || ', but should be ' || tests.expected
 FROM (SELECT task, item, score, result FROM allergies) AS actual

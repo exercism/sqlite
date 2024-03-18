@@ -4,7 +4,7 @@
 -- Test cases:
 -- Note: the strings below _may_ contain literal tab, newline, or carriage returns.
 
-INSERT INTO tests (name, uuid
+INSERT INTO tests (name, uuid,
                     number, expected)
     VALUES
         ('0 eggs', '559e789d-07d1-4422-9004-3b699f83bca3',
