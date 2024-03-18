@@ -13,9 +13,7 @@
       ".meta/example.sql"
     ],
     "editor": [
-      "data.csv",
-      "create_fixture.sql",
-      "create_test_table.sql"
+      "data.csv"
     ]
   },
   "blurb": "Convert a number into its corresponding raindrop sounds - Pling, Plang and Plong.",
