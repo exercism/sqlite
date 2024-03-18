@@ -1,1 +1,2 @@
 -- CREATE TABLE "color_code" ("color" TEXT, "result" INT);
+-- Task: update the color_code table and set the result based on the color.

@@ -1,14 +1,19 @@
--- Create database:
-.read ./create_fixture.sql
+-- Setup test table and read in student solution:
+.read ./test_setup.sql
 
--- Read user student solution and save any output as markdown in user_output.md:
-.mode markdown
-.output user_output.md
-.read ./collatz-conjecture.sql
-.output
+-- Test cases:
+-- Note: the strings below may contain literal tab, newline, carriage returns.
 
--- Create a clean testing environment:
-.read ./create_test_table.sql
+INSERT INTO tests (description, uuid, number, expected)
+    VALUES
+        ('zero steps for one', '540a3d51-e7a6-47a5-92a3-4ad1838f0bfd',
+            1, 0),
+        ('divide if even', '3d76a0a6-ea84-444a-821a-f7857c2c1859',
+            16, 4),
+        ('even and odd steps', '754dea81-123c-429e-b8bc-db20b05a87b9',
+            12, 9),
+        ('large number of even and odd steps', 'ecfd0210-6f85-44f6-8280-f65534892ff6',
+            1000000, 152);
 
 -- Comparison of user input and the tests updates the status for each test:
 UPDATE tests
@@ -16,19 +21,5 @@ SET status = 'pass'
 FROM (SELECT number, steps FROM collatz) AS actual
 WHERE (actual.number, actual.steps) = (tests.number, tests.expected);
 
--- Update message for failed tests to give helpful information:
-UPDATE tests
-SET message = 'Result for ' || tests.number || ' is ' || actual.steps || ', but should be ' || tests.expected
-FROM (SELECT number, steps FROM collatz) AS actual
-WHERE actual.number = tests.number AND tests.status = 'fail';
-
--- Save results to ./output.json (needed by the online test-runner)
-.mode json
-.once './output.json'
-SELECT description, status, message, output, test_code, task_id
-FROM tests;
-
--- Display test results in readable form for the student:
-.mode table
-SELECT description, status, message
-FROM tests;
+-- Write results and debug info:
+.read ./test_reporter.sql
