@@ -13,8 +13,7 @@
       ".meta/example.sql"
     ],
     "editor": [
-      "data.csv",
-      "create_test_table.sql"
+      "data.csv"
     ]
   },
   "blurb": "Bob is a lackadaisical teenager. In conversation, his responses are very limited.",

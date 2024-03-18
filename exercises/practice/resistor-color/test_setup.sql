@@ -1,3 +1,13 @@
+-- Create database:
+.read ./create_fixture.sql
+
+-- Read user student solution and save any output as markdown in user_output.md:
+.mode markdown
+.output user_output.md
+.read ./resistor-color.sql
+.output
+
+-- Create a clean testing environment:
 -- test_color_code tests the color_code values.
 -- test_colors tests the colors values.
 -- test_results combined the results for final output.
@@ -17,10 +27,3 @@ CREATE TABLE IF NOT EXISTS "test_color_code" (
     test_code TEXT,
     task_id INTEGER DEFAULT NULL
 );
-
-INSERT INTO "test_color_code" (uuid, description, color, result)
-    VALUES
-        -- Every test case from the .meta/tests.toml file gets its own row:
-        ('49eb31c5-10a8-4180-9f7f-fea632ab87ef', 'Color codes -> Black', 'black', 0),
-        ('0a4df94b-92da-4579-a907-65040ce0b3fc', 'Color codes -> White', 'white', 9),
-        ('5f81608d-f36f-4190-8084-f45116b6f380', 'Color codes -> Orange', 'orange', 3);

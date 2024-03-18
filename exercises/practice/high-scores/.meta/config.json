@@ -13,10 +13,8 @@
       ".meta/example.sql"
     ],
     "editor": [
-      "create_fixture.sql",
       "data_results.csv",
-      "data_scores.csv",
-      "create_test_table.sql"
+      "data_scores.csv"
     ]
   },
   "blurb": "Manage a player's High Score list.",

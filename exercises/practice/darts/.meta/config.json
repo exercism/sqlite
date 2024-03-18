@@ -13,8 +13,7 @@
       ".meta/example.sql"
     ],
     "editor": [
-      "data.csv",
-      "create_test_table.sql"
+      "data.csv"
     ]
   },
   "blurb": "Write a function that returns the earned points in a single toss of a Darts game.",

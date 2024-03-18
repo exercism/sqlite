@@ -13,8 +13,7 @@
       ".meta/example.sql"
     ],
     "editor": [
-      "data.csv",
-      "create_test_table.sql"
+      "data.csv"
     ]
   },
   "blurb": "Determine if a word or phrase is an isogram.",

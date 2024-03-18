@@ -1,14 +1,20 @@
--- Create database:
-.read ./create_fixture.sql
+-- Setup test table and read in student solution:
+.read ./test_setup.sql
 
--- Read user student solution and save any output as markdown in user_output.md:
-.mode markdown
-.output user_output.md
-.read ./eliuds-eggs.sql
-.output
+-- Test cases:
+-- Note: the strings below _may_ contain literal tab, newline, or carriage returns.
 
--- Create a clean testing environment:
-.read ./create_test_table.sql
+INSERT INTO tests (name, uuid,
+                    number, expected)
+    VALUES
+        ('0 eggs', '559e789d-07d1-4422-9004-3b699f83bca3',
+            0, 0),
+        ('1 egg', '97223282-f71e-490c-92f0-b3ec9e275aba',
+            16, 1),
+        ('4 eggs', '1f8fd18f-26e9-4144-9a0e-57cdfc4f4ff5',
+            89, 4),
+        ('13 eggs', '0c18be92-a498-4ef2-bcbb-28ac4b06cb81',
+            2000000000, 13);
 
 -- Comparison of user input and the tests updates the status for each test:
 UPDATE tests
@@ -16,19 +22,5 @@ SET status = 'pass'
 FROM (SELECT number, result FROM "eliuds-eggs") AS actual
 WHERE (actual.number, actual.result) = (tests.number, tests.expected);
 
--- Update message for failed tests to give helpful information:
-UPDATE tests
-SET message = 'Result for ' || tests.number || ' is ' || actual.result || ', but should be ' || tests.expected
-FROM (SELECT number, result FROM "eliuds-eggs") AS actual
-WHERE actual.number = tests.number AND tests.status = 'fail';
-
--- Save results to ./output.json (needed by the online test-runner)
-.mode json
-.once './output.json'
-SELECT name, status, message, output, test_code, task_id
-FROM tests;
-
--- Display test results in readable form for the student:
-.mode table
-SELECT name, status, message
-FROM tests;
+-- Write results and debug info:
+.read ./test_reporter.sql
