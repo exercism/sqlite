@@ -2,7 +2,7 @@
 .read ./test_setup.sql
 
 -- Test cases:
-INSERT INTO tests (description, uuid,
+INSERT INTO tests (name, uuid,
                     number, result)
     VALUES
         ('the sound for 1 is 1', '1575d549-e502-46d4-a8e1-6b7bec6123d8',

@@ -4,7 +4,7 @@
 -- Test cases:
 -- Note: the strings below contain literal tab, newline, carriage returns.
 
-INSERT INTO tests (description, uuid,
+INSERT INTO tests (name, uuid,
                     x, y, expected)
     VALUES
         ('Missed target', '9033f731-0a3a-4d9c-b1c0-34a1c8362afb',

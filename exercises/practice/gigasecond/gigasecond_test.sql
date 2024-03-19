@@ -3,7 +3,7 @@
 
 -- Test cases:
 -- Note: the strings below contain literal tab, newline, carriage returns.
-INSERT INTO tests (description, uuid,
+INSERT INTO tests (name, uuid,
                     moment, result)
     VALUES
         ('date only specification of time', '92fbe71c-ea52-4fac-bd77-be38023cacf7',

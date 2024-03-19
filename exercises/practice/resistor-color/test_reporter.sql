@@ -7,10 +7,10 @@ WHERE actual.color = test_color_code.color AND test_color_code.status = 'fail';
 
 .mode json
 .once './output.json'
-SELECT description, status, message, output, test_code, task_id
+SELECT name, status, message, output, test_code, task_id
 FROM "test_color_code";
 
 -- Display test results in readable form for the student:
 .mode table
-SELECT description, status, message
+SELECT name, status, message
 FROM "test_color_code";

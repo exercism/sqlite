@@ -4,7 +4,7 @@
 -- Test cases:
 -- Note: the strings below may contain literal tab, newline, carriage returns.
 
-INSERT INTO tests (description, uuid, number, expected)
+INSERT INTO tests (name, uuid, number, expected)
     VALUES
         ('zero steps for one', '540a3d51-e7a6-47a5-92a3-4ad1838f0bfd',
             1, 0),

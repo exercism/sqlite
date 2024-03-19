@@ -3,7 +3,7 @@
 
 -- Test cases:
 -- Note: the strings below contain literal tab, newline, carriage returns.
-INSERT INTO tests (uuid, description, input, expected)
+INSERT INTO tests (uuid, name, input, expected)
     VALUES
         ('e162fead-606f-437a-a166-d051915cea8e','stating something','Tom-ay-to, tom-aaaah-to.','Whatever.'),
         ('73a966dc-8017-47d6-bb32-cf07d1a5fcd9','shouting','WATCH OUT!','Whoa, chill out!'),

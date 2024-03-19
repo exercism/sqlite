@@ -2,7 +2,7 @@
 .read ./test_setup.sql
 
 -- Test cases:
-INSERT INTO tests (description, uuid,
+INSERT INTO tests (name, uuid,
                     color1, color2, expected)
     VALUES
         ('Brown and black', 'ce11995a-5b93-4950-a5e9-93423693b2fc',
