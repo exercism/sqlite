@@ -9,7 +9,7 @@
 
 DROP TABLE IF EXISTS tests;
 CREATE TABLE IF NOT EXISTS tests (
-    -- uuid and name are taken from the test.toml file
+    -- uuid and name (description) are taken from the test.toml file
     uuid TEXT PRIMARY KEY,
     name TEXT NOT NULL,
     -- The following section is needed by the online test-runner

@@ -14,9 +14,9 @@
 
 DROP TABLE IF EXISTS "test_color_code";
 CREATE TABLE IF NOT EXISTS "test_color_code" (
-    -- uuid and description are taken from the test.toml file
+    -- uuid and name (description) are taken from the test.toml file
     uuid TEXT PRIMARY KEY,
-    description TEXT NOT NULL,
+    name TEXT NOT NULL,
     -- Here are columns for the actual tests
     color TEXT NOT NULL,
     result INT NOT NULL,

@@ -2,7 +2,7 @@
 .read ./test_setup.sql
 
 -- Test cases:
-INSERT INTO tests (uuid, description,
+INSERT INTO tests (uuid, name,
                     input, expected)
 VALUES
     ('empty string', 'a0e97d2d-669e-47c7-8134-518a1e2c4555',
