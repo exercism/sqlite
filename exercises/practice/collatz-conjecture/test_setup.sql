@@ -12,7 +12,7 @@ DROP TABLE IF EXISTS tests;
 CREATE TABLE IF NOT EXISTS tests (
     -- uuid and description are taken from the test.toml file
     uuid TEXT PRIMARY KEY,
-    description TEXT NOT NULL,
+    name TEXT NOT NULL,
     -- The following section is needed by the online test-runner
     status TEXT DEFAULT 'fail',
     message TEXT,
