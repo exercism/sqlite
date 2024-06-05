@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "Steffan153"
+  ],
+  "files": {
+    "solution": [
+      "matching-brackets.sql"
+    ],
+    "test": [
+      "matching-brackets_test.sql"
+    ],
+    "example": [
+      ".meta/example.sql"
+    ],
+    "editor": [
+      "data.csv"
+    ]
+  },
+  "blurb": "Make sure the brackets and braces all match.",
+  "source": "Ginna Baker"
+}
