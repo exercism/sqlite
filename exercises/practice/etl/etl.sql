@@ -1,0 +1,2 @@
+-- Schema: CREATE TABLE "etl" ("input" TEXT, "result" TEXT);
+-- Task: update the etl table and set the result based on the input field.
