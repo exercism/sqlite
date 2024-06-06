@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "Steffan153"
+  ],
+  "files": {
+    "solution": [
+      "roman-numerals.sql"
+    ],
+    "test": [
+      "roman-numerals_test.sql"
+    ],
+    "example": [
+      ".meta/example.sql"
+    ],
+    "editor": [
+      "data.csv"
+    ]
+  },
+  "blurb": "Convert modern Arabic numbers into Roman numerals.",
+  "source": "The Roman Numeral Kata",
+  "source_url": "https://codingdojo.org/kata/RomanNumerals/"
+}

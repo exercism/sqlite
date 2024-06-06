@@ -217,6 +217,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
+      },
+      {
+        "slug": "roman-numerals",
+        "name": "Roman Numerals",
+        "uuid": "f109325a-2bbb-46d7-a7ed-fe8484509985",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
       }
     ]
   },
