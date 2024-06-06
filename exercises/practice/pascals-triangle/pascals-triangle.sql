@@ -1,0 +1,2 @@
+-- Schema: CREATE TABLE "pascals-triangle" ("input" INT, "result" TEXT);
+-- Task: update the pascals-triangle table and set the result based on the input field.
