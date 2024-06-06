@@ -1,0 +1,2 @@
+-- Schema: CREATE TABLE "matching-brackets" ("input" TEXT "result" BOOLEAN);
+-- Task: update the matching-brackets table and set the result based on the input field.
