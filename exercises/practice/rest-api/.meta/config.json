@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "steffan153",
+    "vaeng"
+  ],
+  "files": {
+    "solution": [
+      "rest-api.sql"
+    ],
+    "test": [
+      "rest-api_test.sql"
+    ],
+    "example": [
+      ".meta/example.sql"
+    ]
+  },
+  "blurb": "Implement a RESTful API for tracking IOUs."
+}
