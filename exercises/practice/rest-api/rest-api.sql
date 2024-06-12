@@ -1,0 +1,2 @@
+-- Schema: CREATE TABLE "rest-api" ("database" TEXT, "payload" TEXT, "url" TEXT, "result" TEXT);
+-- Task: update the rest-api table and set the result based on the database, payload and url fields.

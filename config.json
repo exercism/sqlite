@@ -225,6 +225,30 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
+      },
+      {
+        "slug": "etl",
+        "name": "ETL",
+        "uuid": "63792af3-0fce-4c90-8cc3-4844ad6b6861",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
+        "slug": "rna-transcription",
+        "name": "RNA Transcription",
+        "uuid": "71556996-0d47-4c34-bd8c-373d55ee03fd",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "rest-api",
+        "name": "REST API",
+        "uuid": "51275817-1b95-48d9-b7ab-bbbf8720acb7",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
       }
     ]
   },
