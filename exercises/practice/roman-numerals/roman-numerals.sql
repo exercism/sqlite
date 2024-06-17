@@ -1,0 +1,2 @@
+-- Schema: CREATE TABLE "roman-numerals" ("number" INT, "result" TEXT);
+-- Task: update the roman-numerals table and set the result based on the number.
