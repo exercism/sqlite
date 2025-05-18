@@ -1,6 +1,10 @@
 -- Update message for failed tests to give helpful information:
 UPDATE tests
-SET message = 'Result for ' || tests.number || ' is ' || actual.steps || ', but should be ' || tests.expected
+SET message = (
+    'Result for ' || tests.number
+    || ' is <' || COALESCE(actual.steps, 'NULL')
+    || '> but should be <' || tests.expected || '>'
+)
 FROM (SELECT number, steps FROM collatz) AS actual
 WHERE actual.number = tests.number AND tests.status = 'fail';
 

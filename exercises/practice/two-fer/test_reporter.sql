@@ -1,5 +1,9 @@
 UPDATE tests
-SET message = 'Result for ' || tests.input || ' is ' || actual.response || ', but should be ' || tests.expected
+SET message = (
+    'Result for ' || tests.input
+    || ' is <' || COALESCE(actual.response, 'NULL')
+    || '> but should be <' || tests.expected || '>'
+)
 FROM (SELECT input, response FROM twofer) AS actual
 WHERE actual.input = tests.input AND tests.status = 'fail';
 

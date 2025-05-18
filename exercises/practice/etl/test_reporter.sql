@@ -1,6 +1,10 @@
 -- Update message for failed tests to give helpful information:
 UPDATE tests
-SET message = 'Result for ' || actual.input || ' is: ' || actual.result || ', but should be: ' || tests.expected
+SET message = (
+    'Result for ' || tests.input
+    || ' is <' || COALESCE(actual.result, 'NULL')
+    || '> but should be <' || tests.expected || '>'
+)
 FROM (SELECT input, result FROM etl) AS actual
 WHERE actual.input = tests.input AND tests.status = 'fail';
 

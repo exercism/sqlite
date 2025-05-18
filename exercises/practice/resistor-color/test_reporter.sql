@@ -1,16 +1,20 @@
 -- Update message for failed tests to give helpful information:
-UPDATE test_color_code
-SET message = 'Result for ' || actual.color || ' is "' || actual.result || '", but should be: "' || test_color_code.result || '"'
+UPDATE test_color_code as tests
+SET message = (
+    'Result for "' || tests.color || '"'
+    || ' is <' || COALESCE(actual.result, 'NULL')
+    || '> but should be <' || tests.result || '>'
+)
 FROM (SELECT color, result FROM color_code) AS actual
-WHERE actual.color = test_color_code.color AND test_color_code.status = 'fail';
+WHERE actual.color = tests.color AND tests.status = 'fail';
 
 
 .mode json
 .once './output.json'
 SELECT name, status, message, output, test_code, task_id
-FROM "test_color_code";
+FROM test_color_code;
 
 -- Display test results in readable form for the student:
 .mode table
 SELECT name, status, message
-FROM "test_color_code";
+FROM test_color_code;
