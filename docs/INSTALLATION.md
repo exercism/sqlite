@@ -2,11 +2,10 @@
 
 ## Target Version
 
-Testing for this track is based on version __3.37__.
+Testing for this track uses the `alpine:3.18` Docker image which, as of May 2025, uses `sqlite3 version 3.41.2`.
+We strive to ensure that the tools provided by this track will work on the latest Ubuntu LTS release.
 While users may have newer versions installed, they should be aware that some features may not work with our test runner.
 Features can be compared on [SQLite version history][version-history].
-The version was chosen to maintain maintain compatibility with users on Ubuntu 22.04, the current LTS version.
-When the next LTS comes into rotation, we will also update our track.
 
 ## Windows
 
