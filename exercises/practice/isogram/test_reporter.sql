@@ -1,6 +1,10 @@
 -- Update message for failed tests to give helpful information:
 UPDATE tests
-SET message = 'Result for "' || tests.input || '" is ' || actual.is_isogram || ', but should be "' || tests.expected || ''
+SET message = (
+    'Result for "' || tests.input || '"'
+    || ' is <' || COALESCE(actual.is_isogram, 'NULL')
+    || '> but should be <' || tests.expected || '>'
+)
 FROM (SELECT phrase, is_isogram FROM isogram) AS actual
 WHERE actual.phrase = tests.input AND tests.status = 'fail';
 

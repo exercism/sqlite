@@ -1,6 +1,10 @@
 -- Update message for failed tests to give helpful information:
 UPDATE tests
-SET message = 'Result is ' || actual.result || ', but should be ' || tests.expected
+SET message = (
+    'Result for ' || tests.year || '/' || tests.month || ', ' || tests.week || ' ' || tests.dayofweek
+    || ' is <' || COALESCE(actual.result, 'NULL')
+    || '> but should be <' || tests.expected || '>'
+)
 FROM (SELECT year, month, week, dayofweek, result  FROM meetup) AS actual
 WHERE (actual.year, actual.month, actual.week, actual.dayofweek) = (tests.year, tests.month, tests.week, tests.dayofweek) AND tests.status = 'fail';
 

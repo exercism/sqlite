@@ -1,6 +1,10 @@
 -- Update message for failed tests to give helpful information:
 UPDATE tests
-SET message = 'Result for ' || tests.task || ' ' || tests.item || ' ' || tests.score || ' is ' || actual.result || ', but should be ' || tests.expected
+SET message = (
+    'Result for ' || tests.task || ' ' || tests.item || ' ' || tests.score
+    || ' is <' || COALESCE(actual.result, 'NULL')
+    || '> but should be <' || tests.expected || '>'
+)
 FROM (SELECT task, item, score, result FROM allergies) AS actual
 WHERE (actual.task, actual.item, actual.score) = (tests.task, tests.item, tests.score) AND tests.status = 'fail';
 

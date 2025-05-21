@@ -1,6 +1,10 @@
 -- Update message for failed tests to give helpful information:
 UPDATE tests
-SET message = 'Result for "' || tests.name || '" is "' || actual.result || '", but should be "' || tests.expected || '"'
+SET message = (
+    'Result for "' || tests.name || '"'
+    || ' is <' || COALESCE(actual.result, 'NULL')
+    || '> but should be <' || tests.expected || '>'
+)
 FROM (SELECT game_id, result FROM results) AS actual
 WHERE actual.game_id = tests.uuid AND tests.status = 'fail';
 

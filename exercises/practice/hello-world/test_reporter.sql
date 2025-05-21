@@ -1,6 +1,10 @@
 -- Upadate message for failed tests to give helpful information:
 UPDATE tests
-SET message = 'Greeting is: ''' || actual.greeting || ''', but should be: ''' || tests.expected ||''''
+SET message = (
+    'Greeting'
+    || ' is "' || COALESCE(actual.greeting, 'NULL')
+    || '" but should be "' || tests.expected || '"'
+)
 FROM (SELECT greeting FROM hello_world) AS actual
 WHERE  tests.status = 'fail';
 

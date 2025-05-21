@@ -1,6 +1,10 @@
 -- Update message for failed tests to give helpful information:
 UPDATE tests
-SET message = 'Result for "' || tests.dna || '" is "' || actual.result || '", but should be "' || tests.expected || '"'
+SET message = (
+    'Result for "' || tests.dna || '"'
+    || ' is <' || COALESCE(actual.result, 'NULL')
+    || '> but should be <' || tests.expected || '>'
+)
 FROM (SELECT dna, result FROM 'rna-transcription') AS actual
 WHERE actual.dna = tests.dna AND tests.status = 'fail';
 
