@@ -29,7 +29,7 @@ INSERT INTO tests (name, uuid,
 -- Comparison of user input and the tests updates the status for each test:
 UPDATE tests
 SET status = 'pass'
-FROM (SELECT number, property, result FROM "difference-of-squares") AS actual
+FROM (SELECT number, property, result FROM 'difference-of-squares') AS actual
 WHERE (actual.number, actual.property, actual.result) = (tests.number, tests.property, tests.expected);
 
 -- Write results and debug info:

@@ -1,6 +1,6 @@
 WITH trimmed AS (
     SELECT input
-         , RTRIM(input, CHAR(32, 9, 10, 13)) AS trimmed
+         , TRIM(input, CHAR(32, 9, 10, 13)) AS trimmed
     FROM bob
 )
 , bools AS (
