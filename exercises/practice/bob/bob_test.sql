@@ -25,9 +25,9 @@ INSERT INTO tests (uuid, name, input, expected)
         ('bc39f7c6-f543-41be-9a43-fd1c2f753fc0','silence','','Fine. Be that way!'),
         ('d6c47565-372b-4b09-b1dd-c40552b8378b','prolonged silence','          ','Fine. Be that way!'),
         ('4428f28d-4100-4d85-a902-e5a78cb0ecd3','alternate silence','										','Fine. Be that way!'),
-        ('66953780-165b-4e7e-8ce3-4bcb80b6385a','multiple line question','
-Does this cryogenic chamber make me look fat?
-No.','Whatever.'),
+        ('2c7278ac-f955-4eb4-bf8f-e33eb4116a15','multiple line question','
+Does this cryogenic chamber make
+ me look fat?','Sure.'),
         ('5371ef75-d9ea-4103-bcfa-2da973ddec1b','starting with whitespace','         hmmmmmmm...','Whatever.'),
         ('05b304d6-f83b-46e7-81e0-4cd3ca647900','ending with whitespace','Okay if like my  spacebar  quite a bit?   ','Sure.'),
         ('72bd5ad3-9b2f-4931-a988-dce1f5771de2','other whitespace','

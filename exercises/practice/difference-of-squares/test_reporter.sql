@@ -5,7 +5,7 @@ SET message = (
     || ' is <' || COALESCE(actual.result, 'NULL')
     || '> but should be <' || tests.expected || '>'
 )
-FROM (SELECT number,  property, result FROM "difference-of-squares") AS actual
+FROM (SELECT number,  property, result FROM 'difference-of-squares') AS actual
 WHERE (actual.number, actual.property) = (tests.number, tests.property) AND tests.status = 'fail';
 
 -- Save results to ./output.json (needed by the online test-runner)
