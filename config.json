@@ -40,7 +40,15 @@
         "uuid": "f3bab368-b048-42d0-984a-8b9102d56cb6",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 1
+      },
+      {
+        "slug": "two-fer",
+        "name": "Two-Fer",
+        "uuid": "c69f301c-126d-4f88-b301-626499f56a7c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
       },
       {
         "slug": "darts",
@@ -107,9 +115,9 @@
         "difficulty": 2
       },
       {
-        "slug": "two-fer",
-        "name": "Two-Fer",
-        "uuid": "c69f301c-126d-4f88-b301-626499f56a7c",
+        "slug": "rna-transcription",
+        "name": "RNA Transcription",
+        "uuid": "71556996-0d47-4c34-bd8c-373d55ee03fd",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
@@ -139,6 +147,22 @@
         "difficulty": 5
       },
       {
+        "slug": "etl",
+        "name": "ETL",
+        "uuid": "63792af3-0fce-4c90-8cc3-4844ad6b6861",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
+        "slug": "kindergarten-garden",
+        "name": "Kindergarten Garden",
+        "uuid": "fb354d1a-c85d-42d0-b919-f554eaa27a08",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "meetup",
         "name": "Meetup",
         "uuid": "d096731f-18cb-4baa-90e5-dde8d19f35f2",
@@ -153,6 +177,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 5
+      },
+      {
+        "slug": "rest-api",
+        "name": "REST API",
+        "uuid": "51275817-1b95-48d9-b7ab-bbbf8720acb7",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
       },
       {
         "slug": "armstrong-numbers",
@@ -195,14 +227,6 @@
         "difficulty": 8
       },
       {
-        "slug": "yacht",
-        "name": "Yacht",
-        "uuid": "fe0f434b-dcf8-46ec-924a-09e47348f22d",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 8
-      },
-      {
         "slug": "matching-brackets",
         "name": "Matching Brackets",
         "uuid": "cc2a9d38-4d01-479a-a7d1-f1a5662cbc3e",
@@ -219,14 +243,6 @@
         "difficulty": 8
       },
       {
-        "slug": "kindergarten-garden",
-        "name": "Kindergarten Garden",
-        "uuid": "fb354d1a-c85d-42d0-b919-f554eaa27a08",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5
-      },
-      {
         "slug": "roman-numerals",
         "name": "Roman Numerals",
         "uuid": "f109325a-2bbb-46d7-a7ed-fe8484509985",
@@ -235,28 +251,12 @@
         "difficulty": 8
       },
       {
-        "slug": "etl",
-        "name": "ETL",
-        "uuid": "63792af3-0fce-4c90-8cc3-4844ad6b6861",
+        "slug": "yacht",
+        "name": "Yacht",
+        "uuid": "fe0f434b-dcf8-46ec-924a-09e47348f22d",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 5
-      },
-      {
-        "slug": "rna-transcription",
-        "name": "RNA Transcription",
-        "uuid": "71556996-0d47-4c34-bd8c-373d55ee03fd",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2
-      },
-      {
-        "slug": "rest-api",
-        "name": "REST API",
-        "uuid": "51275817-1b95-48d9-b7ab-bbbf8720acb7",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1
+        "difficulty": 8
       }
     ]
   },
