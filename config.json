@@ -268,7 +268,7 @@
     },
     {
       "title": "Extensible",
-      "content": "SQLite provides APIs for extending the the database system, including new functionality.",
+      "content": "SQLite provides APIs for extending the database system, including new functionality.",
       "icon": "extensible"
     },
     {
