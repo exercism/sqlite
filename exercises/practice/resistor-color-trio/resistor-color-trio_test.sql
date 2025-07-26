@@ -13,20 +13,20 @@
 -- Comparison of user input and the tests updates the status for each test:
 UPDATE tests
 SET status = 'pass'
-FROM (SELECT color1, color2, color3, color4, result FROM color_code) AS actual
-WHERE (actual.color1, actual.color2, actual.color3, actual.color4, actual.result) = (tests.color1, tests.color2, tests.color3, tests.color4, tests.expected);
+FROM (SELECT color1, color2, color3, result FROM color_code) AS actual
+WHERE (actual.color1, actual.color2, actual.color3, actual.result) = (tests.color1, tests.color2, tests.color3, tests.expected);
 
 -- Update message for failed tests to give helpful information:
 UPDATE tests
 SET message = (
     'Result for "'
-    || CONCAT_WS(',', tests.color1, tests.color2, tests.color3, tests.color4)
+    || CONCAT_WS(',', tests.color1, tests.color2, tests.color3)
     || '"'
     || ' is <' || COALESCE(actual.result, 'NULL')
     || '> but should be <' || tests.expected || '>'
 )
-FROM (SELECT color1, color2, color3, color4, result FROM color_code) AS actual
-WHERE (actual.color1, actual.color2, actual.color3, actual.color4) = (tests.color1, tests.color2, tests.color3, tests.color4) AND tests.status = 'fail';
+FROM (SELECT color1, color2, color3, result FROM color_code) AS actual
+WHERE (actual.color1, actual.color2, actual.color3) = (tests.color1, tests.color2, tests.color3) AND tests.status = 'fail';
 
 -- Save results to ./output.json (needed by the online test-runner)
 .mode json

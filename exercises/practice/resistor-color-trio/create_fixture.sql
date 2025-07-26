@@ -4,7 +4,6 @@ CREATE TABLE color_code (
   color1 TEXT,
   color2 TEXT,
   color3 TEXT,
-  color4 TEXT,
   result TEXT
 );
 .mode csv
