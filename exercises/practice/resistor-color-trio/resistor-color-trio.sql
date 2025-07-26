@@ -1,0 +1,2 @@
+-- Schema: CREATE TABLE IF NOT EXISTS color_code ( color1 TEXT, color2 TEXT, color3 TEXT, color4 TEXT, result TEXT );
+-- Task: update the color_code table and set the result based on the colors.
