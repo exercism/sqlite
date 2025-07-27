@@ -20,7 +20,7 @@ WHERE (actual.color1, actual.color2, actual.color3, actual.result) = (tests.colo
 UPDATE tests
 SET message = (
     'Result for "'
-    || CONCAT(tests.color1, ',', tests.color2, ',', tests.color3)
+    || tests.color1 || ',' || tests.color2 || ',' || tests.color3
     || '"'
     || ' is <' || COALESCE(actual.result, 'NULL')
     || '> but should be <' || tests.expected || '>'
