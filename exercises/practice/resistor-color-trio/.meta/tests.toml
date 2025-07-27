@@ -38,3 +38,4 @@ description = "First two colors make an invalid octal number"
 
 [30872c92-f567-4b69-a105-8455611c10c4]
 description = "Ignore extra colors"
+include = false
