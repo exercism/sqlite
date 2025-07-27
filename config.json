@@ -179,6 +179,14 @@
         "difficulty": 5
       },
       {
+        "slug": "resistor-color-trio",
+        "name": "Resistor Color Trio",
+        "uuid": "ff9d1780-bc8c-49d6-9c33-dba769d551fb",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "rest-api",
         "name": "REST API",
         "uuid": "51275817-1b95-48d9-b7ab-bbbf8720acb7",
@@ -257,14 +265,6 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
-      },
-      {
-        "slug": "resistor-color-trio",
-        "name": "Resistor Color Trio",
-        "uuid": "ff9d1780-bc8c-49d6-9c33-dba769d551fb",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1
       }
     ]
   },
