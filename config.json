@@ -195,6 +195,14 @@
         "difficulty": 7
       },
       {
+        "slug": "acronym",
+        "name": "Acronym",
+        "uuid": "880388be-1e77-4092-bcf3-f237572c40e1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "armstrong-numbers",
         "name": "Armstrong Numbers",
         "uuid": "e007fc26-80ac-4706-9df2-2d654a94266e",
@@ -262,14 +270,6 @@
         "slug": "yacht",
         "name": "Yacht",
         "uuid": "fe0f434b-dcf8-46ec-924a-09e47348f22d",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 8
-      },
-      {
-        "slug": "acronym",
-        "name": "Acronym",
-        "uuid": "880388be-1e77-4092-bcf3-f237572c40e1",
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
