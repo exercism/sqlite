@@ -187,14 +187,6 @@
         "difficulty": 5
       },
       {
-        "slug": "rest-api",
-        "name": "REST API",
-        "uuid": "51275817-1b95-48d9-b7ab-bbbf8720acb7",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 7
-      },
-      {
         "slug": "acronym",
         "name": "Acronym",
         "uuid": "880388be-1e77-4092-bcf3-f237572c40e1",
@@ -254,6 +246,14 @@
         "slug": "pascals-triangle",
         "name": "Pascal's Triangle",
         "uuid": "fb614e0d-ad10-4710-8785-5ab07fd9eb5a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
+        "slug": "rest-api",
+        "name": "REST API",
+        "uuid": "51275817-1b95-48d9-b7ab-bbbf8720acb7",
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
