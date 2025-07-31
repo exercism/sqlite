@@ -14,8 +14,6 @@ CREATE TABLE IF NOT EXISTS tests (
   expected TEXT NOT NULL
 );
 
--- Note: the strings below _may_ contain literal tab, newline, or carriage returns.
-
 INSERT INTO tests (uuid, description, phrase, expected)
 VALUES
         ('1e22cceb-c5e4-4562-9afe-aef07ad1eaf4','basic','Portable Network Graphics','PNG'),

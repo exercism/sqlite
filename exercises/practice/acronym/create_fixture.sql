@@ -4,7 +4,5 @@ CREATE TABLE acronym (
   result TEXT
 );
 
--- Note: the CSV file may contain literal tab, newline, carriage returns.
-
 .mode csv
 .import ./data.csv acronym
