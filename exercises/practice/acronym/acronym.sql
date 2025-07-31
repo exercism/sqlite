@@ -1,0 +1,2 @@
+-- Schema: CREATE TABLE acronym ( phrase TEXT PRIMARY KEY, result TEXT );
+-- Task: update the acronym table and set the result based on the phrase.
