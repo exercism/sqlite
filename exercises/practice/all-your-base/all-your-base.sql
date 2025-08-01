@@ -1,0 +1,8 @@
+-- Schema: CREATE TABLE IF NOT EXISTS "all-your-base" (
+--           input_base  INTEGER NOT NULL,
+--           digits      TEXT    NOT NULL,
+--           output_base INTEGER NOT NULL,
+--           result      TEXT
+--         );
+-- Task: update the all-your-base table and set the result based on converting
+--       digits from input_base to output_base
