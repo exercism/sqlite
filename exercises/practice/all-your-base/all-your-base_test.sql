@@ -14,7 +14,7 @@
 UPDATE tests
 SET status = 'pass'
 FROM (SELECT input_base, digits, output_base, result FROM "all-your-base") AS actual
-WHERE (actual.input_base, actual.digits, actual.output_base, actual.result) = (tests.input_base, tests.digits, tests.output_base, tests.expected);
+WHERE (actual.input_base, actual.digits, actual.output_base, JSON(actual.result)) = (tests.input_base, tests.digits, tests.output_base, JSON(tests.expected));
 
 -- Update message for failed tests to give helpful information:
 UPDATE tests
