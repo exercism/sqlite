@@ -28,4 +28,6 @@ CREATE TABLE IF NOT EXISTS "all-your-base" (
 
 ## JSON documentation
 
-[ JSON Functions And Operators ](https://www.sqlite.org/json1.html)
+[JSON Functions And Operators][json-docs]
+
+[json-docs]: https://www.sqlite.org/json1.htm
