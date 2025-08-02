@@ -24,7 +24,7 @@ UPDATE "all-your-base"
 ;
 
 UPDATE "all-your-base"
-   SET result = JSON_ARRAY(0)
+   SET result = JSON_OBJECT('digits', JSON_ARRAY(0))
  WHERE (
    SELECT COUNT(v)
      FROM (
@@ -36,7 +36,7 @@ UPDATE "all-your-base"
        ;
 
 UPDATE "all-your-base"
-   SET result = (
+   SET result = JSON_OBJECT('digits', (
      WITH RECURSIVE rcte (n, d) AS (
        VALUES((
          SELECT
@@ -58,13 +58,13 @@ UPDATE "all-your-base"
        WHERE n != 0
      )
      SELECT JSON_GROUP_ARRAY(d) FROM rcte WHERE d > -1
-   )
+   ))
  WHERE output_base = 10
    AND result = ''
        ;
 
 UPDATE "all-your-base"
-   SET result = (
+   SET result = JSON_OBJECT('digits', (
      WITH RECURSIVE rcte (n, d) AS (
        VALUES((
          SELECT GROUP_CONCAT(j.VALUE, '') * 1
@@ -82,13 +82,13 @@ UPDATE "all-your-base"
           WHERE d > -1
           ORDER BY row_number() OVER () DESC
        )
-   )
+   ))
  WHERE input_base = 10
    AND result = ''
        ;
 
 UPDATE "all-your-base"
-   SET result = (
+   SET result = JSON_OBJECT('digits', (
      WITH RECURSIVE rcte (n, d) AS (
        VALUES((
          SELECT
@@ -114,7 +114,7 @@ UPDATE "all-your-base"
           WHERE d > -1
           ORDER BY row_number() OVER () DESC
        )
-   )
+   ))
  WHERE input_base  != 10
    AND output_base != 10
    AND result       = ''
