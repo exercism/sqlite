@@ -3,7 +3,7 @@
 * The **digits** column contains a JSON-encoded list of integers.
   Example:
   ```json
-  [1, 0, 1, 0, 1, 0]
+  [1,0,1,0,1,0]
   ```
 * The **result** column should contain JSON-encoded data: an object with the digits as integers or a descripition of any errors.
   Examples:
