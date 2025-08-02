@@ -1,0 +1,11 @@
+-- Schema: CREATE TABLE IF NOT EXISTS "all-your-base" (
+--           input_base  INTEGER NOT NULL,
+--           digits      TEXT    NOT NULL,  -- json array
+--           output_base INTEGER NOT NULL,
+--           result      TEXT               -- json object
+--         );
+-- Task: update the all-your-base table and set the result based on converting
+--       digits from input_base to output_base.
+--       * the digits column contains a JSON-encoded list of integers.
+--       * the result column should contain JSON-encoded data: an
+--         object with the digits as integers or a descripition of any errors.

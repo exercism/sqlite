@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "jimmytty"
+  ],
+  "files": {
+    "solution": [
+      "all-your-base.sql"
+    ],
+    "test": [
+      "all-your-base_test.sql"
+    ],
+    "example": [
+      ".meta/example.sql"
+    ]
+  },
+  "blurb": "Convert a number, represented as a sequence of digits in one base, to any other base."
+}
