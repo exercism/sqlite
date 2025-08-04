@@ -8,3 +8,5 @@ CREATE TABLE "all-your-base" (
 
 .mode csv
 .import ./data.csv "all-your-base"
+
+UPDATE "all-your-base" SET result = NULL;
