@@ -1,12 +1,12 @@
 UPDATE "all-your-base"
    SET result = JSON_OBJECT('error', 'input base must be >= 2')
  WHERE input_base < 2
-   AND result = ''
+   AND result ISNULL
 ;
 UPDATE "all-your-base"
    SET result = JSON_OBJECT('error', 'output base must be >= 2')
  WHERE output_base < 2
-   AND result = ''
+   AND result ISNULL
 ;
 UPDATE "all-your-base"
    SET result = JSON_OBJECT(
@@ -20,7 +20,7 @@ UPDATE "all-your-base"
      )
     WHERE digit < 0 OR digit >= input_base
  ) != 0
-   AND result = ''
+   AND result ISNULL
 ;
 
 UPDATE "all-your-base"
@@ -32,7 +32,7 @@ UPDATE "all-your-base"
      )
     WHERE v != 0
  ) = 0
-   AND result = ''
+   AND result ISNULL
        ;
 
 UPDATE "all-your-base"
@@ -60,7 +60,7 @@ UPDATE "all-your-base"
      SELECT JSON_GROUP_ARRAY(d) FROM rcte WHERE d > -1
    ))
  WHERE output_base = 10
-   AND result = ''
+   AND result ISNULL
        ;
 
 UPDATE "all-your-base"
@@ -84,7 +84,7 @@ UPDATE "all-your-base"
        )
    ))
  WHERE input_base = 10
-   AND result = ''
+   AND result ISNULL
        ;
 
 UPDATE "all-your-base"
@@ -117,5 +117,5 @@ UPDATE "all-your-base"
    ))
  WHERE input_base  != 10
    AND output_base != 10
-   AND result       = ''
+   AND result ISNULL
 ;
