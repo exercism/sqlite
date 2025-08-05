@@ -1,9 +1,9 @@
-DROP TABLE IF EXISTS tmp;
-CREATE TEMPORARY TABLE tmp (
-  p  TEXT UNIQUE NOT NULL,
-  op REAL        NOT NULL
+DROP TABLE IF EXISTS planets;
+CREATE TEMPORARY TABLE planets (
+  name   TEXT UNIQUE NOT NULL,
+  period REAL        NOT NULL
 );
-INSERT INTO tmp (p, op)
+INSERT INTO planets (name, period)
 VALUES ('Mercury',   0.2408467 ),
        ('Venus'  ,   0.61519726),
        ('Earth'  ,   1.0       ),
@@ -15,15 +15,15 @@ VALUES ('Mercury',   0.2408467 ),
 
 UPDATE "space-age"
    SET result = JSON_OBJECT('error', 'not a planet')
- WHERE NOT EXISTS (SELECT 1 FROM tmp WHERE p = planet)
-;
+ WHERE NOT EXISTS (SELECT 1 FROM planets WHERE name = planet)
+       ;
 
 UPDATE "space-age"
    SET result = JSON_OBJECT(
-     'age',
-     ROUND("space-age".seconds / 31557600.0 / tmp.op, 2)
-   )
-  FROM tmp
- WHERE "space-age".planet = tmp.p
+         'age',
+         ROUND("space-age".seconds / 31557600.0 / planets.period, 2)
+       )
+       FROM planets
+ WHERE "space-age".planet = planets.name
    AND "space-age".result ISNULL
-;
+       ;
