@@ -1,7 +1,6 @@
 # SQLite-specific instructions
 
-* The **result** column should contain JSON-encoded data: an object
-  with the age as double or a description of any errors.
+* The **result** column should contain JSON-encoded data: an object with the age as double or a description of any errors.
 
 Examples:
 ```
