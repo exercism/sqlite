@@ -1,0 +1,7 @@
+-- Schema: CREATE TABLE "atbash-cipher" (
+--           property TEXT NOT NULL,
+--           phrase   TEXT NOT NULL,
+--           result   TEXT
+--         );
+-- Task: update the atbash-cipher table and set the result based on
+--       property and phrase
