@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "jimmytty"
+  ],
+  "files": {
+    "solution": [
+      "atbash-cipher.sql"
+    ],
+    "test": [
+      "atbash-cipher_test.sql"
+    ],
+    "example": [
+      ".meta/example.sql"
+    ]
+  },
+  "blurb": "Create an implementation of the Atbash cipher, an ancient encryption system created in the Middle East.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Atbash"
+}
