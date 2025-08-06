@@ -123,6 +123,14 @@
         "difficulty": 2
       },
       {
+        "slug": "space-age",
+        "name": "Space Age",
+        "uuid": "09b96007-c782-4b5e-b929-48bab73b5f69",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "allergies",
         "name": "Allergies",
         "uuid": "a328f4f8-5acd-4913-9c24-d75c5e657387",

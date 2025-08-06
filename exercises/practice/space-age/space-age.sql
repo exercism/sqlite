@@ -1,0 +1,7 @@
+-- Schema: CREATE TABLE "space-age" (
+--             planet  TEXT    NOT NULL,
+--             seconds INTEGER NOT NULL,
+--             result  REAL
+--         );
+-- Task: update the space-age table and set the result based on planet
+--       and seconds.
