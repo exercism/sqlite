@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS "space-age";
 CREATE TABLE "space-age" (
     planet  TEXT    NOT NULL,
     seconds INTEGER NOT NULL,
-    result  TEXT                -- json object
+    result  REAL
 );
 
 .mode csv

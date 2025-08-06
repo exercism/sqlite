@@ -14,15 +14,7 @@ VALUES ('Mercury',   0.2408467 ),
        ('Neptune', 164.79132   );
 
 UPDATE "space-age"
-   SET result = JSON_OBJECT('error', 'not a planet')
- WHERE NOT EXISTS (SELECT 1 FROM planets WHERE name = planet)
-       ;
-
-UPDATE "space-age"
-   SET result = JSON_OBJECT(
-         'age',
-         ROUND("space-age".seconds / 31557600.0 / planets.period, 2)
-       )
+   SET result = ROUND("space-age".seconds / 31557600.0 / planets.period, 2)
        FROM planets
  WHERE "space-age".planet = planets.name
    AND "space-age".result ISNULL
