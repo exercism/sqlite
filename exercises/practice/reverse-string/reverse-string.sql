@@ -1,0 +1,2 @@
+-- Schema: CREATE TABLE "reverse-string" (input TEXT NOT NULL, result TEXT);
+-- Task: update the reverse-string table and set the result based on the input.
