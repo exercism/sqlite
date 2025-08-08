@@ -1,7 +1,9 @@
 UPDATE "isbn-verifier"
    SET result = FALSE
- WHERE GLOB('[0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9]-[0-9X]', isbn) = 0
-   AND GLOB('[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9X]'   , isbn) = 0
+ WHERE GLOB(
+         '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9X]',
+         REPLACE(isbn, '-', '')
+       ) = 0
 ;
 
 UPDATE "isbn-verifier"
