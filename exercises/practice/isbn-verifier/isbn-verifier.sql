@@ -1,2 +1,3 @@
 -- Schema: CREATE TABLE "isbn-verifier" (isbn TEXT NOT NULL, result BOOL);
 -- Task: update the isbn-verifier table and set the result based on the isbn.
+
