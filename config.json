@@ -51,6 +51,14 @@
         "difficulty": 1
       },
       {
+        "slug": "bottle-song",
+        "name": "Bottle Song",
+        "uuid": "a3961350-2053-4e08-bf5d-fe9b43cb753c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "darts",
         "name": "Darts",
         "uuid": "53ab1f3e-62ad-4d2a-a97d-cd2fac9b9187",
