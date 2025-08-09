@@ -8,26 +8,20 @@ UPDATE "isbn-verifier"
 
 UPDATE "isbn-verifier"
    SET result = (
-     WITH RECURSIVE verifier(isbn, digit, pos) AS (
-       VALUES((
-         WITH RECURSIVE cleaner(string, char) AS (
-           VALUES(isbn, '')
-           UNION ALL
-           SELECT SUBSTRING(string, 2), SUBSTRING(string, 1, 1)
-             FROM cleaner
-            WHERE string <> ''
-         )
-         SELECT GROUP_CONCAT(char, '')
-           FROM cleaner WHERE GLOB('[0-9X]', char)
-       ), '', 11)
-       UNION ALL
-       SELECT
-         SUBSTRING(isbn, 2),
-         IIF(SUBSTRING(isbn, 1, 1) = 'X', 10, SUBSTRING(isbn, 1, 1)),
-         pos - 1
-         FROM verifier
-        WHERE isbn <> ''
-     ) SELECT SUM(digit * pos) % 11 = 0 FROM verifier WHERE digit <> ''
-   )
+     SUBSTRING(REPLACE(isbn,'-', ''), -10, 1) * 10 +
+     SUBSTRING(REPLACE(isbn,'-', ''),  -9, 1) *  9 +
+     SUBSTRING(REPLACE(isbn,'-', ''),  -8, 1) *  8 +
+     SUBSTRING(REPLACE(isbn,'-', ''),  -7, 1) *  7 +
+     SUBSTRING(REPLACE(isbn,'-', ''),  -6, 1) *  6 +
+     SUBSTRING(REPLACE(isbn,'-', ''),  -5, 1) *  5 +
+     SUBSTRING(REPLACE(isbn,'-', ''),  -4, 1) *  4 +
+     SUBSTRING(REPLACE(isbn,'-', ''),  -3, 1) *  3 +
+     SUBSTRING(REPLACE(isbn,'-', ''),  -2, 1) *  2 +
+     IIF(
+       SUBSTRING(REPLACE(isbn,'-', ''), -1, 1) = 'X',
+       10,
+       SUBSTRING(REPLACE(isbn,'-', ''), -1, 1)
+     )
+   ) % 11 = 0
  WHERE result ISNULL
 ;

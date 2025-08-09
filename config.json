@@ -91,6 +91,14 @@
         "difficulty": 2
       },
       {
+        "slug": "isbn-verifier",
+        "name": "ISBN Verifier",
+        "uuid": "a0a1cb68-b587-4d30-bf1c-819814847637",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "leap",
         "name": "Leap",
         "uuid": "edfe7d3b-cba7-4fb9-9120-c316576e4164",
@@ -254,14 +262,6 @@
         "slug": "high-scores",
         "name": "High Scores",
         "uuid": "7ab3b905-bfaa-4d21-a665-7dcf2701cb3e",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 8
-      },
-      {
-        "slug": "isbn-verifier",
-        "name": "ISBN Verifier",
-        "uuid": "a0a1cb68-b587-4d30-bf1c-819814847637",
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
