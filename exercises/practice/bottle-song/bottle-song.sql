@@ -1,0 +1,7 @@
+-- Schema: CREATE TABLE "bottle-song" (
+--             start_bottles INTEGER NOT NULL,
+--             take_down     INTEGER NOT NULL,
+--             result        TEXT
+--         );
+-- Task: update bottle-song table and set the result based on the
+--       start_bottles and take_down.
