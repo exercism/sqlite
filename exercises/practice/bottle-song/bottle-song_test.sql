@@ -20,7 +20,7 @@ WHERE (actual.start_bottles, actual.take_down, actual.result) = (tests.start_bot
 UPDATE tests
 SET message = (
     'Result for "'
-    || FORMAT(
+    || PRINTF(
            'start_bottles=%d, take_down=%d',
            tests.start_bottles,
            tests.take_down

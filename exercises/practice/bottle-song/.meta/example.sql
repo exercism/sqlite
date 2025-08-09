@@ -20,10 +20,10 @@ VALUES
 DROP TABLE IF EXISTS verses;
 CREATE TABLE verses AS
   SELECT n,
-         FORMAT('%s green bottles hanging on the wall,' || CHAR(10), a) ||
-         FORMAT('%s green bottles hanging on the wall,' || CHAR(10), a) ||
+         PRINTF('%s green bottles hanging on the wall,' || CHAR(10), a) ||
+         PRINTF('%s green bottles hanging on the wall,' || CHAR(10), a) ||
          'And if one green bottle should accidentally fall,' || CHAR(10) ||
-         FORMAT(
+         PRINTF(
            'There''ll be %s green bottles hanging on the wall.',
            LOWER(b)
          ) AS verse
