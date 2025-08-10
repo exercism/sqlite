@@ -1,0 +1,7 @@
+-- Schema:
+-- CREATE TABLE hamming (
+--     strand1 TEXT NOT NULL,
+--     strand2 TEXT NOT NULL,
+--     result  INTEGER
+-- );
+-- Task: update the hamming table and set the result based on the comparison between strand1 and strand2
