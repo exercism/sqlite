@@ -1,0 +1,10 @@
+-- Schema:
+-- CREATE TABLE triangle (
+--     property TEXT    NOT NULL,
+--     side_a   REAL    NOT NULL,
+--     side_b   REAL    NOT NULL,
+--     side_c   REAL    NOT NULL,
+--     result   BOOLEAN
+-- );
+--
+-- Task: update the triangle and set result based on the property, side_a, side_b and side_c columns.
