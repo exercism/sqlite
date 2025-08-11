@@ -1,0 +1,2 @@
+-- Schema: CREATE TABLE pangram (sentence TEXT NOT NULL, result BOOLEAN);
+-- Task: update pangram table and set result based on sentence.

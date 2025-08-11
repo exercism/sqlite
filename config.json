@@ -107,6 +107,14 @@
         "difficulty": 2
       },
       {
+        "slug": "pangram",
+        "name": "Pangram",
+        "uuid": "f11e9d34-d454-42a8-bd2f-d1a8b6000975",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "raindrops",
         "name": "Raindrops",
         "uuid": "6a5f9c87-4c99-4fc0-88f1-25d517d4b074",
