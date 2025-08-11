@@ -1,29 +1,29 @@
 UPDATE pangram
    SET result = (
-         INSTR(LOWER(sentence), 'a') > 0
-     AND INSTR(LOWER(sentence), 'b') > 0
-     AND INSTR(LOWER(sentence), 'c') > 0
-     AND INSTR(LOWER(sentence), 'd') > 0
-     AND INSTR(LOWER(sentence), 'e') > 0
-     AND INSTR(LOWER(sentence), 'f') > 0
-     AND INSTR(LOWER(sentence), 'g') > 0
-     AND INSTR(LOWER(sentence), 'h') > 0
-     AND INSTR(LOWER(sentence), 'i') > 0
-     AND INSTR(LOWER(sentence), 'j') > 0
-     AND INSTR(LOWER(sentence), 'k') > 0
-     AND INSTR(LOWER(sentence), 'l') > 0
-     AND INSTR(LOWER(sentence), 'm') > 0
-     AND INSTR(LOWER(sentence), 'n') > 0
-     AND INSTR(LOWER(sentence), 'o') > 0
-     AND INSTR(LOWER(sentence), 'p') > 0
-     AND INSTR(LOWER(sentence), 'q') > 0
-     AND INSTR(LOWER(sentence), 'r') > 0
-     AND INSTR(LOWER(sentence), 's') > 0
-     AND INSTR(LOWER(sentence), 't') > 0
-     AND INSTR(LOWER(sentence), 'u') > 0
-     AND INSTR(LOWER(sentence), 'v') > 0
-     AND INSTR(LOWER(sentence), 'w') > 0
-     AND INSTR(LOWER(sentence), 'x') > 0
-     AND INSTR(LOWER(sentence), 'y') > 0
-     AND INSTR(LOWER(sentence), 'z') > 0
+         INSTR(LOWER(sentence), 'a')
+     AND INSTR(LOWER(sentence), 'b')
+     AND INSTR(LOWER(sentence), 'c')
+     AND INSTR(LOWER(sentence), 'd')
+     AND INSTR(LOWER(sentence), 'e')
+     AND INSTR(LOWER(sentence), 'f')
+     AND INSTR(LOWER(sentence), 'g')
+     AND INSTR(LOWER(sentence), 'h')
+     AND INSTR(LOWER(sentence), 'i')
+     AND INSTR(LOWER(sentence), 'j')
+     AND INSTR(LOWER(sentence), 'k')
+     AND INSTR(LOWER(sentence), 'l')
+     AND INSTR(LOWER(sentence), 'm')
+     AND INSTR(LOWER(sentence), 'n')
+     AND INSTR(LOWER(sentence), 'o')
+     AND INSTR(LOWER(sentence), 'p')
+     AND INSTR(LOWER(sentence), 'q')
+     AND INSTR(LOWER(sentence), 'r')
+     AND INSTR(LOWER(sentence), 's')
+     AND INSTR(LOWER(sentence), 't')
+     AND INSTR(LOWER(sentence), 'u')
+     AND INSTR(LOWER(sentence), 'v')
+     AND INSTR(LOWER(sentence), 'w')
+     AND INSTR(LOWER(sentence), 'x')
+     AND INSTR(LOWER(sentence), 'y')
+     AND INSTR(LOWER(sentence), 'z')
    );
