@@ -345,6 +345,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
+      },
+      {
+        "slug": "scrabble-score",
+        "name": "Scrabble Score",
+        "uuid": "ce167ca3-bb12-4238-88eb-c2c7e2cb7809",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
       }
     ]
   },
