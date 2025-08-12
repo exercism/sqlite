@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS tests (
     test_code TEXT,
     task_id INTEGER DEFAULT NULL,
     -- Here are columns for the actual tests
-    word     TEXT    NOT NULL,
+    word TEXT NOT NULL,
     expected INTEGER NOT NULL
 );
 
