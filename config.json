@@ -339,20 +339,20 @@
         "difficulty": 8
       },
       {
+        "slug": "scrabble-score",
+        "name": "Scrabble Score",
+        "uuid": "ce167ca3-bb12-4238-88eb-c2c7e2cb7809",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "yacht",
         "name": "Yacht",
         "uuid": "fe0f434b-dcf8-46ec-924a-09e47348f22d",
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
-      },
-      {
-        "slug": "scrabble-score",
-        "name": "Scrabble Score",
-        "uuid": "ce167ca3-bb12-4238-88eb-c2c7e2cb7809",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1
       }
     ]
   },
