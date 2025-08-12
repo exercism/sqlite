@@ -1,0 +1,2 @@
+-- Schema: CREATE TABLE "scrabble-score" ( word TEXT NOT NULL, result INTEGER );
+-- Task: update scrabble-score table and set the result based on the word.
