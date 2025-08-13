@@ -20,7 +20,7 @@ UPDATE "swift-scheduling"
    SET result = STRFTIME(
      '%Y-%m-%dT%H:%M:%S',
        IIF(
-         STRFTIME('%u', meeting_start) * 1  BETWEEN 1 AND 3,
+         STRFTIME('%w', meeting_start) * 1  BETWEEN 1 AND 3,
          DATETIME(meeting_start, 'WEEKDAY 5', 'START OF DAY', '+17 HOUR'),
          DATETIME(meeting_start, 'WEEKDAY 0', 'START OF DAY', '+20 HOUR')
        )
@@ -53,7 +53,7 @@ UPDATE "swift-scheduling"
      SELECT STRFTIME(
        '%Y-%m-%dT%H:%M:%S',
        IIF(
-         STRFTIME('%u', date_time) * 1 IN (6, 7),
+         STRFTIME('%w', date_time) * 1 IN (6, 0),
          DATETIME(date_time, 'WEEKDAY 1'),
          date_time
        )
@@ -112,7 +112,7 @@ UPDATE "swift-scheduling"
      SELECT STRFTIME(
        '%Y-%m-%dT%H:%M:%S',
        IIF(
-         STRFTIME('%u', date_time) * 1 IN (6, 7),
+         STRFTIME('%w', date_time) * 1 IN (6, 0),
          DATETIME(date_time, '-3 DAY', 'WEEKDAY 5'),
          date_time
        )
