@@ -227,6 +227,14 @@
         "difficulty": 5
       },
       {
+        "slug": "swift-scheduling",
+        "name": "Swift Scheduling",
+        "uuid": "51691c60-f878-4c1d-94e0-9e38e1e974d2",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "acronym",
         "name": "Acronym",
         "uuid": "880388be-1e77-4092-bcf3-f237572c40e1",
