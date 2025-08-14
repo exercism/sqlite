@@ -5,12 +5,11 @@ UPDATE "word-count"
          WITH RECURSIVE mark_sep (string, letter) AS (
            VALUES(LOWER(sentence), '')
            UNION ALL
-           SELECT SUBSTRING(string, 2),
-                  CASE
-                  WHEN GLOB('[0-9a-z'']', SUBSTRING(string, 1, 1))
-                  THEN SUBSTRING(string, 1, 1)
-                  ELSE CHAR(10)
-                  END
+           SELECT SUBSTRING(string, 2), CASE
+             WHEN GLOB('[0-9a-z'']', SUBSTRING(string, 1, 1))
+             THEN SUBSTRING(string, 1, 1)
+             ELSE CHAR(10)
+           END
              FROM mark_sep
             WHERE string <> ''
          ) SELECT GROUP_CONCAT(letter, '') || CHAR(10) AS string FROM mark_sep
