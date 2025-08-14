@@ -1,0 +1,9 @@
+-- Schema:
+-- CREATE TABLE "word-count" (
+--     sentence TEXT NOT NULL,
+--     result   TEXT               -- json object
+-- );
+--
+-- Task: update the word-count table and set the result based on sentence.
+--       * the result column should contain JSON-encoded object of objects,
+--         each word as key and count as integer.

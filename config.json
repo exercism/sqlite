@@ -355,6 +355,14 @@
         "difficulty": 8
       },
       {
+        "slug": "word-count",
+        "name": "Word Count",
+        "uuid": "67ef66f1-4a18-42ba-86ca-59c296487c0d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "yacht",
         "name": "Yacht",
         "uuid": "fe0f434b-dcf8-46ec-924a-09e47348f22d",
