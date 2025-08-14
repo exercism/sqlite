@@ -15,8 +15,10 @@ UPDATE "word-count"
          ) SELECT GROUP_CONCAT(letter, '') || CHAR(10) AS string FROM mark_sep
        ), NULL)
        UNION ALL
-       SELECT SUBSTRING(string, INSTR(string, CHAR(10)) + 1),
-              TRIM(SUBSTRING(string, 1, INSTR(string, CHAR(10)) - 1), '''')
+       SELECT SUBSTRING(
+         string, INSTR(string, CHAR(10)) + 1),
+         TRIM(SUBSTRING(string, 1, INSTR(string, CHAR(10)) - 1), ''''
+       )
          FROM to_words
         WHERE string <> ''
      )
