@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "jimmy"
+  ],
+  "files": {
+    "solution": [
+      "tournament.sql"
+    ],
+    "test": [
+      "tournament_test.sql"
+    ],
+    "example": [
+      ".meta/example.sql"
+    ]
+  },
+  "blurb": "Tally the results of a small football competition."
+}
