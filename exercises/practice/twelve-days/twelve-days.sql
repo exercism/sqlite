@@ -1,0 +1,8 @@
+-- Schema:
+-- CREATE TABLE "twelve-days" (
+--     start_verse INTEGER NOT NULL,
+--     end_verse   INTEGER NOT NULL,
+--     result      TEXT
+-- );
+--
+-- Task: update the twelve-days table and set result bases on the start_verse and end_verse.

@@ -235,6 +235,14 @@
         "difficulty": 5
       },
       {
+        "slug": "twelve-days",
+        "name": "Twelve Days",
+        "uuid": "ff75a702-38b8-4d86-a384-ce019c067589",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "acronym",
         "name": "Acronym",
         "uuid": "880388be-1e77-4092-bcf3-f237572c40e1",
