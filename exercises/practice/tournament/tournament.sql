@@ -1,0 +1,2 @@
+-- Schema: CREATE TABLE tournament ( input TEXT NOT NULL, result TEXT );
+-- Task: update the tournament table and set the result based on the input.

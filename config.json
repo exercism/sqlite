@@ -363,6 +363,14 @@
         "difficulty": 8
       },
       {
+        "slug": "tournament",
+        "name": "Tournament",
+        "uuid": "3be4094d-0ca5-4640-bc9f-c94f2e9dc5b6",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "word-count",
         "name": "Word Count",
         "uuid": "67ef66f1-4a18-42ba-86ca-59c296487c0d",
