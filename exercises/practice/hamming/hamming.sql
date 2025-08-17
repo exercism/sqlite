@@ -2,6 +2,8 @@
 -- CREATE TABLE hamming (
 --     strand1 TEXT NOT NULL,
 --     strand2 TEXT NOT NULL,
---     result  INTEGER
+--     result  INTEGER,
+--     error   TEXT
 -- );
--- Task: update the hamming table and set the result based on the comparison between strand1 and strand2
+--
+-- Task: update the hamming table and set the result column or the error column based on the comparison between strand1 and strand2.

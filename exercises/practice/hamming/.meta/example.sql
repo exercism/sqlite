@@ -1,4 +1,9 @@
 UPDATE hamming
+   SET error = 'strands must be of equal length'
+ WHERE LENGTH(strand1) != LENGTH(strand2)
+;
+
+UPDATE hamming
    SET result = (
      WITH RECURSIVE rcte(string1, string2, char1, char2) AS (
        VALUES(strand1, strand2, '', '')
@@ -11,4 +16,6 @@ UPDATE hamming
      SELECT COUNT(*)
        FROM rcte
       WHERE char1 != char2
-);
+   )
+ WHERE LENGTH(strand1) = LENGTH(strand2)
+;
