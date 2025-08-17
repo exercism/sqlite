@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "jimmytty"
+  ],
+  "files": {
+    "solution": [
+      "sublist.sql"
+    ],
+    "test": [
+      "sublist_test.sql"
+    ],
+    "example": [
+      ".meta/example.sql"
+    ]
+  },
+  "blurb": "Write a function to determine if a list is a sublist of another list."
+}
