@@ -1,0 +1,9 @@
+-- Schema:
+-- DROP TABLE IF EXISTS sublist;
+-- CREATE TABLE sublist (
+--     list_one TEXT NOT NULL,     -- json array
+--     list_two TEXT NOT NULL,     -- json array
+--     result   TEXT
+-- );
+--
+-- Task: update the sublist table and set the result based on the list_one and list_two.
