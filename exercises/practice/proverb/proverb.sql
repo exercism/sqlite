@@ -1,0 +1,7 @@
+-- Schema:
+-- CREATE TABLE proverb (
+--     strings TEXT NOT NULL,    -- json array
+--     result  TEXT
+-- );
+--
+-- Task: update proverb table and set result column based on the strings.

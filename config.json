@@ -331,6 +331,14 @@
         "difficulty": 8
       },
       {
+        "slug": "proverb",
+        "name": "Proverb",
+        "uuid": "10c51241-2399-4a0c-84cf-390a000f3c3b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "rest-api",
         "name": "REST API",
         "uuid": "51275817-1b95-48d9-b7ab-bbbf8720acb7",
