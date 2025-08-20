@@ -1,0 +1,9 @@
+-- Schema:
+-- CREATE TABLE matrix (
+--     property TEXT    NOT NULL,
+--     string   TEXT    NOT NULL,
+--     "index"  INTEGER NOT NULL,
+--     result   TEXT               -- json array of integers
+-- );
+--
+-- Task: update the matrix table and set the result based on the property, string and index.
