@@ -227,6 +227,14 @@
         "difficulty": 5
       },
       {
+        "slug": "secret-handshake",
+        "name": "Secret Handshake",
+        "uuid": "2b10f220-4a5f-437f-b982-58914baa9ec1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "swift-scheduling",
         "name": "Swift Scheduling",
         "uuid": "51691c60-f878-4c1d-94e0-9e38e1e974d2",
