@@ -1,0 +1,2 @@
+-- Schema: CREATE TABLE "pig-latin" ( phrase TEXT NOT NULL, result TEXT );
+-- Task: update the pig-latin table and set the result based on the phrase.
