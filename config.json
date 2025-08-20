@@ -331,6 +331,14 @@
         "difficulty": 8
       },
       {
+        "slug": "pig-latin",
+        "name": "Pig Latin",
+        "uuid": "2c45ef99-047e-4d83-b11d-256acc20a175",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "rest-api",
         "name": "REST API",
         "uuid": "51275817-1b95-48d9-b7ab-bbbf8720acb7",
