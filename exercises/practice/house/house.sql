@@ -1,0 +1,8 @@
+-- Schema:
+-- CREATE TABLE house (
+--     start_verse INTEGER NOT NULL,
+--     end_verse   INTEGER NOT NULL,
+--     result      TEXT
+-- );
+--
+-- Task: update house table and set the result based on the start_verse and end_verse.
