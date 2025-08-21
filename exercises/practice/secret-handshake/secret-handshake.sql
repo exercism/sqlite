@@ -1,0 +1,7 @@
+-- Schema:
+-- CREATE TABLE "secret-handshake" (
+--     number INTEGER NOT NULL,
+--     result TEXT
+-- );
+--
+-- Task: update secret-handshake table and set result column based on the number.

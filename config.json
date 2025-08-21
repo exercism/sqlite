@@ -227,6 +227,14 @@
         "difficulty": 5
       },
       {
+        "slug": "secret-handshake",
+        "name": "Secret Handshake",
+        "uuid": "2b10f220-4a5f-437f-b982-58914baa9ec1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "swift-scheduling",
         "name": "Swift Scheduling",
         "uuid": "51691c60-f878-4c1d-94e0-9e38e1e974d2",
@@ -291,6 +299,14 @@
         "difficulty": 8
       },
       {
+        "slug": "hamming",
+        "name": "Hamming",
+        "uuid": "d1ea133e-1d3f-4894-975e-6ab91aa33a35",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "high-scores",
         "name": "High Scores",
         "uuid": "7ab3b905-bfaa-4d21-a665-7dcf2701cb3e",
@@ -326,6 +342,14 @@
         "slug": "pascals-triangle",
         "name": "Pascal's Triangle",
         "uuid": "fb614e0d-ad10-4710-8785-5ab07fd9eb5a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
+        "slug": "pig-latin",
+        "name": "Pig Latin",
+        "uuid": "2c45ef99-047e-4d83-b11d-256acc20a175",
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
