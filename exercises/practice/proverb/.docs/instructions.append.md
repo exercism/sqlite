@@ -1,6 +1,6 @@
 # SQLite-specific instructions
 
-The **strings** column contains a JSON-encoded list of strings.
+The **strings** column contains a JSON-encoded list of words which is the input values you should use.
 
 Example:
 ```json
