@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS proverb;
 CREATE TABLE proverb (
-    strings TEXT NOT NULL,    -- json array
+    strings TEXT NOT NULL,    -- json array containing the input words
     result  TEXT
 );
 
