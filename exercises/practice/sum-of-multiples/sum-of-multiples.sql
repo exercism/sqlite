@@ -1,0 +1,8 @@
+-- Schema:
+-- CREATE TABLE "sum-of-multiples" (
+--     factors TEXT    NOT NULL,     -- json array of integers
+--     "limit" INTEGER NOT NULL,
+--     result  INTEGER
+-- );
+--
+-- Task: update the "sum-of-multiples" table and set the result based on the phrase.

@@ -235,6 +235,14 @@
         "difficulty": 5
       },
       {
+        "slug": "sum-of-multiples",
+        "name": "Sum of Multiples",
+        "uuid": "18ea92e5-6855-4dd6-b6d0-e2473d036fd4",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "swift-scheduling",
         "name": "Swift Scheduling",
         "uuid": "51691c60-f878-4c1d-94e0-9e38e1e974d2",
