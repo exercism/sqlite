@@ -1,0 +1,7 @@
+-- Schema:
+-- CREATE TABLE transpose (
+--     lines  TEXT NOT NULL,
+--     result TEXT
+-- );
+--
+-- Task: update the transpose table and set the result based on the lines.
