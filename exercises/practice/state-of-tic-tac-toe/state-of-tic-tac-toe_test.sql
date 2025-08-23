@@ -12,9 +12,13 @@
 
 -- Comparison of user input and the tests updates the status for each test:
 UPDATE tests
-SET status = 'pass'
-FROM (SELECT board, result, error FROM "state-of-tic-tac-toe") AS actual
-WHERE actual.board = tests.board AND (actual.result = tests.expected_result OR COALESCE(actual.result, tests.expected_result) ISNULL) AND (actual.error = tests.expected_error OR COALESCE(actual.error, tests.expected_error) ISNULL);
+  SET status = 'pass'
+ FROM (SELECT board, result, error FROM "state-of-tic-tac-toe") AS actual
+WHERE actual.board = tests.board
+  AND (actual.result = tests.expected_result
+       OR COALESCE(actual.result, tests.expected_result) ISNULL)
+  AND (actual.error = tests.expected_error
+       OR COALESCE(actual.error, tests.expected_error) ISNULL);
 
 -- Update message for failed tests to give helpful information:
 UPDATE tests
@@ -22,8 +26,15 @@ SET message = (
     'Result for "'
     || actual.board
     || '"'
-    || ' is <' || PRINTF('result=%s and error="%s"', COALESCE(actual.result, 'NULL'), COALESCE(actual.error, 'NULL'))
-    || '> but should be <' || PRINTF('result=%s and error="%s"', COALESCE(tests.expected_result, '"NULL"'), COALESCE(tests.expected_error, 'NULL')) || '>'
+    || ' is <'
+    || PRINTF('result=%s and error="%s"',
+              COALESCE(actual.result, 'NULL'),
+              COALESCE(actual.error, 'NULL'))
+    || '> but should be <'
+    || PRINTF('result=%s and error="%s"',
+              COALESCE(tests.expected_result, '"NULL"'),
+              COALESCE(tests.expected_error, 'NULL'))
+    || '>'
 )
 FROM (SELECT board, result, error FROM "state-of-tic-tac-toe") AS actual
 WHERE actual.board = tests.board AND tests.status = 'fail';
