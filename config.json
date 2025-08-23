@@ -387,6 +387,14 @@
         "difficulty": 8
       },
       {
+        "slug": "state-of-tic-tac-toe",
+        "name": "State of Tic-Tac-Toe",
+        "uuid": "430f765b-090a-4d91-997e-9d23b59da50d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "sublist",
         "name": "Sublist",
         "uuid": "8491674e-c9e1-4922-a25c-4a5d691158d4",
