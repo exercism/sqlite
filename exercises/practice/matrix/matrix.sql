@@ -1,0 +1,9 @@
+-- Schema:
+-- CREATE TABLE matrix (
+--     string   TEXT    NOT NULL,  -- the matrix as a plain string
+--     property TEXT    NOT NULL,  -- either "row" or "column" which we want to extract
+--     "index"  INTEGER NOT NULL,  -- the row or column index to extract
+--     result   TEXT               -- json array of integers containing the row or column at the specified index
+-- );
+--
+-- Task: update the matrix table and set the result based on the property, string and index.

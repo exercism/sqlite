@@ -203,6 +203,14 @@
         "difficulty": 5
       },
       {
+        "slug": "matrix",
+        "name": "Matrix",
+        "uuid": "6884edbe-4a2b-4415-8aa0-57c959b200c8",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "meetup",
         "name": "Meetup",
         "uuid": "d096731f-18cb-4baa-90e5-dde8d19f35f2",
