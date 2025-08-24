@@ -1,0 +1,7 @@
+-- Schema:
+-- CREATE TABLE "square-root" (
+--     radicand INTEGER NOT NULL,
+--     result   INTEGER
+-- );
+--
+-- Task: update the square-root table and set the result based on the radicand.
