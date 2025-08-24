@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS tests (
     task_id INTEGER DEFAULT NULL,
     -- Here are columns for the actual tests
     radicand INTEGER NOT NULL,
-    expected TEXT NOT NULL
+    expected INTEGER NOT NULL
 );
 
 INSERT INTO tests (uuid, description, radicand, expected)
