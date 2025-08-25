@@ -1,0 +1,8 @@
+-- Schema:
+-- CREATE TABLE "run-length-encoding" (
+--     property TEXT NOT NULL,
+--     string   TEXT NOT NULL,
+--     result   TEXT
+-- );
+--
+-- Task: update the run-length-encoding table and set the result based on the property and string.
