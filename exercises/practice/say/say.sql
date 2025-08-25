@@ -1,0 +1,8 @@
+-- Schema:
+-- CREATE TABLE say (
+--     number INTEGER NOT NULL,
+--     result TEXT,
+--     error  TEXT
+-- );
+--
+-- Task: update the say table and set the result or the error columns based on the number.
