@@ -1,0 +1,8 @@
+-- Schema:
+-- CREATE TABLE "saddle-points" (
+--     matrix TEXT NOT NULL,    -- json array of arrays
+--     result TEXT              -- json array of object
+-- );
+-- Task: update the saddle-points table and set the result based on the matrix.
+--       * the matrix column contains a JSON-encoded array of arrays of integers.
+--       * the result columns should contain JSON-encoded array of objects, each object has two keys: row and column.
