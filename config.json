@@ -387,6 +387,14 @@
         "difficulty": 8
       },
       {
+        "slug": "rotational-cipher",
+        "name": "Rotational Cipher",
+        "uuid": "76fd6c44-a09b-41a7-9fec-addf26b35059",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "scrabble-score",
         "name": "Scrabble Score",
         "uuid": "ce167ca3-bb12-4238-88eb-c2c7e2cb7809",
