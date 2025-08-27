@@ -1,0 +1,8 @@
+-- Schema:
+-- CREATE TABLE "state-of-tic-tac-toe" (
+--     board  TEXT NOT NULL,
+--     result TEXT,
+--     error  TEXT
+-- );
+--
+-- Task: update the state-of-tic-tac-toe table and set the result or error columns based on the board.
