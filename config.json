@@ -195,9 +195,25 @@
         "difficulty": 5
       },
       {
+        "slug": "house",
+        "name": "House",
+        "uuid": "e684299c-9db3-4dce-b3c7-53c9aa38ceaa",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "kindergarten-garden",
         "name": "Kindergarten Garden",
         "uuid": "fb354d1a-c85d-42d0-b919-f554eaa27a08",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
+        "slug": "matrix",
+        "name": "Matrix",
+        "uuid": "6884edbe-4a2b-4415-8aa0-57c959b200c8",
         "practices": [],
         "prerequisites": [],
         "difficulty": 5
@@ -363,6 +379,14 @@
         "difficulty": 8
       },
       {
+        "slug": "protein-translation",
+        "name": "Protein Translation",
+        "uuid": "afebedda-e757-4811-825e-36be60fb8a4b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "rest-api",
         "name": "REST API",
         "uuid": "51275817-1b95-48d9-b7ab-bbbf8720acb7",
@@ -382,6 +406,14 @@
         "slug": "roman-numerals",
         "name": "Roman Numerals",
         "uuid": "f109325a-2bbb-46d7-a7ed-fe8484509985",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
+        "slug": "rotational-cipher",
+        "name": "Rotational Cipher",
+        "uuid": "76fd6c44-a09b-41a7-9fec-addf26b35059",
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
@@ -430,6 +462,14 @@
         "slug": "tournament",
         "name": "Tournament",
         "uuid": "3be4094d-0ca5-4640-bc9f-c94f2e9dc5b6",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
+        "slug": "transpose",
+        "name": "Transpose",
+        "uuid": "501d8d8b-4dd9-457d-866f-88120f046277",
         "practices": [],
         "prerequisites": [],
         "difficulty": 8

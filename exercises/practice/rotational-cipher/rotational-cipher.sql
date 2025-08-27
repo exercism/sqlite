@@ -1,0 +1,8 @@
+-- Schema:
+-- CREATE TABLE "rotational-cipher" (
+--   text      TEXT NOT NULL,
+--   shift_key INTEGER NOT NULL,
+--   result    TEXT
+-- );
+--
+-- Task: update the rotational-cipher table and set the result based on text and shift_key.
