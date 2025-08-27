@@ -459,6 +459,14 @@
         "difficulty": 8
       },
       {
+        "slug": "transpose",
+        "name": "Transpose",
+        "uuid": "501d8d8b-4dd9-457d-866f-88120f046277",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "word-count",
         "name": "Word Count",
         "uuid": "67ef66f1-4a18-42ba-86ca-59c296487c0d",
