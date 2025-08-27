@@ -195,6 +195,14 @@
         "difficulty": 5
       },
       {
+        "slug": "house",
+        "name": "House",
+        "uuid": "e684299c-9db3-4dce-b3c7-53c9aa38ceaa",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "kindergarten-garden",
         "name": "Kindergarten Garden",
         "uuid": "fb354d1a-c85d-42d0-b919-f554eaa27a08",
