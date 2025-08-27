@@ -1,8 +1,8 @@
 DROP TABLE IF EXISTS "rotational-cipher";
 CREATE TABLE "rotational-cipher" (
-  text      TEXT NOT NULL,
-  shift_key INTEGER NOT NULL,
-  result    TEXT
+    text TEXT NOT NULL,
+    shift_key INTEGER NOT NULL,
+    result TEXT
 );
 
 .mode csv
