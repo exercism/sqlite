@@ -1,0 +1,8 @@
+-- Schema:
+-- CREATE TABLE "protein-translation" (
+--   strand TEXT NOT NULL,
+--   result TEXT         ,
+--   error  TEXT
+-- );
+--
+-- Task: update the protein-translation and set the result or the error columns based on strand.

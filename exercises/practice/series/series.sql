@@ -1,0 +1,9 @@
+-- Schema:
+-- CREATE TABLE series (
+--     input        TEXT    NOT NULL,
+--     slice_length INTEGER NOT NULL,
+--     result       TEXT            ,
+--     error        TEXT
+-- );
+--
+-- Task: update the series table and set the result or the error columns based on the input.
