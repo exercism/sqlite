@@ -1,0 +1,8 @@
+-- Schema:
+-- CREATE TABLE "phone-number" (
+--   phrase TEXT NOT NULL,
+--   result TEXT,
+--   error TEXT
+-- );
+--
+-- Task: update the phone-number table and set the result or the error columns based on the phrase.
