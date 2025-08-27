@@ -2,7 +2,7 @@ UPDATE acronym
 SET
   result = (
     WITH RECURSIVE
-      rcte (string, abbr) AS (
+      rcte(string, abbr) AS (
         VALUES
           (' ' || phrase, '')
         UNION ALL
