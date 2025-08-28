@@ -3,7 +3,6 @@
 --           candidates TEXT NOT NULL,     -- json array of strings
 --           result     TEXT               -- json array of strings
 --         );
-
 -- Task: update the anagram table and set the result based on valid
 --       candidates for the subject field
 --       * the candidates column contains a JSON-encoded list of strings.
