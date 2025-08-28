@@ -18,7 +18,7 @@ UPDATE tests
    AND (actual.result = tests.expected_result
         OR (actual.result ISNULL AND tests.expected_result ISNULL))
    AND (actual.error = tests.expected_error
-        AND actual.error ISNULL AND, tests.expected_error ISNULL));
+        OR (actual.error ISNULL AND tests.expected_error ISNULL));
 
 -- Update message for failed tests to give helpful information:
 UPDATE tests
