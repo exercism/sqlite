@@ -419,6 +419,14 @@
         "difficulty": 8
       },
       {
+        "slug": "run-length-encoding",
+        "name": "Run-Length Encoding",
+        "uuid": "065feae7-f6fc-46b9-a226-d3d9df9d192b",  
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "say",
         "name": "Say",
         "uuid": "5b643efe-e63b-4598-95f8-a4cb319107de",
