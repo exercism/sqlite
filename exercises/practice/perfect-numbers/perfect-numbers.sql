@@ -1,0 +1,8 @@
+-- Schema:
+-- CREATE TABLE "perfect-numbers" (
+--   number INTEGER NOT NULL,
+--   result TEXT,
+--   error  TEXT
+-- );
+--
+-- Task: update the perfect-numbers table and set the result or the error columns based on number.

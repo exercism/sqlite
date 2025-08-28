@@ -235,6 +235,14 @@
         "difficulty": 5
       },
       {
+        "slug": "perfect-numbers",
+        "name": "Perfect Numbers",
+        "uuid": "309666ba-cbde-429b-ae07-ddb05366bf0a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "resistor-color-trio",
         "name": "Resistor Color Trio",
         "uuid": "ff9d1780-bc8c-49d6-9c33-dba769d551fb",
@@ -421,7 +429,7 @@
       {
         "slug": "run-length-encoding",
         "name": "Run-Length Encoding",
-        "uuid": "065feae7-f6fc-46b9-a226-d3d9df9d192b",  
+        "uuid": "065feae7-f6fc-46b9-a226-d3d9df9d192b",
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
