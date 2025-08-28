@@ -16,7 +16,7 @@ UPDATE tests
   FROM (SELECT phrase, result, error FROM "phone-number") AS actual
  WHERE actual.phrase = tests.phrase
    AND (actual.result = tests.expected_result
-        OR COALESCE(actual.result, tests.expected_result) ISNULL)
+        OR (actual.result ISNULL AND tests.expected_result ISNULL))
    AND (actual.error = tests.expected_error
         OR COALESCE(actual.error, tests.expected_error) ISNULL);
 
