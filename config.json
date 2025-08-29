@@ -395,6 +395,14 @@
         "difficulty": 8
       },
       {
+        "slug": "phone-number",
+        "name": "Phone Number",
+        "uuid": "8a7fedc5-e977-4ad7-848c-6e48f6a8c42f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "pig-latin",
         "name": "Pig Latin",
         "uuid": "2c45ef99-047e-4d83-b11d-256acc20a175",
