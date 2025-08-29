@@ -363,6 +363,14 @@
         "difficulty": 8
       },
       {
+        "slug": "largest-series-product",
+        "name": "Largest Series Product",
+        "uuid": "66555259-8a28-428a-bca8-c0b06c889297",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "luhn",
         "name": "Luhn",
         "uuid": "bde990ef-fb37-4b75-a3b1-a659b7f69f59",
@@ -441,19 +449,19 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
-      },        
-      {
-        "slug": "saddle-points",
-        "name": "Saddle Points",
-        "uuid": "d050e56b-9f86-416c-baa3-10a98f47b944",  
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 8
       },
       {
         "slug": "run-length-encoding",
         "name": "Run-Length Encoding",
         "uuid": "065feae7-f6fc-46b9-a226-d3d9df9d192b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
+        "slug": "saddle-points",
+        "name": "Saddle Points",
+        "uuid": "d050e56b-9f86-416c-baa3-10a98f47b944",
         "practices": [],
         "prerequisites": [],
         "difficulty": 8

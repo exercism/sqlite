@@ -1,0 +1,9 @@
+-- Schema:
+-- CREATE TABLE "largest-series-product" (
+--   digits TEXT    NOT NULL,
+--   span   INTEGER NOT NULL,
+--   result INTEGER         ,
+--   error  TEXT
+-- );
+--
+-- Task: update the largest-series-product table and set the result or the error columns bases on the digits and the span.
