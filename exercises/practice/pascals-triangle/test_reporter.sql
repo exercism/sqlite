@@ -1,20 +1,39 @@
 -- Update message for failed tests to give helpful information:
 UPDATE tests
-SET message = (
-    'Result for ' || tests.input
-    || ' is:' || char(10) || COALESCE(actual.result, 'NULL')
-    || char(10) || 'but should be:' || char(10) || tests.expected
-)
-FROM (SELECT input, result FROM "pascals-triangle") AS actual
-WHERE actual.input = tests.input AND tests.status = 'fail';
+SET
+  message = (
+    'Result for ' || tests.input || ' is:' || char(10) || COALESCE(actual.result, 'NULL') || char(10) || 'but should be:' || char(10) || tests.expected
+  )
+FROM
+  (
+    SELECT
+      input,
+      result
+    FROM
+      "pascals-triangle"
+  ) AS actual
+WHERE
+  actual.input = tests.input
+  AND tests.status = 'fail';
 
 -- Save results to ./output.json (needed by the online test-runner)
 .mode json
 .once './output.json'
-SELECT name, status, message, output, test_code, task_id
-FROM tests;
+SELECT
+  name,
+  status,
+  message,
+  output,
+  test_code,
+  task_id
+FROM
+  tests;
 
 -- Display test results in readable form for the student:
 .mode table
-SELECT name, status, message
-FROM tests;
+SELECT
+  name,
+  status,
+  message
+FROM
+  tests;
