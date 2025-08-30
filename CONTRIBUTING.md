@@ -1,6 +1,28 @@
-(This file may become the seed of a exercise-generate script.)
+# Contributing
 
-# creating the Bob exercise
+If you have not contributed previously to one of the Exercism tracks, we strongly recommend discussing any changes on [the forum][forum] _before_ creating any PR.
+
+## Formatting
+
+All `.sql` files in this repo should be formatted using [the `sql-formatter` tool][sql-formatter].
+This provides a single, consistent way to format SQL.
+
+The `sql-formatter` does not properly handle [SQLite dot commands][dot-commands].
+The following `bash` script can be used to wrap `sql-formatter` without breaking on dot commands by temporarily turning them into comments.
+
+```bash
+#!/bin/env bash
+sed -i 's/^\./--T./' "$@"
+sql-formatter --fix -l sqlite "$@"
+sed -i 's/^--T\././' "$@"
+```
+
+## Creating a new exercise
+
+(These instructions may become the seed of a exercise-generate script.)
+
+The steps below walk you through creating a new "bob" exercise.
+They provide most the steps needed to create a new practice exercise.
 
 1. create the directory structure:
 
@@ -10,7 +32,7 @@
     bin/configlet create --practice-exercise "$slug"
     ```
 
-2. create the data.csv file from canonical data
+1. create the data.csv file from canonical data
 
     ```sh
     cd "exercises/practice/$slug"
@@ -33,7 +55,7 @@
     ' canonical-data.json > data.csv
     ```
 
-3. create the `create_test_table.sql` from canonical data
+1. create the `create_test_table.sql` from canonical data
 
     ```sh
     #!/usr/bin/env bash
@@ -83,8 +105,12 @@
     } > create_test_table.sql
     ```
 
-3. create the `create_fixture.sql` file
-4. create the `${slug}_test.sql` file based on the test script from another exercise.
-5. create `.meta/example.sql`
-6. set the stub file.
-7. test it.
+1. create the `create_fixture.sql` file
+1. create the `${slug}_test.sql` file based on the test script from another exercise.
+1. create `.meta/example.sql`
+1. set the stub file.
+1. test it.
+
+[forum]: https://forum.exercism.org/c/programming/sqlite/430
+[sql-formatter]: https://github.com/sql-formatter-org/sql-formatter
+[dot-commands]: https://www.sqlite.org/cli.html#special_commands_to_sqlite3_dot_commands_
