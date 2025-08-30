@@ -1,0 +1,5 @@
+-- Schema:
+-- CREATE TABLE "flatten-array" (
+--   array  TEXT NOT NULL,    -- json array
+--   result TEXT              -- json array
+-- );
