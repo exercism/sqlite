@@ -1,14 +1,15 @@
 UPDATE "rna-transcription"
-SET result = REPLACE(
-  REPLACE(
+SET
+  result = REPLACE(
     REPLACE(
       REPLACE(
-        REPLACE(dna, 'A', 'U'),
-        'T', 'A'
+        REPLACE(REPLACE(dna, 'A', 'U'), 'T', 'A'),
+        'C',
+        'Z'
       ),
-      'C', 'Z'
+      'G',
+      'C'
     ),
-    'G', 'C'
-  ),
-  'Z', 'G'
-);
+    'Z',
+    'G'
+  );
