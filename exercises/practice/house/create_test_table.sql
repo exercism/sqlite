@@ -1,35 +1,129 @@
 DROP TABLE IF EXISTS tests;
+
 CREATE TABLE IF NOT EXISTS tests (
-    -- uuid and description are taken from the test.toml file
-    uuid TEXT PRIMARY KEY,
-    description TEXT NOT NULL,
-    -- The following section is needed by the online test-runner
-    status TEXT DEFAULT 'fail',
-    message TEXT,
-    output TEXT,
-    test_code TEXT,
-    task_id INTEGER DEFAULT NULL,
-    -- Here are columns for the actual tests
-    start_verse INTEGER NOT NULL,
-    end_verse INTEGER NOT NULL,
-    expected TEXT NOT NULL
+  -- uuid and description are taken from the test.toml file
+  uuid TEXT PRIMARY KEY,
+  description TEXT NOT NULL,
+  -- The following section is needed by the online test-runner
+  status TEXT DEFAULT 'fail',
+  message TEXT,
+  output TEXT,
+  test_code TEXT,
+  task_id INTEGER DEFAULT NULL,
+  -- Here are columns for the actual tests
+  start_verse INTEGER NOT NULL,
+  end_verse INTEGER NOT NULL,
+  expected TEXT NOT NULL
 );
 
-INSERT INTO tests (uuid, description, start_verse, end_verse, expected)
+INSERT INTO
+  tests (
+    uuid,
+    description,
+    start_verse,
+    end_verse,
+    expected
+  )
 VALUES
-        ('28a540ff-f765-4348-9d57-ae33f25f41f2', 'verse one - the house that jack built', 1, 1, 'This is the house that Jack built.'),
-        ('ebc825ac-6e2b-4a5e-9afd-95732191c8da', 'verse two - the malt that lay', 2, 2, 'This is the malt that lay in the house that Jack built.'),
-        ('1ed8bb0f-edb8-4bd1-b6d4-b64754fe4a60', 'verse three - the rat that ate', 3, 3, 'This is the rat that ate the malt that lay in the house that Jack built.'),
-        ('64b0954e-8b7d-4d14-aad0-d3f6ce297a30', 'verse four - the cat that killed', 4, 4, 'This is the cat that killed the rat that ate the malt that lay in the house that Jack built.'),
-        ('1e8d56bc-fe31-424d-9084-61e6111d2c82', 'verse five - the dog that worried', 5, 5, 'This is the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.'),
-        ('6312dc6f-ab0a-40c9-8a55-8d4e582beac4', 'verse six - the cow with the crumpled horn', 6, 6, 'This is the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.'),
-        ('68f76d18-6e19-4692-819c-5ff6a7f92feb', 'verse seven - the maiden all forlorn', 7, 7, 'This is the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.'),
-        ('73872564-2004-4071-b51d-2e4326096747', 'verse eight - the man all tattered and torn', 8, 8, 'This is the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.'),
-        ('0d53d743-66cb-4351-a173-82702f3338c9', 'verse nine - the priest all shaven and shorn', 9, 9, 'This is the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.'),
-        ('452f24dc-8fd7-4a82-be1a-3b4839cfeb41', 'verse 10 - the rooster that crowed in the morn', 10, 10, 'This is the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.'),
-        ('97176f20-2dd3-4646-ac72-cffced91ea26', 'verse 11 - the farmer sowing his corn', 11, 11, 'This is the farmer sowing his corn that kept the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.'),
-        ('09824c29-6aad-4dcd-ac98-f61374a6a8b7', 'verse 12 - the horse and the hound and the horn', 12, 12, 'This is the horse and the hound and the horn that belonged to the farmer sowing his corn that kept the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.'),
-        ('d2b980d3-7851-49e1-97ab-1524515ec200', 'multiple verses', 4, 8, 'This is the cat that killed the rat that ate the malt that lay in the house that Jack built.\nThis is the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\nThis is the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\nThis is the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\nThis is the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.'),
-        ('0311d1d0-e085-4f23-8ae7-92406fb3e803', 'full rhyme', 1, 12, 'This is the house that Jack built.\nThis is the malt that lay in the house that Jack built.\nThis is the rat that ate the malt that lay in the house that Jack built.\nThis is the cat that killed the rat that ate the malt that lay in the house that Jack built.\nThis is the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\nThis is the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\nThis is the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\nThis is the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\nThis is the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\nThis is the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\nThis is the farmer sowing his corn that kept the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\nThis is the horse and the hound and the horn that belonged to the farmer sowing his corn that kept the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.');
+  (
+    '28a540ff-f765-4348-9d57-ae33f25f41f2',
+    'verse one - the house that jack built',
+    1,
+    1,
+    'This is the house that Jack built.'
+  ),
+  (
+    'ebc825ac-6e2b-4a5e-9afd-95732191c8da',
+    'verse two - the malt that lay',
+    2,
+    2,
+    'This is the malt that lay in the house that Jack built.'
+  ),
+  (
+    '1ed8bb0f-edb8-4bd1-b6d4-b64754fe4a60',
+    'verse three - the rat that ate',
+    3,
+    3,
+    'This is the rat that ate the malt that lay in the house that Jack built.'
+  ),
+  (
+    '64b0954e-8b7d-4d14-aad0-d3f6ce297a30',
+    'verse four - the cat that killed',
+    4,
+    4,
+    'This is the cat that killed the rat that ate the malt that lay in the house that Jack built.'
+  ),
+  (
+    '1e8d56bc-fe31-424d-9084-61e6111d2c82',
+    'verse five - the dog that worried',
+    5,
+    5,
+    'This is the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.'
+  ),
+  (
+    '6312dc6f-ab0a-40c9-8a55-8d4e582beac4',
+    'verse six - the cow with the crumpled horn',
+    6,
+    6,
+    'This is the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.'
+  ),
+  (
+    '68f76d18-6e19-4692-819c-5ff6a7f92feb',
+    'verse seven - the maiden all forlorn',
+    7,
+    7,
+    'This is the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.'
+  ),
+  (
+    '73872564-2004-4071-b51d-2e4326096747',
+    'verse eight - the man all tattered and torn',
+    8,
+    8,
+    'This is the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.'
+  ),
+  (
+    '0d53d743-66cb-4351-a173-82702f3338c9',
+    'verse nine - the priest all shaven and shorn',
+    9,
+    9,
+    'This is the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.'
+  ),
+  (
+    '452f24dc-8fd7-4a82-be1a-3b4839cfeb41',
+    'verse 10 - the rooster that crowed in the morn',
+    10,
+    10,
+    'This is the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.'
+  ),
+  (
+    '97176f20-2dd3-4646-ac72-cffced91ea26',
+    'verse 11 - the farmer sowing his corn',
+    11,
+    11,
+    'This is the farmer sowing his corn that kept the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.'
+  ),
+  (
+    '09824c29-6aad-4dcd-ac98-f61374a6a8b7',
+    'verse 12 - the horse and the hound and the horn',
+    12,
+    12,
+    'This is the horse and the hound and the horn that belonged to the farmer sowing his corn that kept the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.'
+  ),
+  (
+    'd2b980d3-7851-49e1-97ab-1524515ec200',
+    'multiple verses',
+    4,
+    8,
+    'This is the cat that killed the rat that ate the malt that lay in the house that Jack built.\nThis is the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\nThis is the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\nThis is the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\nThis is the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.'
+  ),
+  (
+    '0311d1d0-e085-4f23-8ae7-92406fb3e803',
+    'full rhyme',
+    1,
+    12,
+    'This is the house that Jack built.\nThis is the malt that lay in the house that Jack built.\nThis is the rat that ate the malt that lay in the house that Jack built.\nThis is the cat that killed the rat that ate the malt that lay in the house that Jack built.\nThis is the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\nThis is the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\nThis is the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\nThis is the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\nThis is the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\nThis is the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\nThis is the farmer sowing his corn that kept the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\nThis is the horse and the hound and the horn that belonged to the farmer sowing his corn that kept the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.'
+  );
 
-UPDATE tests SET expected = REPLACE(expected, '\n', CHAR(10));
+UPDATE tests
+SET
+  expected = REPLACE(expected, '\n', CHAR(10));
