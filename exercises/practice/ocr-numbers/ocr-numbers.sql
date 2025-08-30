@@ -1,0 +1,8 @@
+-- Schema:
+-- CREATE TABLE "ocr-numbers" (
+--     input   TEXT NOT NULL,
+--     result  TEXT         ,
+--     error   TEXT
+-- );
+--
+-- Task: update the ocr-numbers table and set the result or the error columns based on the input.
