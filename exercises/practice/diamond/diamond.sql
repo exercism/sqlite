@@ -1,0 +1,7 @@
+-- Schema:
+-- CREATE TABLE diamond (
+--   letter TEXT NOT NULL,
+--   result TEXT
+-- );
+--
+-- Task: update the diamond table and set result column based on the letter.
