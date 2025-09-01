@@ -1,0 +1,8 @@
+-- Schema:
+-- CREATE TABLE clock (
+--   property TEXT NOT NULL,
+--   input    TEXT NOT NULL,   -- json object
+--   result   TEXT
+-- );
+--
+-- Task: update the clock table and set the result column based on the input.

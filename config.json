@@ -179,6 +179,14 @@
         "difficulty": 5
       },
       {
+        "slug": "clock",
+        "name": "Clock",
+        "uuid": "9f346edc-0b89-4616-b62c-2119325fde2a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "eliuds-eggs",
         "name": "Eliud's Eggs",
         "uuid": "f323bd0a-c65b-4d30-b4d2-fa5a3e32ccb0",
