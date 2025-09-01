@@ -347,6 +347,14 @@
         "difficulty": 8
       },
       {
+        "slug": "crypto-square",
+        "name": "Crypto Square",
+        "uuid": "9fc46c57-3011-4dff-b4af-9259aeb2e170",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "diamond",
         "name": "Diamond",
         "uuid": "8f223ea0-4bd2-4e40-99ac-d5d13d9726e5",

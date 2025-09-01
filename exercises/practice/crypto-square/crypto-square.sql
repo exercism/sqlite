@@ -1,0 +1,7 @@
+-- Schema:
+-- CREATE TABLE "crypto-square" (
+--   plaintext TEXT NOT NULL,
+--   result    TEXT
+-- );
+--
+-- Task: update the crypto-square table and set the result column based on the plaintext.
