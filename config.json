@@ -579,6 +579,14 @@
         "difficulty": 8
       },
       {
+        "slug": "wordy",
+        "name": "Wordy",
+        "uuid": "b013d306-2212-44b6-abfb-5523a1b54c65",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "yacht",
         "name": "Yacht",
         "uuid": "fe0f434b-dcf8-46ec-924a-09e47348f22d",
