@@ -1,0 +1,8 @@
+-- Schema:
+-- CREATE TABLE wordy (
+--   question TEXT    NOT NULL,
+--   result   INTEGER         ,
+--   error    TEXT
+-- );
+--
+-- Task: update the wordy table and set the result or the error columns bases on the question.
