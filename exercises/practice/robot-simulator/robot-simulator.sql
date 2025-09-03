@@ -1,0 +1,8 @@
+-- Schema:
+-- CREATE TABLE "robot-simulator" (
+--   property TEXT NOT NULL,
+--   input    TEXT NOT NULL,    -- json object
+--   result   TEXT              -- json object
+-- );
+--
+-- Task: update the robot-simulator table and set the result column based on property and input.
