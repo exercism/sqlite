@@ -1,0 +1,7 @@
+-- Schema:
+-- CREATE TABLE poker (
+--   hands  TEXT NOT NULL,   -- json array
+--   result TEXT             -- json array
+-- );
+--
+-- Task: update the poder table and set the result column based on the hands.
