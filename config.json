@@ -451,6 +451,14 @@
         "difficulty": 8
       },
       {
+        "slug": "poker",
+        "name": "Poker",
+        "uuid": "b9ec94e1-8c20-4095-b627-889b614e2a99",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "protein-translation",
         "name": "Protein Translation",
         "uuid": "afebedda-e757-4811-825e-36be60fb8a4b",
