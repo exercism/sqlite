@@ -32,7 +32,7 @@ UPDATE tests
                         wisdom,
                         charisma
                ) AS score
-          FROM "dnd-CHARACTER"
+          FROM "dnd-character"
          WHERE property = 'ability'
            AND input    = 'random'
            AND score BETWEEN 3 AND 18
