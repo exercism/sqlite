@@ -187,6 +187,14 @@
         "difficulty": 5
       },
       {
+        "slug": "dnd-character",
+        "name": "D&D Character",
+        "uuid": "d2da9563-a621-4e02-b2e4-f9553f3b82fc",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "eliuds-eggs",
         "name": "Eliud's Eggs",
         "uuid": "f323bd0a-c65b-4d30-b4d2-fa5a3e32ccb0",
