@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "jimmytty"
+  ],
+  "files": {
+    "solution": [
+      "dnd-character.sql"
+    ],
+    "test": [
+      "dnd-character_test.sql"
+    ],
+    "example": [
+      ".meta/example.sql"
+    ]
+  },
+  "blurb": "Randomly generate Dungeons & Dragons characters.",
+  "source": "Simon Shine, Erik Schierboom",
+  "source_url": "https://github.com/exercism/problem-specifications/issues/616#issuecomment-437358945"
+}

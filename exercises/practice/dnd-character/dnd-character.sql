@@ -1,0 +1,15 @@
+-- Schema:
+-- CREATE TABLE "dnd-character" (
+--   property     TEXT    NOT NULL,
+--   input        TEXT    NOT NULL,
+--   strength     INTEGER         ,
+--   dexterity    INTEGER         ,
+--   constitution INTEGER         ,
+--   intelligence INTEGER         ,
+--   wisdom       INTEGER         ,
+--   charisma     INTEGER         ,
+--   modifier     INTEGER         ,
+--   hitpoints    INTEGER
+-- );
+--
+-- Task: update the dnd-character table and set the appropriate columns based on the property and the input.
