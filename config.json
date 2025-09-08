@@ -371,6 +371,14 @@
         "difficulty": 8
       },
       {
+        "slug": "food-chain",
+        "name": "Food Chain",
+        "uuid": "128ab281-7720-4383-be90-a2b311bd8c38",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "hamming",
         "name": "Hamming",
         "uuid": "d1ea133e-1d3f-4894-975e-6ab91aa33a35",
