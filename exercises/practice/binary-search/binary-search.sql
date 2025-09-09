@@ -1,0 +1,9 @@
+-- Schema:
+-- CREATE TABLE "binary-search" (
+--   array  TEXT    NOT NULL,    -- json array
+--   value  INTEGER NOT NULL,
+--   result INTEGER         ,
+--   error  TEXT
+-- );
+--
+-- Task: update the binary-search table and set the result or the error columns based on the array and the value.
