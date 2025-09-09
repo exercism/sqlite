@@ -1,0 +1,8 @@
+-- Schema:
+-- CREATE TABLE "grade-school" (
+--   property TEXT NOT NULL,
+--   input    TEXT NOT NULL,    -- json object
+--   result   TEXT              -- json array
+-- );
+--
+-- Task: update the grade-school and update the result column based on the property and the input.
