@@ -1,0 +1,9 @@
+-- Schema:
+-- CREATE TABLE "queen-attack" (
+--   property TEXT    NOT NULL,
+--   input    TEXT    NOT NULL,    -- json object
+--   result   BOOLEAN         ,
+--   error    TEXT
+-- );
+--
+-- Task: update the "queen-attack" table and set the result or the error columns based on the property and the input.
