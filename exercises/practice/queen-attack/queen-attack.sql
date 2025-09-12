@@ -1,0 +1,11 @@
+-- Schema:
+-- CREATE TABLE "queen-attack" (
+--   white_row INTEGER NOT NULL,
+--   white_col INTEGER NOT NULL,
+--   black_row INTEGER NOT NULL,
+--   black_col INTEGER NOT NULL,
+--   result    BOOLEAN         ,
+--   error     TEXT
+-- );
+--
+-- Task: update the "queen-attack" table and set the result or the error columns based on the white and black queens positions.
