@@ -1,9 +1,11 @@
 DROP TABLE IF EXISTS "queen-attack";
 CREATE TABLE "queen-attack" (
-  property TEXT    NOT NULL,
-  input    TEXT    NOT NULL,    -- json object
-  result   BOOLEAN         ,
-  error    TEXT
+  white_row INTEGER NOT NULL,
+  white_col INTEGER NOT NULL,
+  black_row INTEGER NOT NULL,
+  black_col INTEGER NOT NULL,
+  result    BOOLEAN         ,
+  error     TEXT
 );
 
 .mode csv

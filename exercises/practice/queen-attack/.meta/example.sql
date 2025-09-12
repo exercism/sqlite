@@ -1,80 +1,55 @@
-WITH
-  cte AS (
-    SELECT input,
-           JSON_EXTRACT(input, '$.queen.position.row')    AS row,
-           JSON_EXTRACT(input, '$.queen.position.column') AS col
-      FROM "queen-attack"
-     WHERE property = 'create'
-  ),
-  errors AS (
-    SELECT input,
-           CASE
-           WHEN row < 0 THEN 'row not positive'
-           WHEN row > 7 THEN 'row not on board'
-           WHEN col < 0 THEN 'column not positive'
-           WHEN col > 7 THEN 'column not on board'
-           END AS error
-      FROM cte
-     WHERE error NOT NULL
-  )
-    UPDATE "queen-attack"
-    SET error = errors.error
-    FROM errors
-    WHERE "queen-attack".input = errors.input
-    ;
-
 UPDATE "queen-attack"
-   SET result = TRUE
- WHERE error ISNULL
-   AND property = 'create'
-       ;
+   SET error =
+       CASE
+       WHEN white_row < 0 OR black_row < 0 THEN 'row not positive'
+       WHEN white_row > 7 OR black_row > 7 THEN 'row not on board'
+       WHEN white_col < 0 OR black_col < 0 THEN 'column not positive'
+       WHEN white_col > 7 OR black_col > 7 THEN 'column not on board'
+       END
+;
 
 UPDATE "queen-attack"
    SET result = (
-     WITH positions (row, col) AS (
-       WITH cte (row, col) AS (
-         VALUES (
-           JSON_EXTRACT(input, '$.white_queen.position.row'),
-           JSON_EXTRACT(input, '$.white_queen.position.column')
-         )
-       )
-       SELECT row, value FROM cte, generate_series(0, 7)
+     WITH
+       seq AS (SELECT value FROM GENERATE_SERIES(0, 7)),
+       positions (row, col) AS (
+       SELECT white_row, value FROM seq
         UNION
-       SELECT value, col FROM cte, generate_series(0, 7)
+       SELECT value, white_col FROM seq
         UNION
-       SELECT row - value AS r, col - value AS c
-         FROM cte, GENERATE_SERIES(0, 7)
+       SELECT white_row - value AS r, white_col - value AS c
+         FROM seq
         WHERE r >= 0 AND c >= 0
         UNION
-       SELECT row + value AS r, col + value AS c
-         FROM cte, GENERATE_SERIES(0, 7)
+       SELECT white_row + value AS r, white_col + value AS c
+         FROM seq
         WHERE r <= 7 AND c <= 7
         UNION
-       SELECT row - value AS r, col - value AS c
-         FROM cte, GENERATE_SERIES(0, 7)
+       SELECT white_row - value AS r, white_col - value AS c
+         FROM seq
         WHERE r >= 0 AND c >= 0
         UNION
-       SELECT row + value AS r, col + value AS c
-         FROM cte, GENERATE_SERIES(0, 7)
+       SELECT white_row + value AS r, white_col + value AS c
+         FROM seq
         WHERE r <= 7 AND c <= 7
         UNION
-       SELECT row + value AS r, col - value AS c
-         FROM cte, GENERATE_SERIES(0, 7)
+       SELECT white_row + value AS r, white_col - value AS c
+         FROM seq
         WHERE r <= 7 AND c >= 0
         UNION
-       SELECT row - value AS r, col + value AS c
-         FROM cte, GENERATE_SERIES(0, 7)
+       SELECT white_row - value AS r, white_col + value AS c
+         FROM seq
         WHERE r >= 0 AND c <= 7
      )
      SELECT
        COALESCE(
          (SELECT TRUE
             FROM positions
-           WHERE row = JSON_EXTRACT(input, '$.black_queen.position.row')
-             AND col = JSON_EXTRACT(input, '$.black_queen.position.column')
+           WHERE row = black_row
+             AND col = black_col
          ),
          FALSE
        )
    )
- WHERE property = 'canAttack'
+ WHERE error ISNULL
 ;
