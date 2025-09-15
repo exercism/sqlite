@@ -1,4 +1,3 @@
-BEGIN TRANSACTION;
 DROP TABLE IF EXISTS letters;
 CREATE TEMPORARY TABLE letters (
   grid TEXT    NOT NULL,
@@ -215,4 +214,3 @@ UPDATE "word-search"
   FROM results
  WHERE "word-search".input = results.input
 ;
-COMMIT;

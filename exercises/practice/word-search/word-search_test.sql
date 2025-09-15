@@ -37,7 +37,13 @@ UPDATE tests
        )
   FROM (SELECT input, result FROM "word-search") AS actual
  WHERE actual.input = tests.input
-   AND tests.status = 'fail';
+   AND tests.status = 'fail'
+;
+
+-- Hacking errors ---------------------------------------------
+INSERT INTO tests (uuid, description, input, expected, message)
+VALUES ('a', '', '', '', (SELECT COUNT(*) 'COUNT strings' FROM strings));
+---------------------------------------------------------------
 
 -- Save results to ./output.json (needed by the online test-runner)
 .mode json
