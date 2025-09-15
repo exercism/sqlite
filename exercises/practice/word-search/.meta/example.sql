@@ -1,3 +1,4 @@
+BEGIN TRANSACTION;
 DROP TABLE IF EXISTS letters;
 CREATE TEMPORARY TABLE letters (
   grid TEXT    NOT NULL,
@@ -117,12 +118,12 @@ WITH
           starts.grid,
           row,
           col,
-          g.VALUE,
+          g.value,
           JSON_ARRAY(row + g.value, col - g.value) coord
           FROM bounds, starts, GENERATE_SERIES(0, mrow) g
          WHERE bounds.grid = starts.grid
-           AND row + g.VALUE <= mrow
-           AND col - g.VALUE >= 0
+           AND row + g.value <= mrow
+           AND col - g.value >= 0
       )
      GROUP BY grid, row, col
     HAVING JSON_ARRAY_LENGTH(coords) > 1
@@ -143,7 +144,7 @@ WITH
        AND row_col IN ((SELECT j.value FROM JSON_EACH(coords) j))
   ),
   straigh AS (
-        SELECT grid,
+    SELECT grid,
            GROUP_CONCAT(chr, '') AS string,
            JSON_GROUP_ARRAY(JSON_ARRAY(chr, JSON_ARRAY(row, col))) array
       FROM (SELECT * FROM chrs ORDER BY grid, row_col ASC)
@@ -170,7 +171,7 @@ WITH
               JSON_EXTRACT(
                 array,
                 PRINTF('$[%d][1]', INSTR(string, j.value) - 1),
-                PRINTF('$[%d][1]', INSTR(string, j.VALUE) +
+                PRINTF('$[%d][1]', INSTR(string, j.value) +
                        LENGTH(j.value) - 2
                 )
               )
@@ -214,3 +215,4 @@ UPDATE "word-search"
   FROM results
  WHERE "word-search".input = results.input
 ;
+COMMIT;
