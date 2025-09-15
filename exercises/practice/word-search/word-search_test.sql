@@ -42,7 +42,10 @@ UPDATE tests
 
 -- Hacking errors ---------------------------------------------
 INSERT INTO tests (uuid, description, input, expected, message)
-VALUES ('a', '', '', '', (select count(*) from (select distinct string from strings) where string like '%java%'));
+VALUES
+('a', '', '', '', (select count(*) from (select distinct string from strings) where string like '%java%')),
+('b', '', '', '', (SELECT GROUP_CONCAT(string) FROM (SELECT DISTINCT string FROM strings ORDER BY string)))
+       ;
 ---------------------------------------------------------------
 
 -- Save results to ./output.json (needed by the online test-runner)
