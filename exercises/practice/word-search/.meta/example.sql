@@ -31,54 +31,54 @@ CREATE TEMPORARY TABLE strings (
   string TEXT NOT NULL,
   array  TEXT NOT NULL
 );
-INSERT INTO strings (grid, string, array)
-SELECT grid,
-       GROUP_CONCAT(chr, ''),
-       JSON_GROUP_ARRAY(JSON_ARRAY(chr, JSON_ARRAY(row, col)))
-  FROM (
-    SELECT grid, chr, row, col
-      FROM letters
-     ORDER BY row ASC, col ASC
-  )
- GROUP BY grid, row
-HAVING LENGTH(GROUP_CONCAT(chr, '')) > 1
-;
-INSERT INTO strings (grid, string, array)
-SELECT grid,
-       GROUP_CONCAT(chr, ''),
-       JSON_GROUP_ARRAY(JSON_ARRAY(chr, JSON_ARRAY(row, col)))
-  FROM (
-    SELECT grid, chr, row, col
-      FROM letters
-     ORDER BY row DESC, col DESC
-  )
- GROUP BY grid, row
-HAVING LENGTH(GROUP_CONCAT(chr, '')) > 1
-;
-INSERT INTO strings (grid, string, array)
-SELECT grid,
-       GROUP_CONCAT(chr, ''),
-       JSON_GROUP_ARRAY(JSON_ARRAY(chr, JSON_ARRAY(row, col)))
-  FROM (
-    SELECT grid, chr, row, col
-      FROM letters
-     ORDER BY col ASC, row ASC
-  )
- GROUP BY grid, col
-HAVING LENGTH(GROUP_CONCAT(chr, '')) > 1
-;
-INSERT INTO strings (grid, string, array)
-SELECT grid,
-       GROUP_CONCAT(chr, ''),
-       JSON_GROUP_ARRAY(JSON_ARRAY(chr, JSON_ARRAY(row, col)))
-  FROM (
-    SELECT grid, chr, row, col
-      FROM letters
-     ORDER BY col DESC, row DESC
-  )
- GROUP BY grid, col
-HAVING LENGTH(GROUP_CONCAT(chr, '')) > 1
-;
+-- INSERT INTO strings (grid, string, array)
+-- SELECT grid,
+--        GROUP_CONCAT(chr, ''),
+--        JSON_GROUP_ARRAY(JSON_ARRAY(chr, JSON_ARRAY(row, col)))
+--   FROM (
+--     SELECT grid, chr, row, col
+--       FROM letters
+--      ORDER BY row ASC, col ASC
+--   )
+--  GROUP BY grid, row
+-- HAVING LENGTH(GROUP_CONCAT(chr, '')) > 1
+-- ;
+-- INSERT INTO strings (grid, string, array)
+-- SELECT grid,
+--        GROUP_CONCAT(chr, ''),
+--        JSON_GROUP_ARRAY(JSON_ARRAY(chr, JSON_ARRAY(row, col)))
+--   FROM (
+--     SELECT grid, chr, row, col
+--       FROM letters
+--      ORDER BY row DESC, col DESC
+--   )
+--  GROUP BY grid, row
+-- HAVING LENGTH(GROUP_CONCAT(chr, '')) > 1
+-- ;
+-- INSERT INTO strings (grid, string, array)
+-- SELECT grid,
+--        GROUP_CONCAT(chr, ''),
+--        JSON_GROUP_ARRAY(JSON_ARRAY(chr, JSON_ARRAY(row, col)))
+--   FROM (
+--     SELECT grid, chr, row, col
+--       FROM letters
+--      ORDER BY col ASC, row ASC
+--   )
+--  GROUP BY grid, col
+-- HAVING LENGTH(GROUP_CONCAT(chr, '')) > 1
+-- ;
+-- INSERT INTO strings (grid, string, array)
+-- SELECT grid,
+--        GROUP_CONCAT(chr, ''),
+--        JSON_GROUP_ARRAY(JSON_ARRAY(chr, JSON_ARRAY(row, col)))
+--   FROM (
+--     SELECT grid, chr, row, col
+--       FROM letters
+--      ORDER BY col DESC, row DESC
+--   )
+--  GROUP BY grid, col
+-- HAVING LENGTH(GROUP_CONCAT(chr, '')) > 1
+-- ;
 
 WITH
   bounds (grid, mrow, mcol) AS (
