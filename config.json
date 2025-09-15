@@ -627,6 +627,14 @@
         "difficulty": 8
       },
       {
+        "slug": "word-search",
+        "name": "Word Search",
+        "uuid": "3d82c7c8-0988-438b-b9db-345c9eb61250",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "wordy",
         "name": "Wordy",
         "uuid": "b013d306-2212-44b6-abfb-5523a1b54c65",
