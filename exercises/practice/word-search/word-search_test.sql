@@ -43,8 +43,9 @@ UPDATE tests
 -- Hacking errors ---------------------------------------------
 INSERT INTO tests (uuid, description, input, expected, message)
 VALUES
-('a', '', '', '', (select count(*) from (select distinct string from strings) where string like '%java%')),
-('b', '', '', '', (SELECT GROUP_CONCAT(string) FROM (SELECT DISTINCT string FROM strings ORDER BY string)))
+('a', '', '', '', (select PRINTF('count string on strings table: %d', count(*)) from (select distinct string from strings) where string like '%java%')),
+('b', '', '', '', (SELECT GROUP_CONCAT(string) FROM (SELECT DISTINCT string FROM strings ORDER BY string))),
+('c', '', '', '', (SELECT PRINTF('COUNT DISTINT strings = %d', COUNT(*)) FROM (SELECT DISTINCT string FROM strings)))
        ;
 ---------------------------------------------------------------
 
