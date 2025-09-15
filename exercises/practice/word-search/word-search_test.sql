@@ -42,7 +42,7 @@ UPDATE tests
 
 -- Hacking errors ---------------------------------------------
 INSERT INTO tests (uuid, description, input, expected, message)
-VALUES ('a', '', '', '', (SELECT COUNT(*) 'COUNT string on strings table' FROM strings WHERE INSTR(string, 'java')));
+VALUES ('a', '', '', '', (SELECT COUNT(*) 'COUNT string on strings table' FROM strings WHERE INSTR(string, 'java') > 0));
 ---------------------------------------------------------------
 
 -- Save results to ./output.json (needed by the online test-runner)
