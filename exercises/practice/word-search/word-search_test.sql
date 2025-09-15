@@ -127,7 +127,91 @@ SELECT PRINTF('COUNT diagonal strings = %d', COUNT(*)) FROM (
 SELECT * FROM straigh
  UNION ALL
 SELECT * FROM reverse
-  )))
+))),
+('e', '', '', '', (
+WITH
+  bounds (grid, mrow, mcol) AS (
+    SELECT grid, MAX(row), MAX(col)
+      FROM letters
+     GROUP BY grid
+  ),
+  starts AS (
+    SELECT grid,
+           gr.value row,
+           gc.value col
+      FROM bounds, GENERATE_SERIES(0, mrow) gr, GENERATE_SERIES(0, mcol) gc
+  ),
+  r2l_coords AS (
+    SELECT grid,
+           JSON_GROUP_ARRAY(JSON(coord)) AS coords
+      FROM (
+        SELECT DISTINCT
+          starts.grid,
+          row,
+          col,
+          JSON_ARRAY(row + g.value, col + g.value) coord
+          FROM bounds, starts, GENERATE_SERIES(0, mrow) g
+         WHERE bounds.grid = starts.grid
+           AND row + g.value <= mrow
+           AND col + g.value <= mcol
+      )
+     GROUP BY grid, row, col
+    HAVING JSON_ARRAY_LENGTH(coords) > 1
+  ),
+  l2r_coords AS (
+    SELECT grid,
+           JSON_GROUP_ARRAY(JSON(coord)) AS coords
+      FROM (
+        SELECT DISTINCT
+          starts.grid,
+          row,
+          col,
+          g.value,
+          JSON_ARRAY(row + g.value, col - g.value) coord
+          FROM bounds, starts, GENERATE_SERIES(0, mrow) g
+         WHERE bounds.grid = starts.grid
+           AND row + g.value <= mrow
+           AND col - g.value >= 0
+      )
+     GROUP BY grid, row, col
+    HAVING JSON_ARRAY_LENGTH(coords) > 1
+  ),
+  chrs AS (
+    SELECT letters.*,
+           JSON_ARRAY(letters.row, letters.col) AS row_col,
+           r2l_coords.coords
+      FROM letters, r2l_coords
+     WHERE letters.grid = r2l_coords.grid
+       AND row_col IN ((SELECT j.value FROM JSON_EACH(coords) j))
+     UNION ALL
+    SELECT letters.*,
+           JSON_ARRAY(letters.row, letters.col) AS row_col,
+           l2r_coords.coords
+      FROM letters, l2r_coords
+     WHERE letters.grid = l2r_coords.grid
+       AND row_col IN ((SELECT j.value FROM JSON_EACH(coords) j))
+  ),
+  straigh AS (
+    SELECT grid,
+           GROUP_CONCAT(chr, '') AS string,
+           JSON_GROUP_ARRAY(JSON_ARRAY(chr, JSON_ARRAY(row, col))) array
+      FROM (SELECT * FROM chrs ORDER BY grid, row_col ASC)
+     GROUP BY grid, coords
+  ),
+  reverse AS (
+    SELECT grid,
+           GROUP_CONCAT(chr, '') AS string,
+           JSON_GROUP_ARRAY(JSON_ARRAY(chr, JSON_ARRAY(row, col))) array
+      FROM (SELECT * FROM chrs ORDER BY grid, row_col DESC)
+     GROUP BY grid, coords
+  )
+SELECT PRINTF('COUNT diagonal strings for specific string = %d', COUNT(*)) FROM (
+SELECT * FROM straigh
+ UNION ALL
+SELECT * FROM reverse
+)
+ WHERE INSTR(string, 'java')
+))
        ;
 ---------------------------------------------------------------
 
