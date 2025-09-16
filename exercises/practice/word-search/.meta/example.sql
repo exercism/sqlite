@@ -142,14 +142,14 @@ WITH
      WHERE letters.grid = l2r_coords.grid
        AND row_col IN ((SELECT j.value FROM JSON_EACH(coords) j))
   ),
-  straigh AS (
+  straight AS (
     SELECT grid,
            GROUP_CONCAT(chr, '') AS string,
            JSON_GROUP_ARRAY(JSON_ARRAY(chr, JSON_ARRAY(row, col))) array
       FROM (SELECT * FROM chrs ORDER BY grid, row_col ASC)
      GROUP BY grid, coords
   ),
-  reverse AS (
+  reversed AS (
     SELECT grid,
            GROUP_CONCAT(chr, '') AS string,
            JSON_GROUP_ARRAY(JSON_ARRAY(chr, JSON_ARRAY(row, col))) array
@@ -157,9 +157,9 @@ WITH
      GROUP BY grid, coords
   )
 INSERT INTO strings (grid, string, array)
-SELECT * FROM straigh
+SELECT * FROM straight
  UNION ALL
-SELECT * FROM reverse
+SELECT * FROM reversed
 ;
 
 WITH
