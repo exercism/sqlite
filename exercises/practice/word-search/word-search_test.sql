@@ -91,21 +91,25 @@ VALUES
      GROUP BY grid, row, col
     HAVING JSON_ARRAY_LENGTH(coords) > 1
   ),
-  chrs AS (
+    chrs AS (
+      SELECT * FROM (
     SELECT letters.*,
            JSON_ARRAY(letters.row, letters.col) AS row_col,
            r2l_coords.coords
       FROM letters, r2l_coords
      WHERE letters.grid = r2l_coords.grid
        AND row_col IN ((SELECT j.value FROM JSON_EACH(coords) j))
-     UNION ALL
+)
+       UNION ALL
+      SELECT * FROM (
     SELECT letters.*,
            JSON_ARRAY(letters.row, letters.col) AS row_col,
            l2r_coords.coords
       FROM letters, l2r_coords
      WHERE letters.grid = l2r_coords.grid
        AND row_col IN ((SELECT j.value FROM JSON_EACH(coords) j))
-  ),
+      )
+             ),
   straight AS (
     SELECT grid,
            GROUP_CONCAT(chr, '') AS string,
@@ -120,7 +124,7 @@ VALUES
       FROM (SELECT * FROM chrs ORDER BY grid, row_col DESC)
      GROUP BY grid, coords
   )
-  SELECT COUNT(*) FROM l2r_coords
+  SELECT COUNT(*) FROM chrs
 ) )
        ;
 ---------------------------------------------------------------
