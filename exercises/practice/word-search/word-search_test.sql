@@ -120,7 +120,7 @@ VALUES
       FROM (SELECT * FROM chrs ORDER BY grid, row_col DESC)
      GROUP BY grid, coords
   )
-      SELECT JSON_GROUP_OBJECT(grid, JSON_OBJECT('string', string, 'array', ARRAY)) FROM straight
+  SELECT COUNT(*) FROM chrs
 ) )
        ;
 ---------------------------------------------------------------
