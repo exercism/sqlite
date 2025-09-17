@@ -371,6 +371,14 @@
         "difficulty": 8
       },
       {
+        "slug": "bowling",
+        "name": "Bowling",
+        "uuid": "ef97039a-4f03-42dc-a44c-9dbc4fb8f03b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "collatz-conjecture",
         "name": "Collatz Conjecture",
         "uuid": "b2644e1e-aa52-4503-80e6-cbac1c5b0f06",

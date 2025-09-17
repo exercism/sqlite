@@ -1,0 +1,10 @@
+-- Schema:
+-- CREATE TABLE bowling (
+--   property       TEXT NOT NULL,
+--   previous_rolls TEXT NOT NULL, -- json aray
+--   roll           INTEGER      ,
+--   result         INTEGER      ,
+--   error          TEXT
+-- );
+--
+-- Task: update the bowling table and result the result or the error columns based on the property, the previous_rolls and the roll.
