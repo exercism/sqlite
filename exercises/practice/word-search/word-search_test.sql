@@ -97,14 +97,14 @@ VALUES
            r2l_coords.coords
       FROM letters, r2l_coords
      WHERE letters.grid = r2l_coords.grid
-       AND row_col IN ((SELECT j.value FROM JSON_EACH(coords) j))
+       AND JSON(row_col) IN ((SELECT JSON(j.value) FROM JSON_EACH(coords) j))
        UNION ALL
     SELECT letters.*,
            JSON_ARRAY(letters.row, letters.col) AS row_col,
            l2r_coords.coords
       FROM letters, l2r_coords
      WHERE letters.grid = l2r_coords.grid
-       AND row_col IN ((SELECT j.value FROM JSON_EACH(coords) j))
+       AND JSON(row_col) IN ((SELECT JSON(j.value) FROM JSON_EACH(coords) j))
     ),
   straight AS (
     SELECT grid,
@@ -120,7 +120,7 @@ VALUES
       FROM (SELECT * FROM chrs ORDER BY grid, row_col DESC)
      GROUP BY grid, coords
   )
-  SELECT JSON_GROUP_OBJECT(grid, JSON(coords)) FROM r2l_coords
+  SELECT COUNT(*) FROM chrs
 ) )
        ;
 ---------------------------------------------------------------
