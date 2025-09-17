@@ -120,7 +120,7 @@ VALUES
       FROM (SELECT * FROM chrs ORDER BY grid, row_col DESC)
      GROUP BY grid, coords
   )
-  SELECT COUNT(*) FROM chrs
+  SELECT COUNT(*) FROM letters
 ) )
        ;
 ---------------------------------------------------------------
