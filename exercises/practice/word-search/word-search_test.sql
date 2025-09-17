@@ -293,7 +293,11 @@ SELECT GROUP_CONCAT(string) FROM (
 SELECT * FROM straigh
  UNION ALL
 SELECT * FROM reverse
-)))
+))),
+('g', '', '', '', (
+SELECT JSON_GROUP_OBJECT(grid, JSON_OBJECT('mrow', mrow, 'mcol', mcol))
+  FROM (SELECT grid, MAX(row) mrow, MAX(col) mcol FROM letters GROUP BY grid)
+))
        ;
 ---------------------------------------------------------------
 
