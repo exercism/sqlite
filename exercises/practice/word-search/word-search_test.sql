@@ -92,19 +92,19 @@ VALUES
     HAVING JSON_ARRAY_LENGTH(coords) > 1
   ),
     chrs AS (
-    SELECT letters.grid, letters.chr, letters.row, letters.col,
+    SELECT letters.*,
            JSON_ARRAY(letters.row, letters.col) AS row_col,
            r2l_coords.coords
       FROM letters, r2l_coords
      WHERE letters.grid = r2l_coords.grid
-       AND row_col IN ((SELECT j.value FROM JSON_EACH(coords) j))
+       AND row_col NOT IN ((SELECT j.value FROM JSON_EACH(coords) j))
        UNION ALL
-    SELECT letters.grid, letters.chr, letters.row, letters.col,
+    SELECT letters.*,
            JSON_ARRAY(letters.row, letters.col) AS row_col,
            l2r_coords.coords
       FROM letters, l2r_coords
      WHERE letters.grid = l2r_coords.grid
-       AND row_col IN ((SELECT j.value FROM JSON_EACH(coords) j))
+       AND row_col NOT IN ((SELECT j.value FROM JSON_EACH(coords) j))
     ),
   straight AS (
     SELECT grid,
