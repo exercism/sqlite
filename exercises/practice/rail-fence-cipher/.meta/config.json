@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "jimmytty"
+  ],
+  "files": {
+    "solution": [
+      "rail-fence-cipher.sql"
+    ],
+    "test": [
+      "rail-fence-cipher_test.sql"
+    ],
+    "example": [
+      ".meta/example.sql"
+    ]
+  },
+  "blurb": "Implement encoding and decoding for the rail fence cipher.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Transposition_cipher#Rail_Fence_cipher"
+}

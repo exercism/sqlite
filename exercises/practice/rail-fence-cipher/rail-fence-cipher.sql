@@ -1,0 +1,9 @@
+-- Schema:
+-- CREATE TABLE "rail-fence-cipher" (
+--   property TEXT    NOT NULL,
+--   msg      TEXT    NOT NULL,
+--   rails    INTEGER NOT NULL,
+--   result   text
+-- );
+--
+-- Task: update the rail-fence-cipher table and set the result column based on the property, the msg and the rails.
