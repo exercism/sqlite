@@ -507,6 +507,14 @@
         "difficulty": 8
       },
       {
+        "slug": "rail-fence-cipher",
+        "name": "Rail Fence Cipher",
+        "uuid": "7ca6ff97-ea27-450e-96dd-c39b9410c491",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "rest-api",
         "name": "REST API",
         "uuid": "51275817-1b95-48d9-b7ab-bbbf8720acb7",
