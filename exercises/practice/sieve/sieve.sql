@@ -5,4 +5,4 @@
 -- );
 --
 -- Task: update the sieve table and set the result column based on the limit.
---       * the result column must be filled with a string of prime numbers separated by ", ". Example: 2, 3.
+-- The result column must contain a string of prime numbers separated by ", ". For example, "2, 3".
