@@ -1,0 +1,8 @@
+-- Schema:
+-- CREATE TABLE sieve (
+--   "limit" INTEGER NOT NULL,
+--   result  TEXT
+-- );
+--
+-- Task: update the sieve table and set the result column based on the limit.
+-- The result column must contain a string of prime numbers separated by ", ". For example, "2, 3".

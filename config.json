@@ -603,6 +603,14 @@
         "difficulty": 8
       },
       {
+        "slug": "sieve",
+        "name": "Sieve",
+        "uuid": "285ad81c-e27b-4fe4-a2f6-36c9c502b62d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "state-of-tic-tac-toe",
         "name": "State of Tic-Tac-Toe",
         "uuid": "430f765b-090a-4d91-997e-9d23b59da50d",
