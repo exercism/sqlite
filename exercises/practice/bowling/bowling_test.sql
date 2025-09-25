@@ -13,11 +13,11 @@
 -- Comparison of user input and the tests updates the status for each test:
 UPDATE tests
    SET status = 'pass'
-  FROM (SELECT property, previous_rolls, roll, result, error
+  FROM (SELECT previous_rolls, roll, result, error
           FROM bowling
        ) AS actual
- WHERE (actual.property, actual.previous_rolls, COALESCE(actual.roll, '')) =
-       ( tests.property, tests.previous_rolls,  COALESCE( tests.roll, ''))
+ WHERE (actual.previous_rolls, COALESCE(actual.roll, '')) =
+       ( tests.previous_rolls, COALESCE( tests.roll, ''))
    AND (actual.result = tests.expected_result
         OR (actual.result ISNULL AND tests.expected_result ISNULL))
    AND (actual.error = tests.expected_error
@@ -28,9 +28,8 @@ UPDATE tests
 UPDATE tests
    SET message = (
          'Result for "' ||
-         PRINTF('property=%s, previous_rolls=%s',
-                actual.property, actual.previous_rolls) ||
-         IIF(actual.property = 'roll',
+         PRINTF('previous_rolls=%s', actual.previous_rolls) ||
+         IIF(actual.roll NOTNULL,
              PRINTF(', roll=%s', actual.roll),
              ''
          )||
@@ -44,11 +43,11 @@ UPDATE tests
                 COALESCE(tests.expected_error, 'NULL')) ||
          '>'
        )
-  FROM (SELECT property, previous_rolls, roll, result, error
+  FROM (SELECT previous_rolls, roll, result, error
           FROM bowling
        ) AS actual
- WHERE (actual.property, actual.previous_rolls, COALESCE(actual.roll, '')) =
-       ( tests.property, tests.previous_rolls,  COALESCE( tests.roll, ''))
+ WHERE (actual.previous_rolls, COALESCE(actual.roll, '')) =
+       ( tests.previous_rolls, COALESCE( tests.roll, ''))
    AND tests.status = 'fail';
 
 -- Save results to ./output.json (needed by the online test-runner)

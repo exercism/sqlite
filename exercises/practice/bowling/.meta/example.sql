@@ -2,7 +2,7 @@ UPDATE bowling
    SET error = 'Negative roll is invalid'
  WHERE (SELECT 1
           FROM JSON_EACH(
-                 IIF(property = 'roll',
+                 IIF(roll NOTNULL,
                      JSON_INSERT(previous_rolls, '$[#]', roll),
                      previous_rolls
                 )
@@ -16,7 +16,7 @@ UPDATE bowling
    SET error = 'Pin count exceeds pins on the lane'
  WHERE (SELECT 1
           FROM JSON_EACH(
-                 IIF(property = 'roll',
+                 IIF(roll NOTNULL,
                      JSON_INSERT(previous_rolls, '$[#]', roll),
                      previous_rolls
                 )
@@ -33,7 +33,7 @@ CREATE TEMPORARY TABLE tmp (
 );
 
 WITH cte (prevrolls) AS (
-  SELECT IIF(property = 'roll',
+  SELECT IIF(roll NOTNULL,
              JSON_INSERT(previous_rolls, '$[#]', roll),
              previous_rolls
          )
@@ -90,7 +90,7 @@ WITH cte (rolls, error) AS (
 UPDATE bowling
    SET error = cte.error
   FROM cte
- WHERE IIF(property = 'roll',
+ WHERE IIF(roll NOTNULL,
            JSON_INSERT(previous_rolls, '$[#]', roll),
            previous_rolls
        ) = cte.rolls
@@ -100,11 +100,11 @@ UPDATE bowling
 UPDATE bowling
    SET error = 'Score cannot be taken until the end of the game'
   FROM tmp
- WHERE IIF(property = 'roll',
+ WHERE IIF(roll NOTNULL,
            JSON_INSERT(previous_rolls, '$[#]', roll),
            previous_rolls
        ) = tmp.rolls
-   AND property = 'score'
+   AND roll ISNULL
    AND bowling.error ISNULL
    AND (JSON_ARRAY_LENGTH(frames) < 10
         OR (
@@ -120,11 +120,10 @@ UPDATE bowling
 UPDATE bowling
    SET error = 'Cannot roll after game is over'
   FROM tmp
- WHERE IIF(property = 'roll',
-             JSON_INSERT(previous_rolls, '$[#]', roll),
-             previous_rolls
+ WHERE IIF(roll NOTNULL,
+           JSON_INSERT(previous_rolls, '$[#]', roll),
+           previous_rolls
        ) = tmp.rolls
-   AND property = 'roll'
    AND bowling.error ISNULL
    AND JSON_ARRAY_LENGTH(frames) > 10
    AND (
@@ -157,7 +156,7 @@ WITH cte (rolls, score) AS (
 UPDATE bowling
    SET result = score
   FROM cte
- WHERE IIF(property = 'roll',
+ WHERE IIF(roll NOTNULL,
            JSON_INSERT(previous_rolls, '$[#]', roll),
            previous_rolls
        ) = cte.rolls
