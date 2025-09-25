@@ -1,0 +1,9 @@
+-- Schema:
+-- CREATE TABLE bowling (
+--   previous_rolls TEXT NOT NULL, -- json aray
+--   roll           INTEGER      ,
+--   result         INTEGER      ,
+--   error          TEXT
+-- );
+--
+-- Task: update the bowling table and set the result or the error columns based on the previous_rolls and the roll.
