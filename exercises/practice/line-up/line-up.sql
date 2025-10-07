@@ -1,0 +1,8 @@
+-- Schema:
+-- CREATE TABLE "line-up" (
+--   name   TEXT    NOT NULL,
+--   number INTEGER NOT NULL,
+--   result TEXT
+-- );
+--
+-- Task: Update the line-up table and set the result column based on the name and the number.
