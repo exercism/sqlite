@@ -10,6 +10,15 @@ VALUES
     'Hello, World!'
   );
 
+.mode csv
+.output user_output.csv
+.read hello-world.sql
+.output
+
+DROP TABLE IF EXISTS hello_world;
+CREATE TABLE hello_world (greeting TEXT);
+.import user_output.csv hello_world
+
 -- Comparison of user input and the tests updates the status for each test:
 UPDATE tests
 SET

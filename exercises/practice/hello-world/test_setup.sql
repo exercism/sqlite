@@ -1,7 +1,7 @@
 -- Create database:
 .read ./create_fixture.sql
 -- Read user student solution and save any output as markdown in user_output.md:
-.mode markdown
+.mode list
 .output user_output.md
 .read ./hello-world.sql
 .output
