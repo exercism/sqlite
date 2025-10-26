@@ -716,6 +716,13 @@
       "icon": "small"
     }
   ],
+  "concepts": [
+    {
+      "uuid": "92187df0-fb68-4b46-af3b-cc17c2ef6fbc",
+      "slug": "select",
+      "name": "SELECT"
+    }
+  ],
   "tags": [
     "execution_mode/interpreted",
     "platform/linux",
