@@ -76,8 +76,8 @@ Seattle   57.8
 Boise     62.0       
 ```
 
-
-Note that the `FROM` clause is optional.
+~~~~exercism/note
+The `FROM` clause is optional.
 A statement like `SELECT "Hello, world.";` is perfectly valid, and will generate the following result:
 
 ```
@@ -85,6 +85,7 @@ A statement like `SELECT "Hello, world.";` is perfectly valid, and will generate
 ---------------
 Hello, world. 
 ```
+~~~~
 
 ## Filtering data with the WHERE clause
 
@@ -124,7 +125,7 @@ date        location  temperature  humidity
 
 
 In addition to `=` and `BETWEEN...AND`, the `WHERE` clause supports a wide range of expressions, including comparison (`<`, `<=`, `>`, `>=`), pattern matching (`LIKE`, `GLOB`, `REGEXP`, `MATCH`), and checking for membership in a list (`IN`, `NOT IN`).
-See [SQL Language Expressions](https://sqlite.org/lang_expr.html) for the complete documentation.
+See [SQL Language Expressions](sql-expr) for the complete documentation.
 
 
 ## Handling duplicate data
@@ -163,3 +164,5 @@ Portland
 Seattle 
 Boise   
 ```
+
+[sql-expr]: https://sqlite.org/lang_expr.html
