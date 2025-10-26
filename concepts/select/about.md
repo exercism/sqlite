@@ -1,6 +1,7 @@
 # The SELECT statement
 
-When you want to retrieve data from a database, you issue a query.  In SQL, you issue a query using the `SELECT` statement.  The result of a `SELECT` statement is a dataset -- some number of values arranged in rows and columns, where each column is a particular attribute of the data and each row is a set of values for each column.
+In SQL, a `SELECT` statement allows you to retrieve data from a database.
+The result of a `SELECT` statement is a dataset -- some number of values arranged in rows and columns, where each column is a particular attribute of the data and each row is a set of values for each column.
 
 Roughly, you can think of the set of columns as a data structure, where each column represents a field of the data structure, and each row represents a concrete instance of the data structure.
 
@@ -20,12 +21,14 @@ WHERE <criteria>;
 Note that the line breaks are not required; any spacing will suffice to separate the different
 clauses (i.e. parts) of the `SELECT` statement.
 
-Immediately following the `SELECT` keyword is a list of the columns that you want in the result.  The `FROM` clause identifies the source of the data, which is typically a table in the database.  The `WHERE` clause filters the output data by one or more criteria.
+Immediately following the `SELECT` keyword is a list of the columns that you want in the result.
+The `FROM` clause identifies the source of the data, which is typically a table in the database.
+The `WHERE` clause filters the output data by one or more criteria.
 
 For example, consider a database with a table named `weather_readings` containing the following data:
 
 
-| date       | place        | temperature | humidity |
+| date       | location     | temperature | humidity |
 |------------|--------------|-------------|----------|
 | 2025-10-22 | Portland     | 53.1        | 72       |
 | 2025-10-22 | Seattle      | 56.2        | 66       |
@@ -44,7 +47,7 @@ SELECT * FROM weather_readings;
 Result:
 
 ```
-date        place     temperature  humidity
+date        location  temperature  humidity
 ----------  --------  -----------  --------
 2025-10-22  Portland  53.1         72      
 2025-10-22  Seattle   56.2         66      
@@ -54,16 +57,16 @@ date        place     temperature  humidity
 2025-10-23  Boise     62.0         58   
 ```
 
-But if we only want the place and temperature values, we could specify those columns:
+But if we only want the location and temperature values, we could specify those columns:
 
 ```sql
-SELECT place, temperature FROM weather_readings;
+SELECT location, temperature FROM weather_readings;
 ```
 
 Result:
 
 ```
-place     temperature
+location  temperature
 --------  -----------
 Portland  53.1          
 Seattle   56.2          
@@ -74,7 +77,8 @@ Boise     62.0
 ```
 
 
-Note that the `FROM` clause is optional.  A statement like `SELECT "Hello, world.";` is perfectly valid, and will generate the following result:
+Note that the `FROM` clause is optional.
+A statement like `SELECT "Hello, world.";` is perfectly valid, and will generate the following result:
 
 ```
 "Hello, world."
@@ -89,12 +93,12 @@ For example, if we only want weather data for Seattle:
 
 ```sql
 SELECT * FROM weather_readings
-WHERE place = "Seattle";
+WHERE location = "Seattle";
 ```
 
 Result:
 ```
-date        place     temperature  humidity
+date        location  temperature  humidity
 ----------  --------  -----------  --------
 2025-10-22  Seattle   56.2         66      
 2025-10-23  Seattle   57.8         68      
@@ -111,7 +115,7 @@ WHERE humidity BETWEEN 60 AND 70;
 
 Result:
 ```
-date        place     temperature  humidity
+date        location  temperature  humidity
 ----------  --------  -----------  --------
 2025-10-22  Seattle   56.2         66   
 2025-10-23  Seattle   57.8         68      
@@ -119,22 +123,24 @@ date        place     temperature  humidity
 ```
 
 
-In addition to `=` and `BETWEEN...AND`, the `WHERE` clause supports a wide range of expressions, including comparison (`<`, `<=`, `>`, `>=`), pattern matching (`LIKE`, `GLOB`, `REGEXP`, `MATCH`), and checking for membership in a list (`IN`, `NOT IN`).  See [SQL Language Expressions](https://sqlite.org/lang_expr.html) for the complete documentation.
+In addition to `=` and `BETWEEN...AND`, the `WHERE` clause supports a wide range of expressions, including comparison (`<`, `<=`, `>`, `>=`), pattern matching (`LIKE`, `GLOB`, `REGEXP`, `MATCH`), and checking for membership in a list (`IN`, `NOT IN`).
+See [SQL Language Expressions](https://sqlite.org/lang_expr.html) for the complete documentation.
 
 
 ## Handling duplicate data
 
-Sometimes it is useful to filter out duplicate items in the output data.  For example, let's say we
-want to get a list of all the cities for which we have readings.  If we run the following query
+Sometimes it is useful to filter out duplicate items in the output data.
+For example, let's say we want to get a list of all the cities for which we have readings.
+If we run the following query:
 
 ```sql
-SELECT place FROM weather_readings;
+SELECT location FROM weather_readings;
 ```
 
 we would get the following result:
 
 ```
-place   
+location   
 --------
 Portland
 Seattle 
@@ -144,14 +150,14 @@ Seattle
 Boise   
 ```
 
-By using the `DISTINCT` keyword in our query, we can reduce the result to the set of unique place names:
+By using the `DISTINCT` keyword in our query, we can reduce the result to the set of unique location names:
 
 ```sql
-SELECT DISTINCT place FROM weather_readings;
+SELECT DISTINCT location FROM weather_readings;
 ```
 
 ```
-place   
+location   
 --------
 Portland
 Seattle 
