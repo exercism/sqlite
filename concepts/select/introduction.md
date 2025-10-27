@@ -1,7 +1,7 @@
 # The SELECT statement
 
 In SQL, a `SELECT` statement allows you to retrieve data from a database.
-The result of a `SELECT` statement is a dataset -- some number of values arranged in rows and columns, where each column is a particular attribute of the data and each row is a set of values for each column.
+The result of a `SELECT` statement is a result set -- some number of values arranged in rows and columns, where each column is a particular attribute of the data and each row is a set of values for each column.
 
 Roughly, you can think of the set of columns as a data structure, where each column represents a field of the data structure, and each row represents a concrete instance of the data structure.
 
@@ -127,42 +127,5 @@ date        location  temperature  humidity
 In addition to `=` and `BETWEEN...AND`, the `WHERE` clause supports a wide range of expressions, including comparison (`<`, `<=`, `>`, `>=`), pattern matching (`LIKE`, `GLOB`, `REGEXP`, `MATCH`), and checking for membership in a list (`IN`, `NOT IN`).
 See [SQL Language Expressions](sql-expr) for the complete documentation.
 
-
-## Handling duplicate data
-
-Sometimes it is useful to filter out duplicate items in the output data.
-For example, let's say we want to get a list of all the cities for which we have readings.
-If we run the following query:
-
-```sql
-SELECT location FROM weather_readings;
-```
-
-we would get the following result:
-
-```
-location   
---------
-Portland
-Seattle 
-Boise   
-Portland
-Seattle 
-Boise   
-```
-
-By using the `DISTINCT` keyword in our query, we can reduce the result to the set of unique location names:
-
-```sql
-SELECT DISTINCT location FROM weather_readings;
-```
-
-```
-location   
---------
-Portland
-Seattle 
-Boise   
-```
 
 [sql-expr]: https://sqlite.org/lang_expr.html
