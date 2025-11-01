@@ -14,8 +14,7 @@ SELECT location, temperature FROM weather_readings;
 .print "Greeting"
 .print "========"
 .print
--- This one will fail on purpose
-SELECT 'Hello, world.' AS say_hi;
+SELECT 'Hello, world.';
 
 .print 
 .print "Data for Seattle"
