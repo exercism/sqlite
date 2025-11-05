@@ -1,16 +1,11 @@
 -- Create database:
 .read ./create_fixture.sql
 
-.mode columns
-
--- Generate expected output
-.output expected_output.txt
-.read ./intro-select_exemplar.sql
+.mode json
 
 -- Run user solution
 .output user_output.txt
 .read ./intro-select.sql
 
 -- Compare expected vs actual
-.shell diff expected_output.txt user_output.txt
-
+.shell python evaluate.py test_data.json user_output.txt

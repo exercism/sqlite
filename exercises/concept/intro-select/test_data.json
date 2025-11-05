@@ -1,0 +1,64 @@
+[
+    {
+        "description": "ALL records => SELECT * FROM weather_readings", 
+        "expected": [
+            {"date":"2025-10-22","location":"Portland","temperature":53.1,"humidity":72},
+            {"date":"2025-10-22","location":"Seattle","temperature":56.2,"humidity":66},
+            {"date":"2025-10-22","location":"Boise","temperature":60.4,"humidity":55},
+            {"date":"2025-10-23","location":"Portland","temperature":54.6,"humidity":70},
+            {"date":"2025-10-23","location":"Seattle","temperature":57.79999999999999,"humidity":68},
+            {"date":"2025-10-23","location":"Boise","temperature":62.0,"humidity":58}
+        ]
+    },
+    {
+        "description": "Just location and temperature columns => SELECT location, temperature FROM weather_readings",
+        "expected": [
+            {"location":"Portland","temperature":53.1},
+            {"location":"Seattle","temperature":56.2},
+            {"location":"Boise","temperature":60.4},
+            {"location":"Portland","temperature":54.6},
+            {"location":"Seattle","temperature":57.79999999999999},
+            {"location":"Boise","temperature":62.0}
+        ]
+    },
+    {
+        "description": "Without \"FROM\" => SELECT 'Hello, world.'",
+        "expected": [
+            {"'Hello, world.'":"Hello, world."}
+        ]
+    },
+    {
+        "description": "All records from Seatle location => SELECT * FROM weather_readings WHERE location = 'Seattle'",
+        "expected": [
+            {"date":"2025-10-22","location":"Seattle","temperature":56.2,"humidity":66},
+            {"date":"2025-10-23","location":"Seattle","temperature":57.79999999999999,"humidity":68}
+        ]
+    },
+        {
+        "description": "All records where humidity in range => SELECT * FROM weather_readings WHERE humidity BETWEEN 60 AND 70",
+        "expected": [
+            {"date":"2025-10-22","location":"Seattle","temperature":56.2,"humidity":66},
+            {"date":"2025-10-23","location":"Portland","temperature":54.6,"humidity":70},
+            {"date":"2025-10-23","location":"Seattle","temperature":57.79999999999999,"humidity":68}
+        ]
+    },
+    {
+        "description": "Just location column => SELECT location FROM weather_readings",
+        "expected": [
+            {"location":"Portland"},
+            {"location":"Seattle"},
+            {"location":"Boise"},
+            {"location":"Portland"},
+            {"location":"Seattle"},
+            {"location":"Boise"}
+        ]
+    },
+    {
+        "description": "Only unique locations => SELECT DISTINCT location FROM weather_readings",
+        "expected": [
+            {"location":"Portland"},
+            {"location":"Seattle"},
+            {"location":"Boise"}
+        ]
+    }
+]
