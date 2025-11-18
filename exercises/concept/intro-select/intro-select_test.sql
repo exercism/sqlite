@@ -1,11 +1,13 @@
 -- Create database:
 .read ./create_fixture.sql
 
-.mode json
+-- ASK: How can we correlate user output with specific tests?
+
+-- Store test data
+.read ./store_test_data.sql
 
 -- Run user solution
-.output user_output.txt
 .read ./intro-select.sql
 
--- Compare expected vs actual
-.shell python evaluate.py test_data.json user_output.txt
+-- TODO: Compare expected vs actual among each of the slug values in test_data
+--       Compare columns first; if columns are equal, then compare rows
