@@ -6,7 +6,7 @@
             {"date":"2025-10-22","location":"Seattle","temperature":56.2,"humidity":66},
             {"date":"2025-10-22","location":"Boise","temperature":60.4,"humidity":55},
             {"date":"2025-10-23","location":"Portland","temperature":54.6,"humidity":70},
-            {"date":"2025-10-23","location":"Seattle","temperature":57.79999999999999,"humidity":68},
+            {"date":"2025-10-23","location":"Seattle","temperature":57.5,"humidity":68},
             {"date":"2025-10-23","location":"Boise","temperature":62.0,"humidity":58}
         ]
     },
@@ -17,7 +17,7 @@
             {"location":"Seattle","temperature":56.2},
             {"location":"Boise","temperature":60.4},
             {"location":"Portland","temperature":54.6},
-            {"location":"Seattle","temperature":57.79999999999999},
+            {"location":"Seattle","temperature":57.5},
             {"location":"Boise","temperature":62.0}
         ]
     },
@@ -31,7 +31,7 @@
         "description": "All records from Seatle location => SELECT * FROM weather_readings WHERE location = 'Seattle'",
         "expected": [
             {"date":"2025-10-22","location":"Seattle","temperature":56.2,"humidity":66},
-            {"date":"2025-10-23","location":"Seattle","temperature":57.79999999999999,"humidity":68}
+            {"date":"2025-10-23","location":"Seattle","temperature":57.5,"humidity":68}
         ]
     },
         {
@@ -39,7 +39,7 @@
         "expected": [
             {"date":"2025-10-22","location":"Seattle","temperature":56.2,"humidity":66},
             {"date":"2025-10-23","location":"Portland","temperature":54.6,"humidity":70},
-            {"date":"2025-10-23","location":"Seattle","temperature":57.79999999999999,"humidity":68}
+            {"date":"2025-10-23","location":"Seattle","temperature":57.5,"humidity":68}
         ]
     },
     {
