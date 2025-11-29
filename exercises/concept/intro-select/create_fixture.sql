@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS weather_readings;
 CREATE TABLE weather_readings (
   date        TEXT    NOT NULL,
   location    TEXT    NOT NULL,
-  temperature REAL    NOT NULL,
+  temperature INTEGER NOT NULL,
   humidity    INTEGER NOT NULL
 );
 

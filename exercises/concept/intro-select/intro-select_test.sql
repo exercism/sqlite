@@ -1,13 +1,14 @@
 -- Create database:
 .read ./create_fixture.sql
 
--- ASK: How can we correlate user output with specific tests?
+-- ASK: How can we correlate user output with specific tests? One way is to add .output statements
+-- in the stub file. But that introduces more noise into the stub file.
 
--- Store test data
-.read ./store_test_data.sql
-
--- Run user solution
+-- Run user solution and store results
 .read ./intro-select.sql
+.shell rm -f ./results.db
+.save ./results.db
 
--- TODO: Compare expected vs actual among each of the slug values in test_data
---       Compare columns first; if columns are equal, then compare rows
+-- Generate report
+-- TODO: Make sure exit code reflects test result
+.shell sh ./generate-report.sh results.db
