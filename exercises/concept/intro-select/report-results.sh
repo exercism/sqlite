@@ -11,5 +11,5 @@ for SLUG in $SLUGS; do
     jq -n --slurpfile test_data test_data.json --argjson got ''${ACTUAL}'' --arg slug ${SLUG} -f test-result.jq >> results.txt
 done
 
-# Generate top-level report
-jq -n --slurpfile results results.txt -f test-report.jq > output.json
+# Aggregate results
+jq -n --slurpfile results results.txt '$results' > output.json

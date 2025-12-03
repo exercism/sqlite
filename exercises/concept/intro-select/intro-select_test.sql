@@ -13,12 +13,5 @@
 
 .output
 
--- Generate report
-.shell sh ./generate-report.sh results.db
-
--- Exit normally if all tests passed; otherwise abort with error code
-CREATE TABLE result (
-    status TEXT CHECK(status = "true")
-);
-.mode line
-.import "|jq -c .status output.json" result
+-- Report results
+.shell sh ./report-results.sh results.db
