@@ -23,12 +23,6 @@
             {"location":"Boise","temperature":62}
         ]
     },
-    "hello": {
-        "description": "Hello, world.",
-        "expected": [
-            {"'Hello, world.'":"Hello, world."}
-        ]
-    },
     "seattle": {
         "task_id": 3,
         "description": "Seattle only",
