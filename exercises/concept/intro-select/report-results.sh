@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
-DB_FILE=$1
-mapfile -t SLUGS < <(jq -r 'keys[]' test_data.json)
+db_file=$1
+mapfile -t slugs < <(jq -r 'keys[]' test_data.json)
 
 # Generate result for each test
-for SLUG in "${SLUGS[@]}"; do
-    ACTUAL=$(sqlite3 -json $DB_FILE "SELECT * FROM ${SLUG};" | tr -d '[:space:]')
-    if [[ -z "$ACTUAL" ]]; then
-        ACTUAL="[]"
+for slug in "${slugs[@]}"; do
+    actual=$(sqlite3 -json $db_file "SELECT * FROM ${slug};" | tr -d '[:space:]')
+    if [[ -z "$actual" ]]; then
+        actual="[]"
     fi
-    jq -n --slurpfile test_data test_data.json --argjson got "${ACTUAL}" --arg slug "${SLUG}" -f test-result.jq
+    jq -n --slurpfile test_data test_data.json --argjson got "${actual}" --arg slug "${slug}" -f test-result.jq
 done > results.txt
 
 # Aggregate results
