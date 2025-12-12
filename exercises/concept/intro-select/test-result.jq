@@ -4,7 +4,7 @@ def columns:
     end;
 
 def rows:
-    [map(to_entries)[] | map(.value)];
+    map(to_entries | map(.value));
 
 def failure_message(got; expected):
     (got | columns | tostring)  as $got_columns
@@ -14,7 +14,7 @@ def failure_message(got; expected):
       else
         (got | rows | tostring) as $got_rows
         | (expected | rows | tostring) as $expected_rows
-        | "With columns " + $got_columns + ", expected " + $expected_rows + "; but got " + $got_rows
+        | "With columns " + $got_columns + ", \nbexpected " + $expected_rows + ";\nbut got " + $got_rows
       end;
 
 $test_data[0][$slug] as $single_test_data
@@ -22,7 +22,7 @@ $test_data[0][$slug] as $single_test_data
 | $single_test_data.expected as $expected
 | $single_test_data.task_id as $task_id
 | if $task_id then {$task_id} else {} end as $entry
-| $entry + {$description} as $entry
+| $entry += {$description}
 | if $got != $expected then 
       $entry + {"status": "fail", "message": failure_message($got; $expected)} 
   else 

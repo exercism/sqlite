@@ -14,4 +14,4 @@
 .output
 
 -- Report results
-.shell sh ./report-results.sh results.db
+.shell bash ./report-results.sh results.db
