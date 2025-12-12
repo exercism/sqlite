@@ -22,7 +22,7 @@ $test_data[0][$slug] as $single_test_data
 | $single_test_data.expected as $expected
 | $single_test_data.task_id as $task_id
 | if $task_id then {$task_id} else {} end as $entry
-| $entry += {$description}
+| $entry + {$description} as $entry
 | if $got != $expected then 
       $entry + {"status": "fail", "message": failure_message($got; $expected)} 
   else 
