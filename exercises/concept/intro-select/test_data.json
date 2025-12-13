@@ -3,62 +3,62 @@
         "task_id": 1,
         "description": "All data", 
         "expected": [
-            {"date":"2025-10-22","location":"Portland","temperature":53,"humidity":72},
-            {"date":"2025-10-22","location":"Seattle","temperature":56,"humidity":66},
-            {"date":"2025-10-22","location":"Boise","temperature":60,"humidity":55},
-            {"date":"2025-10-23","location":"Portland","temperature":54,"humidity":70},
-            {"date":"2025-10-23","location":"Seattle","temperature":57,"humidity":68},
-            {"date":"2025-10-23","location":"Boise","temperature":62,"humidity":58}
+            {"date": "2025-10-22", "location": "Portland", "temperature": 53, "humidity": 72},
+            {"date": "2025-10-22", "location": "Seattle", "temperature": 56, "humidity": 66},
+            {"date": "2025-10-22", "location": "Boise", "temperature": 60, "humidity": 55},
+            {"date": "2025-10-23", "location": "Portland", "temperature": 54, "humidity": 70},
+            {"date": "2025-10-23", "location": "Seattle", "temperature": 57, "humidity": 68},
+            {"date": "2025-10-23", "location": "Boise", "temperature": 62, "humidity": 58}
         ]
     },
     "location_and_temperature": {
         "task_id": 2,
         "description": "Just location and temperature",
         "expected": [
-            {"location":"Portland","temperature":53},
-            {"location":"Seattle","temperature":56},
-            {"location":"Boise","temperature":60},
-            {"location":"Portland","temperature":54},
-            {"location":"Seattle","temperature":57},
-            {"location":"Boise","temperature":62}
+            {"location": "Portland", "temperature": 53},
+            {"location": "Seattle", "temperature": 56},
+            {"location": "Boise", "temperature": 60},
+            {"location": "Portland", "temperature": 54},
+            {"location": "Seattle", "temperature": 57},
+            {"location": "Boise", "temperature": 62}
         ]
     },
     "seattle": {
         "task_id": 3,
         "description": "Seattle only",
         "expected": [
-            {"date":"2025-10-22","location":"Seattle","temperature":56,"humidity":66},
-            {"date":"2025-10-23","location":"Seattle","temperature":57,"humidity":68}
+            {"date": "2025-10-22", "location": "Seattle", "temperature": 56, "humidity": 66},
+            {"date": "2025-10-23", "location": "Seattle", "temperature": 57, "humidity": 68}
         ]
     },
     "limited_humidity": {
         "task_id": 4,
         "description": "Humidity within range",
         "expected": [
-            {"date":"2025-10-22","location":"Seattle","temperature":56,"humidity":66},
-            {"date":"2025-10-23","location":"Portland","temperature":54,"humidity":70},
-            {"date":"2025-10-23","location":"Seattle","temperature":57,"humidity":68}
+            {"date": "2025-10-22", "location": "Seattle", "temperature": 56, "humidity": 66},
+            {"date": "2025-10-23", "location": "Portland", "temperature": 54, "humidity": 70},
+            {"date": "2025-10-23", "location": "Seattle", "temperature": 57, "humidity": 68}
         ]
     },
     "location": {
         "task_id": 5,
         "description": "Just locations",
         "expected": [
-            {"location":"Portland"},
-            {"location":"Seattle"},
-            {"location":"Boise"},
-            {"location":"Portland"},
-            {"location":"Seattle"},
-            {"location":"Boise"}
+            {"location": "Portland"},
+            {"location": "Seattle"},
+            {"location": "Boise"},
+            {"location": "Portland"},
+            {"location": "Seattle"},
+            {"location": "Boise"}
         ]
     },
     "unique_location": {
         "task_id": 5,
         "description": "Only unique locations",
         "expected": [
-            {"location":"Portland"},
-            {"location":"Seattle"},
-            {"location":"Boise"}
+            {"location": "Portland"},
+            {"location": "Seattle"},
+            {"location": "Boise"}
         ]
     }
 }

@@ -4,7 +4,7 @@ mapfile -t slugs < <(jq -r 'keys[]' test_data.json)
 
 # Generate result for each test
 for slug in "${slugs[@]}"; do
-    actual=$(sqlite3 -json $db_file "SELECT * FROM ${slug};" | tr -d '[:space:]')
+    actual=$(sqlite3 -json $db_file "SELECT * FROM ${slug};")
     if [[ -z "$actual" ]]; then
         actual="[]"
     fi
