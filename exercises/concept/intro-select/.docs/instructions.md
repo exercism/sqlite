@@ -1,6 +1,6 @@
 # Instructions
 
-You are a data analyst at a firm that analyzes weather data in the Pacific Northwest.  You will be working with a database containing a `weather_data` table with the following columns:
+You are a data analyst at a firm that analyzes weather data in the Pacific Northwest.  You will be working with a database containing a `weather_readings` table with the following columns:
 
 * `date`:  The date on which the sample was collected.
 * `location`:  The name of the city in which the sample was collected.
@@ -13,11 +13,11 @@ Your job for each task is to add the appropriate `SELECT` statement within the e
 
 ## 1. Gather all of the data
 
-Gather all of the data from the `weather_data` table.
+Gather all of the data from the `weather_readings` table.
 
 ## 2. Gather only the location and temperature data
 
-Gather only the location and temperature values from the `weather_data` table.
+Gather only the location and temperature values from the `weather_readings` table.
 
 ## 3. Gather only data for Seattle
 
