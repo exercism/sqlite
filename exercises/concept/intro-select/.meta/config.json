@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "blackk-foxx"
+  ],
+  "contributors": [
+    "IsaacG",
+    "jimmytty"
+  ],
+  "files": {
+    "solution": [
+      "intro-select.sql"
+    ],
+    "test": [
+      "intro-select_test.sql"
+    ]
+  },
+  "blurb": "Learn SELECT statement basics"
+}
