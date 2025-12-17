@@ -1,14 +1,16 @@
 # Instructions
 
-You are a data analyst at a firm that analyzes weather data in the Pacific Northwest.  You will be working with a database containing a `weather_readings` table with the following columns:
+You are a data analyst at a firm that analyzes weather data in the Pacific Northwest.
+You will be working with a database containing a `weather_readings` table with the following columns.
 
-* `date`:  The date on which the sample was collected.
-* `location`:  The name of the city in which the sample was collected.
-* `temperature`:  The temperature, in degrees Fahrenheit.
-* `humidity`:  The relative humidity, as a percentage value.
+* `date`: The date on which the sample was collected.
+* `location`: The name of the city in which the sample was collected.
+* `temperature`: The temperature, in degrees Fahrenheit.
+* `humidity`: The relative humidity, as a percentage value.
 
 In each of the following tasks, your job is to gather the specified result set, by using a `SELECT` statement.
 Note that in each case, the result set will be stored in a new table -- one table for each task -- via a pre-written `CREATE TABLE` statement.
+For now, don't worry about the `CREATE TABLE`; that will be covered in another lesson.
 Your job for each task is to add the appropriate `SELECT` statement within the existing `CREATE TABLE` statement.
 
 ## 1. Gather all of the data
