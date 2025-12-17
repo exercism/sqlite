@@ -1,11 +1,15 @@
 # Introduction
 
-In SQL, the `SELECT` statement allows you to retrieve data from a database.
-The result of a `SELECT` statement is a result set -- some number of values arranged in rows and columns, where each column is a particular attribute of the data and each row is a set of values for each column.
+In SQL, a `SELECT` statement allows you to retrieve data from a database.
+The result of a `SELECT` statement is a result set.
+A result set contains values arranged in rows and columns.
+Each column is a particular attribute of the data.
+Each row contains a value for every column.
 
-Roughly, you can think of the set of columns as a data structure, where each column represents a field of the data structure, and each row represents a concrete instance of the data structure.
+One way to think about it is that a set of columns represents a data structure, where each column represents a field of the data structure, and each row represents an instance of the data structure.
 
-With a `SELECT` statement, you can specify the data you want and optionally transform, filter, and/or modify the shape of the output data.
+With a `SELECT` statement, you can specify the data you want to retrieve.
+You can also optionally transform, filter, and/or modify the shape of the output data.
 
 
 ## The basics
@@ -18,8 +22,18 @@ FROM <source>
 WHERE <criteria>;
 ```
 
-Note that the line breaks are not required; any spacing will suffice to separate the different
-clauses (i.e. parts) of the `SELECT` statement.
+Note that the line breaks are not required; any spacing will suffice to separate the different clauses (i.e. parts) of the `SELECT` statement.
+
+~~~~exercism/note
+The `FROM` and `WHERE` clauses are optional.
+A statement like `SELECT "Hello, world.";` is perfectly valid, and will generate the following result:
+
+```
+"Hello, world."
+---------------
+Hello, world. 
+```
+~~~~
 
 Immediately following the `SELECT` keyword is a list of the columns that you want in the result.
 The `FROM` clause identifies the source of the data, which is typically a table in the database.
@@ -41,7 +55,7 @@ For example, consider a database with a table named `inventory` containing the f
 | 899998877665 | Cookware   | KitchenCo      | IronCraft   | Cast-Iron Grill Pan              | 5.3    | 21    |
 | 844110220987 | Appliances | Culinary Depot | BlendPro    | High-Speed Personal Blender      | 3.1    | 16    |
 
-If we want to simply retrieve all of the data from the table, we could run the following query:
+If we want to retrieve all of the data from the table, we could run the following query:
 
 ```sql
 SELECT * FROM inventory;
@@ -63,7 +77,7 @@ upc           category    supplier        brand        product_name             
 844110220987  Appliances  Culinary Depot  BlendPro     High-Speed Personal Blender       3.1     16   
 ```
 
-But if we only want the category and product_name values, we could specify those columns:
+If we only want the category and product_name values, we could specify those columns:
 
 ```sql
 SELECT category, product_name FROM inventory;
@@ -88,7 +102,7 @@ Appliances  High-Speed Personal Blender
 ## Filtering data with the WHERE clause
 
 The `WHERE` clause allows you to filter the data retrieved by a `SELECT` statement.
-For example, if we only want Appliances:
+For example, if we only want Appliances, we can do the following:
 
 ```sql
 SELECT * FROM inventory

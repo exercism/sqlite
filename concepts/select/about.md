@@ -24,6 +24,17 @@ WHERE <criteria>;
 
 Note that the line breaks are not required; any spacing will suffice to separate the different clauses (i.e. parts) of the `SELECT` statement.
 
+~~~~exercism/note
+The `FROM` and `WHERE` clauses are optional.
+A statement like `SELECT "Hello, world.";` is perfectly valid, and will generate the following result:
+
+```
+"Hello, world."
+---------------
+Hello, world. 
+```
+~~~~
+
 Immediately following the `SELECT` keyword is a list of the columns that you want in the result.
 The `FROM` clause identifies the source of the data, which is typically a table in the database.
 The `WHERE` clause filters the output data by one or more criteria.
@@ -44,7 +55,7 @@ For example, consider a database with a table named `inventory` containing the f
 | 899998877665 | Cookware   | KitchenCo      | IronCraft   | Cast-Iron Grill Pan              | 5.3    | 21    |
 | 844110220987 | Appliances | Culinary Depot | BlendPro    | High-Speed Personal Blender      | 3.1    | 16    |
 
-If we want to retrieve all of the data from the table, we could run the following query.
+If we want to retrieve all of the data from the table, we could run the following query:
 
 ```sql
 SELECT * FROM inventory;
@@ -66,7 +77,7 @@ upc           category    supplier        brand        product_name             
 844110220987  Appliances  Culinary Depot  BlendPro     High-Speed Personal Blender       3.1     16   
 ```
 
-If we only want the category and product_name values, we could specify those columns.
+If we only want the category and product_name values, we could specify those columns:
 
 ```sql
 SELECT category, product_name FROM inventory;
@@ -88,21 +99,10 @@ Cookware    Cast-Iron Grill Pan
 Appliances  High-Speed Personal Blender     
 ```
 
-~~~~exercism/note
-The `FROM` clause is optional.
-A statement like `SELECT "Hello, world.";` is perfectly valid, and will generate the following result:
-
-```
-"Hello, world."
----------------
-Hello, world. 
-```
-~~~~
-
 ## Filtering data with the WHERE clause
 
 The `WHERE` clause allows you to filter the data retrieved by a `SELECT` statement.
-For example, if we only want Appliances, we can do the following.
+For example, if we only want Appliances, we can do the following:
 
 ```sql
 SELECT * FROM inventory
@@ -119,7 +119,7 @@ upc           category    supplier        brand      product_name               
 ```
 
 
-Or maybe we only want data where the weight is between 2.0 and 6.0.
+Or maybe we only want data where the weight is between 2.0 and 6.0:
 
 ```sql
 SELECT * FROM inventory
