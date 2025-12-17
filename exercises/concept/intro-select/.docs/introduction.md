@@ -11,7 +11,6 @@ One way to think about it is that a set of columns represents a data structure, 
 With a `SELECT` statement, you can specify the data you want to retrieve.
 You can also optionally transform, filter, and/or modify the shape of the output data.
 
-
 ## The basics
 
 The anatomy of a basic `SELECT` statement is as follows:
@@ -39,9 +38,7 @@ Immediately following the `SELECT` keyword is a list of the columns that you wan
 The `FROM` clause identifies the source of the data, which is typically a table in the database.
 The `WHERE` clause filters the output data by one or more criteria.
 
-
 For example, consider a database with a table named `inventory` containing the following data:
-
 
 |     upc      |  category  |    supplier    |    brand    |           product_name           | weight | stock |
 |--------------|------------|----------------|-------------|----------------------------------|--------|-------|
@@ -118,14 +115,12 @@ upc           category    supplier        brand      product_name               
 844110220987  Appliances  Culinary Depot  BlendPro   High-Speed Personal Blender  3.1     16   
 ```
 
-
 Or maybe we only want data where the weight is between 2.0 and 6.0:
 
 ```sql
 SELECT * FROM inventory
 WHERE weight BETWEEN 2.0 AND 6.0;
 ```
-
 
 Result:
 ```
