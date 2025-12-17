@@ -8,23 +8,23 @@ You will be working with a database containing a `weather_readings` table with t
 * `temperature`: The temperature, in degrees Fahrenheit.
 * `humidity`: The relative humidity, as a percentage value.
 
-In each of the following tasks, your job is to gather the specified result set, by using a `SELECT` statement.
+In each of the following tasks, your job is to retrieve the specified result set, by using a `SELECT` statement.
 Note that in each case, the result set will be stored in a new table -- one table for each task -- via a pre-written `CREATE TABLE` statement.
 For now, don't worry about the `CREATE TABLE`; that will be covered in another lesson.
-Your job for each task is to add the appropriate `SELECT` statement within the existing `CREATE TABLE` statement.
+Just focus on adding the appropriate `SELECT` statement to accomplish the given task.
 
-## 1. Gather all of the data
+## 1. Retrieve all of the data
 
-Gather all of the data from the `weather_readings` table.
+Retrieve all of the data from the `weather_readings` table.
 
-## 2. Gather only the location and temperature data
+## 2. Retrieve only the location and temperature data
 
-Gather only the location and temperature values from the `weather_readings` table.
+Retrieve only the location and temperature values from the `weather_readings` table.
 
-## 3. Gather only data for Seattle
+## 3. Retrieve only data for Seattle
 
-Gather only the data for the Seattle location.
+Retrieve only the data for the Seattle location.
 
-## 4. Gather only the data with humidity in a specific range
+## 4. Retrieve only the data with humidity in a specific range
 
-Gather only the data where the humidity is between 60% and 70%.
+Retrieve only the data where the humidity is between 60% and 70%.

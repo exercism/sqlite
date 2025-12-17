@@ -14,7 +14,7 @@ def failure_message(got; expected):
       else
         (got | rows | tostring) as $got_rows
         | (expected | rows | tostring) as $expected_rows
-        | "With columns \($got_columns)\nexpected \($expected_rows)\nbut got \($got_rows)"
+        | "With columns \($got_columns)\nexpected rows \($expected_rows)\nbut got \($got_rows)"
       end;
 
 $test_data[0][$slug]
