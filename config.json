@@ -35,8 +35,8 @@
   "exercises": {
     "concept": [
       {
-        "slug": "intro-select",
-        "name": "SELECT Basics",
+        "slug": "weather-report",
+        "name": "Weather Report",
         "uuid": "1762549a-4622-442d-9aff-4c65f72a955c",
         "concepts": [
           "select"

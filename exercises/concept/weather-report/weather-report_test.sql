@@ -4,7 +4,7 @@
 -- Run user solution and store results
 .mode markdown
 .output user_output.md
-.read ./intro-select.sql
+.read ./weather-report.sql
 .save ./results.db
 
 .output

@@ -21,17 +21,11 @@ FROM <source>
 WHERE <criteria>;
 ```
 
-Note that the line breaks are not required; any spacing will suffice to separate the different clauses (i.e. parts) of the `SELECT` statement.
-
 ~~~~exercism/note
 The `FROM` and `WHERE` clauses are optional.
-A statement like `SELECT "Hello, world.";` is perfectly valid, and will generate the following result:
+For example, a statement like `SELECT "Hello, world.";` is perfectly valid.
 
-```
-"Hello, world."
----------------
-Hello, world. 
-```
+Also note that the line breaks are not required; any spacing will suffice to separate the different clauses (i.e. parts) of the `SELECT` statement.
 ~~~~
 
 Immediately following the `SELECT` keyword is a list of the columns that you want in the result.

@@ -8,10 +8,10 @@
   ],
   "files": {
     "solution": [
-      "intro-select.sql"
+      "weather-report.sql"
     ],
     "test": [
-      "intro-select_test.sql"
+      "weather-report_test.sql"
     ]
   },
   "blurb": "Learn SELECT statement basics"
