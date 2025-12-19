@@ -7,6 +7,9 @@
     "jimmytty"
   ],
   "files": {
+    "exemplar": [
+      ".meta/exemplar.sql"
+    ],
     "solution": [
       "weather-report.sql"
     ],
