@@ -3,7 +3,7 @@ CREATE TABLE weather_readings (
   date        TEXT    NOT NULL,
   location    TEXT    NOT NULL,
   temperature INTEGER NOT NULL,
-  humidity    INTEGER NOT NULL
+  wind_speed  INTEGER NOT NULL
 );
 
 .mode csv

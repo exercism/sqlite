@@ -6,7 +6,7 @@ You will be working with a database containing a `weather_readings` table with t
 * `date`: The date on which the sample was collected.
 * `location`: The name of the city in which the sample was collected.
 * `temperature`: The temperature, in degrees Fahrenheit.
-* `humidity`: The relative humidity, as a percentage value.
+* `wind_speed`: The wind speed, in miles per hour.
 
 In each of the following tasks, your job is to retrieve the specified result set, by using a `SELECT` statement.
 Note that in each case, the result set will be stored in a new table -- one table for each task -- via a pre-written `CREATE TABLE` statement.
@@ -25,6 +25,6 @@ Retrieve only the location and temperature values from the `weather_readings` ta
 
 Retrieve only the data for the Seattle location.
 
-## 4. Retrieve only the data with humidity in a specific range
+## 4. Retrieve only the data with wind speed in a specific range
 
-Retrieve only the data where the humidity is between 60% and 70%.
+Retrieve only the data where the wind speed is between 5 and 15 miles per hour.

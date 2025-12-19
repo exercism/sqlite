@@ -3,12 +3,12 @@
         "task_id": 1,
         "description": "All data", 
         "expected": [
-            {"date": "2025-10-22", "location": "Portland", "temperature": 53, "humidity": 72},
-            {"date": "2025-10-22", "location": "Seattle", "temperature": 56, "humidity": 66},
-            {"date": "2025-10-22", "location": "Boise", "temperature": 60, "humidity": 55},
-            {"date": "2025-10-23", "location": "Portland", "temperature": 54, "humidity": 70},
-            {"date": "2025-10-23", "location": "Seattle", "temperature": 57, "humidity": 68},
-            {"date": "2025-10-23", "location": "Boise", "temperature": 62, "humidity": 58}
+            {"date": "2025-10-22", "location": "Portland", "temperature": 53, "wind_speed": 19},
+            {"date": "2025-10-22", "location": "Seattle", "temperature": 56, "wind_speed": 5},
+            {"date": "2025-10-22", "location": "Boise", "temperature": 60, "wind_speed": 1},
+            {"date": "2025-10-23", "location": "Portland", "temperature": 54, "wind_speed": 11},
+            {"date": "2025-10-23", "location": "Seattle", "temperature": 57, "wind_speed": 6},
+            {"date": "2025-10-23", "location": "Boise", "temperature": 62, "wind_speed": 21}
         ]
     },
     "location_and_temperature": {
@@ -27,17 +27,17 @@
         "task_id": 3,
         "description": "Seattle only",
         "expected": [
-            {"date": "2025-10-22", "location": "Seattle", "temperature": 56, "humidity": 66},
-            {"date": "2025-10-23", "location": "Seattle", "temperature": 57, "humidity": 68}
+            {"date": "2025-10-22", "location": "Seattle", "temperature": 56, "wind_speed": 5},
+            {"date": "2025-10-23", "location": "Seattle", "temperature": 57, "wind_speed": 6}
         ]
     },
-    "limited_humidity": {
+    "limited_wind_speed": {
         "task_id": 4,
-        "description": "Humidity within range",
+        "description": "wind_speed within range",
         "expected": [
-            {"date": "2025-10-22", "location": "Seattle", "temperature": 56, "humidity": 66},
-            {"date": "2025-10-23", "location": "Portland", "temperature": 54, "humidity": 70},
-            {"date": "2025-10-23", "location": "Seattle", "temperature": 57, "humidity": 68}
+            {"date": "2025-10-22", "location": "Seattle", "temperature": 56, "wind_speed": 5},
+            {"date": "2025-10-23", "location": "Portland", "temperature": 54, "wind_speed": 11},
+            {"date": "2025-10-23", "location": "Seattle", "temperature": 57, "wind_speed": 6}
         ]
     }
 }

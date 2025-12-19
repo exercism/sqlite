@@ -13,7 +13,7 @@ CREATE TABLE seattle AS
     SELECT "TODO: Replace this SELECT statement as needed to accomplish the task"
 ;
 
-CREATE TABLE limited_humidity AS
-    -- Task 4. Select all data where the humidity is between 60% and 70%.
+CREATE TABLE limited_wind_speed AS
+    -- Task 4. Select all data where the wind speed is between 5 and 15 miles per hour.
     SELECT "TODO: Replace this SELECT statement as needed to accomplish the task"
 ;
