@@ -13,7 +13,7 @@ The goal of this exercise is to teach students the basics of the `SELECT` statem
 ## Out of scope
 
 - Advanced filtering
-` Subqueries
+- Subqueries
 
 ## Concepts
 
