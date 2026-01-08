@@ -1,0 +1,43 @@
+{
+    "all_data": {
+        "task_id": 1,
+        "description": "All data", 
+        "expected": [
+            {"date": "2025-10-22", "location": "Portland", "temperature": 53, "wind_speed": 19},
+            {"date": "2025-10-22", "location": "Seattle", "temperature": 56, "wind_speed": 5},
+            {"date": "2025-10-22", "location": "Boise", "temperature": 60, "wind_speed": 1},
+            {"date": "2025-10-23", "location": "Portland", "temperature": 54, "wind_speed": 11},
+            {"date": "2025-10-23", "location": "Seattle", "temperature": 57, "wind_speed": 6},
+            {"date": "2025-10-23", "location": "Boise", "temperature": 62, "wind_speed": 21}
+        ]
+    },
+    "location_and_temperature": {
+        "task_id": 2,
+        "description": "Just location and temperature",
+        "expected": [
+            {"location": "Portland", "temperature": 53},
+            {"location": "Seattle", "temperature": 56},
+            {"location": "Boise", "temperature": 60},
+            {"location": "Portland", "temperature": 54},
+            {"location": "Seattle", "temperature": 57},
+            {"location": "Boise", "temperature": 62}
+        ]
+    },
+    "seattle": {
+        "task_id": 3,
+        "description": "Seattle only",
+        "expected": [
+            {"date": "2025-10-22", "location": "Seattle", "temperature": 56, "wind_speed": 5},
+            {"date": "2025-10-23", "location": "Seattle", "temperature": 57, "wind_speed": 6}
+        ]
+    },
+    "limited_wind_speed": {
+        "task_id": 4,
+        "description": "wind_speed within range",
+        "expected": [
+            {"date": "2025-10-22", "location": "Seattle", "temperature": 56, "wind_speed": 5},
+            {"date": "2025-10-23", "location": "Portland", "temperature": 54, "wind_speed": 11},
+            {"date": "2025-10-23", "location": "Seattle", "temperature": 57, "wind_speed": 6}
+        ]
+    }
+}

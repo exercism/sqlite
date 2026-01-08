@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://sqlite.org/lang_select.html#simple_select_processing",
+    "description": "Simple SELECT processing details"
+  },
+  {
+    "url": "https://sqlite.org/lang_select.html",
+    "description": "Complete SELECT documentation for SQLite"
+  }
+]
