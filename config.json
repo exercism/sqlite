@@ -33,6 +33,17 @@
     ]
   },
   "exercises": {
+    "concept": [
+      {
+        "slug": "weather-report",
+        "name": "Weather Report",
+        "uuid": "1762549a-4622-442d-9aff-4c65f72a955c",
+        "concepts": [
+          "select"
+        ],
+        "prerequisites": []
+      }
+    ],
     "practice": [
       {
         "slug": "hello-world",
@@ -714,6 +725,13 @@
       "title": "Compact",
       "content": "The official SQLite library is less than a single megabyte.",
       "icon": "small"
+    }
+  ],
+  "concepts": [
+    {
+      "uuid": "92187df0-fb68-4b46-af3b-cc17c2ef6fbc",
+      "slug": "select",
+      "name": "SELECT"
     }
   ],
   "tags": [
