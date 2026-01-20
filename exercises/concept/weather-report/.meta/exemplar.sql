@@ -11,7 +11,7 @@ CREATE TABLE location_and_temperature AS
 CREATE TABLE seattle AS
     -- Task 3. Select all data for Seattle.
     SELECT * FROM weather_readings
-    WHERE location = "Seattle"
+    WHERE location = 'Seattle'
 ;
 
 CREATE TABLE limited_wind_speed AS
