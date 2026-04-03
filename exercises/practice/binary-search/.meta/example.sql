@@ -32,13 +32,13 @@ SELECT
            WHEN JSON_EXTRACT(
                   list, PRINTF('$[%d][0]', JSON_ARRAY_LENGTH(list) / 2)
                 ) > target
-                THEN (SELECT JSON_GROUP_ARRAY(j.value)
+                THEN (SELECT JSON_GROUP_ARRAY(JSON(j.value))
                         FROM JSON_EACH(list) j
                        WHERE j.key < JSON_ARRAY_LENGTH(list) / 2)
            WHEN JSON_EXTRACT(
                   list, PRINTF('$[%d][0]', JSON_ARRAY_LENGTH(list) / 2)
                 ) < target
-                THEN (SELECT JSON_GROUP_ARRAY(j.value)
+                THEN (SELECT JSON_GROUP_ARRAY(JSON(j.value))
                         FROM JSON_EACH(list) j
                        WHERE j.key > JSON_ARRAY_LENGTH(list) / 2)
            END,
