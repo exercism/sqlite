@@ -7,7 +7,9 @@ SET
         IIF(
           json_type(DB.value) IS NULL,
           json_array(),
-          json_array(DB.value)
+          json_array(
+            json(DB.value)
+          )
         )
       )
     FROM
