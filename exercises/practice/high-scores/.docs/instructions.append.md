@@ -1,4 +1,6 @@
-# SQLite-specific instructions
+# Instructions append
+
+## SQLite-specific instructions
 
 To populate the `results` table, there are four "properties" you must consider:
 
