@@ -1,4 +1,6 @@
-# Additional instructions
+# Instructions append
+
+## Additional instructions
 
 You will be provided a table named "isogram".
 The first column, "phrase", contains some text.
