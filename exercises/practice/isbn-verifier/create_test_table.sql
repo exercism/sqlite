@@ -131,4 +131,16 @@ VALUES
     'input is too long but contains a valid isbn',
     '98245726788',
     FALSE
+  ),
+  (
+    '8005b57f-f194-44ee-88d2-a77ac4142591',
+    'only one check digit is allowed',
+    '3-598-21508-96',
+    FALSE
+  ),
+  (
+    'fdb14c99-4cf8-43c5-b06d-eb1638eff343',
+    'X is not substituted by the value 10',
+    '3-598-2X507-5',
+    FALSE
   );
