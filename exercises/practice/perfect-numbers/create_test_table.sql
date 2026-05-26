@@ -68,6 +68,13 @@ VALUES
     NULL
   ),
   (
+    '05f15b93-849c-45e9-9c7d-1ea131ef7d10',
+    'Perfect square abundant number is classified correctly',
+    196,
+    'abundant',
+    NULL
+  ),
+  (
     'e610fdc7-2b6e-43c3-a51c-b70fb37413ba',
     'Smallest prime deficient number is classified correctly',
     2,
