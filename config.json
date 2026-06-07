@@ -107,6 +107,14 @@
         "difficulty": 2
       },
       {
+        "slug": "line-up",
+        "name": "Line up",
+        "uuid": "bb005a57-11f8-4379-b181-cfb799b04a8f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "pangram",
         "name": "Pangram",
         "uuid": "f11e9d34-d454-42a8-bd2f-d1a8b6000975",
@@ -673,14 +681,6 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
-      },
-      {
-        "slug": "line-up",
-        "name": "Line up",
-        "uuid": "bb005a57-11f8-4379-b181-cfb799b04a8f",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3
       }
     ]
   },
