@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "jimmytty"
+  ],
+  "files": {
+    "solution": [
+      "word-search.sql"
+    ],
+    "test": [
+      "word-search_test.sql"
+    ],
+    "example": [
+      ".meta/example.sql"
+    ]
+  },
+  "blurb": "Create a program to solve a word search puzzle."
+}
