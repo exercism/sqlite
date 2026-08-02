@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "blackk-foxx"
+  ],
+  "contributors": [
+    "IsaacG",
+    "jimmytty"
+  ],
+  "files": {
+    "exemplar": [
+      ".meta/exemplar.sql"
+    ],
+    "solution": [
+      "weather-report.sql"
+    ],
+    "test": [
+      "weather-report_test.sql"
+    ]
+  },
+  "blurb": "Learn SELECT statement basics"
+}
