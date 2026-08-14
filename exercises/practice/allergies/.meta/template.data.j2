@@ -1,0 +1,7 @@
+{%- for case in cases -%}
+{%- if case["property"] == "allergicTo" -%}
+{{ [case["property"], case["input"]["item"], case["input"]["score"]] | tocsv }},""
+{% else -%}
+{{ [case["property"], "", case["input"]["score"]] | tocsv }},""
+{% endif -%}
+{% endfor %}

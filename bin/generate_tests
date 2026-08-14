@@ -3,9 +3,7 @@
 """Test generator v1."""
 
 import argparse
-import csv
 import datetime
-import io
 import json
 import os
 import pathlib
@@ -76,29 +74,33 @@ def filter_tojson(data, separators=(',', ':'), indent=None) -> str:
     return json.dumps(data, separators=separators, indent=indent)
 
 
+def item_tocsv(data) -> str:
+    """Format one item to CSV."""
+    if isinstance(data, (int, float)):
+        return str(data)
+    elif isinstance(data, str):
+        return f'"{data.replace('"', '""')}"'
+    elif isinstance(data, list):
+        entities = ",".join([item_tocsv(i) for i in data])
+        return f'"[{entities.replace('"', '""')}]"'
+    raise ValueError(f"Unsuported data type {type(data)} in filter_tocsv()")
+
+
 def filter_tocsv(data: list) -> str:
     """Filter `tocsv` that CSV encodes an object."""
-    formatted_data = []
-    for datum in data:
-        if isinstance(datum, (int, float, str)):
-            formatted_data.append(datum)
-        elif isinstance(datum, list):
-            formatted_data.append("[" + filter_tocsv(datum) + "]")
-        else:
-            raise ValueError(f"Unsuported data type {type(datum)} in filter_tocsv()")
-    buff = io.StringIO()
-    writer = csv.writer(buff, dialect="unix")
-    writer.writerow(formatted_data)
-    buff.seek(0)
-    got = buff.read().removesuffix("\n")
-    return got
+    return ",".join(item_tocsv(i) for i in data).replace("\r", "")
+
+
+def sql_quote(data: str) -> str:
+    """Filter `quote` that SQL encodes a string."""
+    return data.replace('"', '""').replace("'", "''")
 
 
 def jinja_env(exercise: pathlib.Path) -> jinja2.Environment:
     """Return a configured Jinja env with filters added."""
     env = jinja2.Environment(loader=jinja2.FileSystemLoader(exercise / ".meta"))
-    # Shell quoting
-    env.filters["quote"] = shlex.quote
+    # SQL quoting
+    env.filters["quote"] = sql_quote
     # JSON formatting, default to compact form (`jq -c`).
     env.filters["tojson"] = filter_tojson
     env.filters["tocsv"] = filter_tocsv
@@ -153,7 +155,7 @@ def generate(specs: pathlib.Path, exercise: pathlib.Path) -> None:
         try:
             template = jinja_env(exercise).get_template(f"template.{base}.j2")
             out = template.render(data).strip("\n")
-        except jinja2.exceptions.TemplateAssertionError as e:
+        except Exception as e:
             e.add_note(f"Error rendering template.{base}.j2 for {exercise.name}")
             raise
 
@@ -186,10 +188,12 @@ def main():
     exercises = args.exercises
     # Generate all exercises with templates if none are specified as args.
     if not exercises:
-        exercises = [
-            i.parent.parent
-            for i in pathlib.Path("exercises/practice").glob("*/.meta/template.j2")
-        ]
+        exercises = sorted(
+            {
+                i.parent.parent
+                for i in pathlib.Path("exercises/practice").glob("*/.meta/template.*.j2")
+            }
+        )
     else:
         # Turn strings to paths and make them relative to the practice exercises.
         out = []
