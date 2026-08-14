@@ -88,11 +88,15 @@ def item_tocsv(data) -> str:
 
 def filter_tocsv(data: list) -> str:
     """Filter `tocsv` that CSV encodes an object."""
-    return ",".join(item_tocsv(i) for i in data).replace("\r", "")
+    return ",".join(item_tocsv(i) for i in data).replace("\r", "\n")
 
 
-def sql_quote(data: str) -> str:
+def sql_quote(data) -> str:
     """Filter `quote` that SQL encodes a string."""
+    if data is None:
+        return "NULL"
+    if isinstance(data, (int, float)):
+        return str(data)
     return data.replace('"', '""').replace("'", "''")
 
 
