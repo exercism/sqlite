@@ -1,0 +1,3 @@
+{%- for case in cases -%}
+{{ [case["input"]["previousRolls"], case["input"].get("roll", "")] | tocsv }},"",""
+{% endfor %}
