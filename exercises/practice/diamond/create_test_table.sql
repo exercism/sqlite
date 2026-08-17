@@ -20,7 +20,7 @@ INSERT INTO
 VALUES
   (
     '202fb4cc-6a38-4883-9193-a29d5cb92076',
-    'Degenerate case with a single ''A'' row',
+    'Degenerate case with a single "A" row',
     'A',
     'A'
   ),
