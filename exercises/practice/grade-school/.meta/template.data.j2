@@ -1,0 +1,3 @@
+{%- for case in cases -%}
+{{ [case["property"], case["input"] | tojson] | tocsv }},""
+{% endfor %}
