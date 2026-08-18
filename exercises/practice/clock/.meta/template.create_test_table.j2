@@ -1,0 +1,38 @@
+DROP TABLE IF EXISTS tests;
+
+CREATE TABLE IF NOT EXISTS tests (
+  -- uuid and description are taken from the test.toml file
+  uuid TEXT PRIMARY KEY,
+  description TEXT NOT NULL,
+  -- The following section is needed by the online test-runner
+  status TEXT DEFAULT 'fail',
+  message TEXT,
+  output TEXT,
+  test_code TEXT,
+  task_id INTEGER DEFAULT NULL,
+  -- Here are columns for the actual tests
+  property TEXT NOT NULL,
+  input TEXT NOT NULL, -- json object
+  expected TEXT NOT NULL
+);
+
+INSERT INTO
+  tests (uuid, description, property, input, expected)
+VALUES
+{%- for case in cases %}
+  (
+    '{{ case["uuid"] }}',
+    '{{ case["description"] }}',
+    '{{ case["property"] }}',
+    '{{ case["input"] | tojson }}',
+{%- if case["expected"] in ["true", "false"] %}
+    {{ case["expected"] }}
+{%- else %}
+    '{{ case["expected"] }}'
+{%- endif %}
+{%- if loop.last %}
+  );
+{%- else %}
+  ),
+{%- endif %}
+{%- endfor %}
