@@ -22,8 +22,8 @@ VALUES
   (
     '{{ case["uuid"] }}',
     '{{ case["description"] }}',
-    '{{ case["input"]["phrase"] | quote }}',
-    '{{ case["expected"] | quote }}'
+    {{ case["input"]["phrase"] | quote }},
+    {{ case["expected"] | quote }}
 {%- if loop.last %}
   );
 {%- else %}

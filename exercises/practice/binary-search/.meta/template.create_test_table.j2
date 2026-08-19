@@ -21,12 +21,12 @@ VALUES
 {%- for case in cases %}
   (
     '{{ case["uuid"] }}',
-    '{{ case["description"] | quote }}',
+    {{ case["description"] | quote }},
     '[{{ case["input"]["array"] | tocsv }}]',
     {{ case["input"]["value"] }},
 {%- if case["expect_error"] %}
     NULL,
-    '{{ case.get("expect_error_msg") | quote }}'
+    {{ case.get("expect_error_msg") | quote }}
 {%- else %}
     {{ case["expected"] }},
     NULL

@@ -91,13 +91,17 @@ def filter_tocsv(data: list) -> str:
     return ",".join(item_tocsv(i) for i in data).replace("\r", "\n")
 
 
-def sql_quote(data) -> str:
+def sql_quote(data, str_delim="'") -> str:
     """Filter `quote` that SQL encodes a string."""
     if data is None:
         return "NULL"
     if isinstance(data, (int, float)):
         return str(data)
-    return data.replace('"', '""').replace("'", "''")
+    if isinstance(data, str):
+        return str_delim + data.replace('"', '""').replace("'", "''") + str_delim
+    if isinstance(data, bool):
+        return "TRUE" if data else "FALSE"
+    raise ValueError(f"Unsupported type {type(data)} ({data=})")
 
 
 def jinja_env(exercise: pathlib.Path) -> jinja2.Environment:
@@ -118,25 +122,9 @@ def jinja_env(exercise: pathlib.Path) -> jinja2.Environment:
     return env
 
 
-def bool_to_str(obj):
-    """Convert boolean values to strings."""
-    if isinstance(obj, dict):
-        return {key: bool_to_str(val) for key, val in obj.items()}
-    if isinstance(obj, list):
-        return [bool_to_str(val) for val in obj]
-    if obj is True:
-        return "true"
-    if obj is False:
-        return "false"
-    return obj
-
-
 def generate(specs: pathlib.Path, exercise: pathlib.Path) -> None:
     """Generate and write test file for a given spec and exercise."""
     cases = get_cases(specs, exercise)
-    for case in cases:
-        case["expected"] = bool_to_str(case["expected"])
-
     timestamp = datetime.datetime.now(tz=datetime.UTC).replace(microsecond=0).isoformat()
     header = textwrap.dedent(f"""\
         #!/usr/bin/env bats
