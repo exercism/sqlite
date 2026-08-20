@@ -1,0 +1,3 @@
+{%- for case in cases -%}
+{{ [case["property"], case["input"]["string"] | replace("\n", "\\n"), case["input"]["index"]] | tocsv }},""
+{% endfor %}
