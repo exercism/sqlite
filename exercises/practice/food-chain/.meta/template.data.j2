@@ -1,0 +1,3 @@
+{%- for case in cases -%}
+{{ [case["input"]["startVerse"], case["input"]["endVerse"]] | tocsv }},""
+{% endfor %}
