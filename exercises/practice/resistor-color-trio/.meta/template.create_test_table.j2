@@ -1,0 +1,43 @@
+DROP TABLE IF EXISTS tests;
+
+CREATE TABLE IF NOT EXISTS tests (
+  -- uuid and description are taken from the test.toml file
+  uuid TEXT PRIMARY KEY,
+  description TEXT NOT NULL,
+  -- The following section is needed by the online test-runner
+  status TEXT DEFAULT 'fail',
+  message TEXT,
+  output TEXT,
+  test_code TEXT,
+  task_id INTEGER DEFAULT NULL,
+  -- Here are columns for the actual tests
+  color1 TEXT NOT NULL,
+  color2 TEXT NOT NULL,
+  color3 TEXT NOT NULL,
+  expected TEXT NOT NULL
+);
+
+INSERT INTO
+  tests (
+    uuid,
+    description,
+    color1,
+    color2,
+    color3,
+    expected
+  )
+VALUES
+{%- for case in cases %}
+  (
+    '{{ case["uuid"] }}',
+    '{{ case["description"] }}',
+{%- for color in case["input"]["colors"] %}
+    '{{ color }}',
+{%- endfor %}
+    '{{ case["expected"]["value"] }} {{ case["expected"]["unit"] }}'
+{%- if loop.last %}
+  );
+{%- else %}
+  ),
+{%- endif %}
+{%- endfor %}
