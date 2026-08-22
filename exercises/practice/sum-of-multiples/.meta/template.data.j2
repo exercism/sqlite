@@ -1,0 +1,3 @@
+{%- for case in cases -%}
+{{ [case["input"]["factors"], case["input"]["limit"]] | tocsv }},""
+{% endfor %}
