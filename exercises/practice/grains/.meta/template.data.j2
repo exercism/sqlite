@@ -1,0 +1,3 @@
+{%- for case in cases -%}
+{{ [case["property"] | replace("square", "single-square"), case["input"]["square"] or 0] | tocsv }},0
+{% endfor %}
