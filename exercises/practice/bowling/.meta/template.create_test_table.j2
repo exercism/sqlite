@@ -26,12 +26,12 @@ VALUES
 {%- for case in cases %}
   (
     '{{ case["uuid"] }}',
-    '{{ case["description"] | quote }}',
+    {{ case["description"] | quote }},
     '[{{ case["input"]["previousRolls"] | tocsv }}]',
     {{ case["input"].get("roll") | quote }},
 {%- if case["expect_error"] %}
     NULL,
-    '{{ case["expect_error_msg"] | quote }}'
+    {{ case["expect_error_msg"] | quote }}
 {%- else %}
     {{ case["expected"] }},
     NULL

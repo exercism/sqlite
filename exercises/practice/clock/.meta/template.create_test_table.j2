@@ -25,11 +25,7 @@ VALUES
     '{{ case["description"] }}',
     '{{ case["property"] }}',
     '{{ case["input"] | tojson }}',
-{%- if case["expected"] in ["true", "false"] %}
-    {{ case["expected"] }}
-{%- else %}
-    '{{ case["expected"] }}'
-{%- endif %}
+    {{ case["expected"] | quote }}
 {%- if loop.last %}
   );
 {%- else %}
