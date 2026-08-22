@@ -45,7 +45,9 @@ VALUES
   (
     '7349f682-9707-47c0-a9af-be56e1e7ff30',
     'handles expanded lists',
-    'one,\ntwo,\nthree',
+    'one,
+two,
+three',
     '{"one":1,"two":1,"three":1}'
   ),
   (
@@ -93,7 +95,10 @@ VALUES
   (
     '50176e8a-fe8e-4f4c-b6b6-aa9cf8f20360',
     'alternating word separators not detected as a word',
-    ',\n,one,\n ,two \n ''three''',
+    ',
+,one,
+ ,two 
+ ''three''',
     '{"one":1,"two":1,"three":1}'
   ),
   (
