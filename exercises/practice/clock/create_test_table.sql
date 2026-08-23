@@ -276,110 +276,110 @@ VALUES
     'clocks with same time',
     'equal',
     '{"clock1":{"hour":15,"minute":37},"clock2":{"hour":15,"minute":37}}',
-    true
+    True
   ),
   (
     '5d409d4b-f862-4960-901e-ec430160b768',
     'clocks a minute apart',
     'equal',
     '{"clock1":{"hour":15,"minute":36},"clock2":{"hour":15,"minute":37}}',
-    false
+    False
   ),
   (
     'a6045fcf-2b52-4a47-8bb2-ef10a064cba5',
     'clocks an hour apart',
     'equal',
     '{"clock1":{"hour":14,"minute":37},"clock2":{"hour":15,"minute":37}}',
-    false
+    False
   ),
   (
     '66b12758-0be5-448b-a13c-6a44bce83527',
     'clocks with hour overflow',
     'equal',
     '{"clock1":{"hour":10,"minute":37},"clock2":{"hour":34,"minute":37}}',
-    true
+    True
   ),
   (
     '2b19960c-212e-4a71-9aac-c581592f8111',
     'clocks with hour overflow by several days',
     'equal',
     '{"clock1":{"hour":3,"minute":11},"clock2":{"hour":99,"minute":11}}',
-    true
+    True
   ),
   (
     '6f8c6541-afac-4a92-b0c2-b10d4e50269f',
     'clocks with negative hour',
     'equal',
     '{"clock1":{"hour":22,"minute":40},"clock2":{"hour":-2,"minute":40}}',
-    true
+    True
   ),
   (
     'bb9d5a68-e324-4bf5-a75e-0e9b1f97a90d',
     'clocks with negative hour that wraps',
     'equal',
     '{"clock1":{"hour":17,"minute":3},"clock2":{"hour":-31,"minute":3}}',
-    true
+    True
   ),
   (
     '56c0326d-565b-4d19-a26f-63b3205778b7',
     'clocks with negative hour that wraps multiple times',
     'equal',
     '{"clock1":{"hour":13,"minute":49},"clock2":{"hour":-83,"minute":49}}',
-    true
+    True
   ),
   (
     'c90b9de8-ddff-4ffe-9858-da44a40fdbc2',
     'clocks with minute overflow',
     'equal',
     '{"clock1":{"hour":0,"minute":1},"clock2":{"hour":0,"minute":1441}}',
-    true
+    True
   ),
   (
     '533a3dc5-59a7-491b-b728-a7a34fe325de',
     'clocks with minute overflow by several days',
     'equal',
     '{"clock1":{"hour":2,"minute":2},"clock2":{"hour":2,"minute":4322}}',
-    true
+    True
   ),
   (
     'fff49e15-f7b7-4692-a204-0f6052d62636',
     'clocks with negative minute',
     'equal',
     '{"clock1":{"hour":2,"minute":40},"clock2":{"hour":3,"minute":-20}}',
-    true
+    True
   ),
   (
     '605c65bb-21bd-43eb-8f04-878edf508366',
     'clocks with negative minute that wraps',
     'equal',
     '{"clock1":{"hour":4,"minute":10},"clock2":{"hour":5,"minute":-1490}}',
-    true
+    True
   ),
   (
     'b87e64ed-212a-4335-91fd-56da8421d077',
     'clocks with negative minute that wraps multiple times',
     'equal',
     '{"clock1":{"hour":6,"minute":15},"clock2":{"hour":6,"minute":-4305}}',
-    true
+    True
   ),
   (
     '822fbf26-1f3b-4b13-b9bf-c914816b53dd',
     'clocks with negative hours and minutes',
     'equal',
     '{"clock1":{"hour":7,"minute":32},"clock2":{"hour":-12,"minute":-268}}',
-    true
+    True
   ),
   (
     'e787bccd-cf58-4a1d-841c-ff80eaaccfaa',
     'clocks with negative hours and minutes that wrap',
     'equal',
     '{"clock1":{"hour":18,"minute":7},"clock2":{"hour":-54,"minute":-11513}}',
-    true
+    True
   ),
   (
     '96969ca8-875a-48a1-86ae-257a528c44f5',
     'full clock and zeroed clock',
     'equal',
     '{"clock1":{"hour":24,"minute":0},"clock2":{"hour":0,"minute":0}}',
-    true
+    True
   );

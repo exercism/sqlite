@@ -31,7 +31,7 @@ VALUES
     '{{ case["description"] }}',
     {{ case["input"]["startBottles"] }},
     {{ case["input"]["takeDown"] }},
-    '{{ case["expected"] | join("\n") | quote }}'
+    {{ case["expected"] | join("\n") | quote }}
 {%- if loop.last %}
   );
 {%- else %}
