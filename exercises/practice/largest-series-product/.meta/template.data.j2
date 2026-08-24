@@ -1,0 +1,3 @@
+{%- for case in cases -%}
+{{ [case["input"]["digits"], case["input"]["span"]] | tocsv }},""
+{% endfor %}

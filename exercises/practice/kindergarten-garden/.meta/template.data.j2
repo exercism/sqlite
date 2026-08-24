@@ -1,0 +1,3 @@
+{%- for case in cases -%}
+{{ [case["input"]["diagram"], case["input"]["student"]] | tocsv }},""
+{% endfor %}
