@@ -1,0 +1,47 @@
+DROP TABLE IF EXISTS tests;
+
+CREATE TABLE IF NOT EXISTS tests (
+  -- uuid and description are taken from the test.toml file
+  uuid TEXT PRIMARY KEY,
+  description TEXT NOT NULL,
+  -- The following section is needed by the online test-runner
+  status TEXT DEFAULT 'fail',
+  message TEXT,
+  output TEXT,
+  test_code TEXT,
+  task_id INTEGER DEFAULT NULL,
+  -- Here are columns for the actual tests
+  property TEXT NOT NULL,
+  string TEXT NOT NULL,
+  "index" INTEGER NOT NULL,
+  expected TEXT NOT NULL -- json array of integers
+);
+
+INSERT INTO
+  tests (
+    uuid,
+    description,
+    property,
+    string,
+    "index",
+    expected
+  )
+VALUES
+{%- for case in cases %}
+  (
+    '{{ case["uuid"] }}',
+    '{{ case["description"] }}',
+    '{{ case["property"] }}',
+    '{{ case["input"]["string"] | replace("\n", "\\n") }}',
+    {{ case["input"]["index"] }},
+    '{{ case["expected"] | tojson }}'
+{%- if loop.last %}
+  );
+{%- else %}
+  ),
+{%- endif %}
+{%- endfor %}
+
+UPDATE tests
+SET
+  string = REPLACE(string, '\n', CHAR(10));

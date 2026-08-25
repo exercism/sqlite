@@ -1,0 +1,3 @@
+{%- for case in cases -%}
+{{ [case["input"]["year"], case["input"]["month"], case["input"]["week"], case["input"]["dayofweek"]] | tocsv }},""
+{% endfor %}
