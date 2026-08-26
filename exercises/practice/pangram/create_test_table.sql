@@ -22,59 +22,59 @@ VALUES
     '64f61791-508e-4f5c-83ab-05de042b0149',
     'empty sentence',
     '',
-    false
+    False
   ),
   (
     '74858f80-4a4d-478b-8a5e-c6477e4e4e84',
     'perfect lower case',
     'abcdefghijklmnopqrstuvwxyz',
-    true
+    True
   ),
   (
     '61288860-35ca-4abe-ba08-f5df76ecbdcd',
     'only lower case',
     'the quick brown fox jumps over the lazy dog',
-    true
+    True
   ),
   (
     '6564267d-8ac5-4d29-baf2-e7d2e304a743',
     'missing the letter ''x''',
     'a quick movement of the enemy will jeopardize five gunboats',
-    false
+    False
   ),
   (
     'c79af1be-d715-4cdb-a5f2-b2fa3e7e0de0',
     'missing the letter ''h''',
     'five boxing wizards jump quickly at it',
-    false
+    False
   ),
   (
     'd835ec38-bc8f-48e4-9e36-eb232427b1df',
     'with underscores',
     'the_quick_brown_fox_jumps_over_the_lazy_dog',
-    true
+    True
   ),
   (
     '8cc1e080-a178-4494-b4b3-06982c9be2a8',
     'with numbers',
     'the 1 quick brown fox jumps over the 2 lazy dogs',
-    true
+    True
   ),
   (
     'bed96b1c-ff95-45b8-9731-fdbdcb6ede9a',
     'missing letters replaced by numbers',
     '7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog',
-    false
+    False
   ),
   (
     '938bd5d8-ade5-40e2-a2d9-55a338a01030',
     'mixed case and punctuation',
     '"Five quacking Zephyrs jolt my wax bed."',
-    true
+    True
   ),
   (
     '7138e389-83e4-4c6e-8413-1e40a0076951',
     'a-m and A-M are 26 different characters but not a pangram',
     'abcdefghijklm ABCDEFGHIJKLM',
-    false
+    False
   );
