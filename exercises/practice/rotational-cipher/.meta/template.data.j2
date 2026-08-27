@@ -1,0 +1,3 @@
+{%- for case in cases -%}
+{{ [case["input"]["text"], case["input"]["shiftKey"]] | tocsv }},""
+{% endfor %}
