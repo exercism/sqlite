@@ -40,7 +40,8 @@ VALUES
     'slices of one from two',
     '12',
     1,
-    '1\n2',
+    '1
+2',
     NULL
   ),
   (
@@ -56,7 +57,9 @@ VALUES
     'slices of two overlap',
     '9142',
     2,
-    '91\n14\n42',
+    '91
+14
+42',
     NULL
   ),
   (
@@ -64,7 +67,10 @@ VALUES
     'slices can include duplicates',
     '777777',
     3,
-    '777\n777\n777\n777',
+    '777
+777
+777
+777',
     NULL
   ),
   (
@@ -72,7 +78,14 @@ VALUES
     'slices of a long series',
     '918493904243',
     5,
-    '91849\n18493\n84939\n49390\n93904\n39042\n90424\n04243',
+    '91849
+18493
+84939
+49390
+93904
+39042
+90424
+04243',
     NULL
   ),
   (

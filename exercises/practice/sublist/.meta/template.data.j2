@@ -1,0 +1,3 @@
+{%- for case in cases -%}
+{{ [case["input"]["listOne"], case["input"]["listTwo"]] | tocsv }},""
+{% endfor %}
