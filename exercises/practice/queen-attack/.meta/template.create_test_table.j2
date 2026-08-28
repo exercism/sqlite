@@ -1,0 +1,65 @@
+DROP TABLE IF EXISTS tests;
+
+CREATE TABLE IF NOT EXISTS tests (
+  -- uuid and description are taken from the test.toml file
+  uuid TEXT PRIMARY KEY,
+  description TEXT NOT NULL,
+  -- The following section is needed by the online test-runner
+  status TEXT DEFAULT 'fail',
+  message TEXT,
+  output TEXT,
+  test_code TEXT,
+  task_id INTEGER DEFAULT NULL,
+  -- Here are columns for the actual tests
+  white_row INTEGER NOT NULL,
+  white_col INTEGER NOT NULL,
+  black_row INTEGER NOT NULL,
+  black_col INTEGER NOT NULL,
+  expected_result BOOLEAN,
+  expected_error TEXT
+);
+
+INSERT INTO
+  tests (
+    uuid,
+    description,
+    white_row,
+    white_col,
+    black_row,
+    black_col,
+    expected_result,
+    expected_error
+  )
+VALUES
+{%- for case in cases %}
+  (
+    '{{ case["uuid"] }}',
+    '{{ case["description"] }}',{%- if case["property"] == "create" %}
+    {{ case["input"]["queen"]["position"]["row"] }},
+    {{ case["input"]["queen"]["position"]["column"] }},
+    {{ case["input"]["queen"]["position"]["row"] }},
+    {{ case["input"]["queen"]["position"]["column"] }},
+{%- elif case["property"] == "canAttack" %}
+    {{ case["input"]["white_queen"]["position"]["row"] }},
+    {{ case["input"]["white_queen"]["position"]["column"] }},
+    {{ case["input"]["black_queen"]["position"]["row"] }},
+    {{ case["input"]["black_queen"]["position"]["column"] }},
+{%- endif %}
+{%- if not case["expect_error"] %}
+  {%- if case["property"] == "create" %}
+  {#- For "create", we use the same position twice. #}
+  {#- If the position is valid, the queen can reach itself. #}
+    1,
+  {%- else %}
+    {{ case["expected"] | int }},
+  {%- endif %}
+{%- else %}
+    NULL,
+{%- endif %}
+    {{ case.get("expect_error_msg") | quote }}
+{%- if loop.last %}
+  );
+{%- else %}
+  ),
+{%- endif %}
+{%- endfor %}

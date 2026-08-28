@@ -1,0 +1,74 @@
+DROP TABLE IF EXISTS tests;
+
+CREATE TABLE IF NOT EXISTS tests (
+  -- uuid and description are taken from the test.toml file
+  uuid TEXT PRIMARY KEY,
+  description TEXT NOT NULL,
+  -- The following section is needed by the online test-runner
+  status TEXT DEFAULT 'fail',
+  message TEXT,
+  output TEXT,
+  test_code TEXT,
+  task_id INTEGER DEFAULT NULL,
+  -- Here are columns for the actual tests
+  property TEXT NOT NULL,
+  input TEXT NOT NULL,
+  constitution INTEGER,
+  modifier INTEGER,
+  expected TEXT NOT NULL
+);
+
+INSERT INTO
+  tests (
+    uuid,
+    description,
+    property,
+    input,
+    constitution,
+    modifier,
+    expected
+  )
+VALUES
+{%- for case in cases -%}{%- if case["property"] == "modifier" %}
+  (
+    '{{ case["uuid"] }}',
+    '{{ case["description"] }}',
+    '{{ case["property"] }}',
+    'score',
+    {{ case["input"]["score"] }},
+    {{ case["expected"] }},
+    ''
+{%- if loop.last %}
+  );
+{%- else %}
+  ),
+{%- endif %}
+{%- endif %}
+{%- endfor %}
+  (
+    '4f28f19c-2e47-4453-a46a-c0d365259c14',
+    'random ability is within range',
+    'ability',
+    'random',
+    NULL,
+    NULL,
+    'score >= 3 && score <= 18'
+  ),
+  (
+    '385d7e72-864f-4e88-8279-81a7d75b04ad',
+    'random character is valid',
+    'character',
+    'random',
+    NULL,
+    NULL,
+    '{"strength":"strength >= 3 && strength <= 18","dexterity":"dexterity >= 3 && dexterity <= 18","constitution":"constitution >= 3 && constitution <= 18","intelligence":"intelligence >= 3 && intelligence <= 18","wisdom":"wisdom >= 3 && wisdom <= 18","charisma":"charisma >= 3 && charisma <= 18","hitpoints":"hitpoints == 10 + modifier(constitution)"}'
+  ),
+  (
+    'dca2b2ec-f729-4551-84b9-078876bb4808',
+    'each ability is only calculated once',
+    'character',
+    '',
+    NULL,
+    NULL,
+    '{"strength":"strength == strength","dexterity":"dexterity == dexterity","constitution":"constitution == constitution","intelligence":"intelligence == intelligence","wisdom":"wisdom == wisdom","charisma":"charisma == charisma"}'
+  );

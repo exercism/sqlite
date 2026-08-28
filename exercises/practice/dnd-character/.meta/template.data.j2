@@ -1,0 +1,7 @@
+{%- for case in cases -%}{%- if case["property"] == "modifier" %}
+"{{ case["property"] }}","score",,,{{ case["input"]["score"] }},,,,,
+{%- endif %}
+{%- endfor %}
+"ability","random",,,,,,,,
+"character","random",,,,,,,,
+"character","",,,,,,,,
