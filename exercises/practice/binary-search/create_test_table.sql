@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS tests;
+
 CREATE TABLE IF NOT EXISTS tests (
   -- uuid and description are taken from the test.toml file
   uuid TEXT PRIMARY KEY,
@@ -10,13 +11,21 @@ CREATE TABLE IF NOT EXISTS tests (
   test_code TEXT,
   task_id INTEGER DEFAULT NULL,
   -- Here are columns for the actual tests
-  array TEXT NOT NULL,          -- json array
+  array TEXT NOT NULL, -- json array
   value INTEGER NOT NULL,
   expected_result INTEGER,
   expected_error TEXT
 );
 
-INSERT INTO tests (uuid, description, array, value, expected_result, expected_error)
+INSERT INTO
+  tests (
+    uuid,
+    description,
+    array,
+    value,
+    expected_result,
+    expected_error
+  )
 VALUES
   (
     'b55c24a9-a98d-4379-a08c-2adcf8ebeee8',

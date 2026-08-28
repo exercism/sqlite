@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS tests;
+
 CREATE TABLE IF NOT EXISTS tests (
   -- uuid and description are taken from the test.toml file
   uuid TEXT PRIMARY KEY,
@@ -16,7 +17,8 @@ CREATE TABLE IF NOT EXISTS tests (
   expected TEXT NOT NULL
 );
 
-INSERT INTO tests (uuid, description, property, msg, rails, expected)
+INSERT INTO
+  tests (uuid, description, property, msg, rails, expected)
 VALUES
   (
     '46dc5c50-5538-401d-93a5-41102680d068',
