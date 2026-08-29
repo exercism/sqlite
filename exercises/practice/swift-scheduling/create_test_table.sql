@@ -136,4 +136,11 @@ VALUES
     '2022-10-06T11:00:00',
     'Q3',
     '2023-09-29T08:00:00'
+  ),
+  (
+    '7c8f1616-be62-417e-bbd5-a60fa743eccc',
+    'Q2 starting in the last month of the second quarter translates to the last workday of the second quarter of this year',
+    '2019-06-15T09:50:00',
+    'Q2',
+    '2019-06-28T08:00:00'
   );
