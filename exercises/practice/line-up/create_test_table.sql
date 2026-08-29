@@ -118,11 +118,46 @@ VALUES
     'Washi, you are the 21st customer we serve today. Thank you!'
   ),
   (
+    'a98e2e22-ab41-4557-a7c2-efedc19c16da',
+    'format exceptional ordinal numeral 22 ending in nd even though it is a multiple of 11',
+    'Ingrid',
+    22,
+    'Ingrid, you are the 22nd customer we serve today. Thank you!'
+  ),
+  (
+    'ab45d2fb-e0ee-4016-b605-76917584db0a',
+    'format exceptional ordinal numeral 33 ending in rd even though it is a multiple of 11',
+    'Mario',
+    33,
+    'Mario, you are the 33rd customer we serve today. Thank you!'
+  ),
+  (
+    'c9243603-9f17-45b3-9a41-db9ebdbf08e1',
+    'format exceptional ordinal numeral 52 ending in nd even though it is a multiple of 13',
+    'Quentin',
+    52,
+    'Quentin, you are the 52nd customer we serve today. Thank you!'
+  ),
+  (
     '74ee2317-0295-49d2-baf0-d56bcefa14e3',
     'format exceptional ordinal numeral 62',
     'Nayra',
     62,
     'Nayra, you are the 62nd customer we serve today. Thank you!'
+  ),
+  (
+    '3f6c408c-4331-42b6-bb6c-3ad0823e568a',
+    'format non-exceptional ordinal numeral 72 ending in nd even though it is a multiple of 12',
+    'Ugo',
+    72,
+    'Ugo, you are the 72nd customer we serve today. Thank you!'
+  ),
+  (
+    '8db52cd9-9689-413f-a812-6c36fcfd0d07',
+    'format exceptional ordinal numeral 91 ending in st even though it is a multiple of 13',
+    'Boris',
+    91,
+    'Boris, you are the 91st customer we serve today. Thank you!'
   ),
   (
     'b37c332d-7f68-40e3-8503-e43cbd67a0c4',
@@ -151,4 +186,11 @@ VALUES
     'Yma',
     123,
     'Yma, you are the 123rd customer we serve today. Thank you!'
+  ),
+  (
+    '6792c54e-59a7-4faf-839a-c4bb61014229',
+    'format large number 972 ending in nd even though it is a multiple of 12',
+    'Elias',
+    972,
+    'Elias, you are the 972nd customer we serve today. Thank you!'
   );
