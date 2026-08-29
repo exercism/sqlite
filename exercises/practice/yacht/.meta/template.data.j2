@@ -1,0 +1,3 @@
+{%- for case in cases -%}
+"{{ case["input"]["dice"] | join(", ")}}","{{ case["input"]["category"] }}",""
+{% endfor %}
