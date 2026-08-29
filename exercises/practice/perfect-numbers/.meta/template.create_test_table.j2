@@ -29,8 +29,7 @@ VALUES
   (
     '{{ case["uuid"] }}',
     '{{ case["description"] }}',
-    {{ case["input"]["number"] }},
-
+    '{{ case["input"]["number"] }}',
 {%- if not case["expect_error"] %}
     '{{ case["expected"] }}',
 {%- else %}

@@ -14,7 +14,8 @@ CREATE TABLE IF NOT EXISTS tests (
   expected TEXT NOT NULL
 );
 
-INSERT INTO tests (uuid, description, "limit", expected)
+INSERT INTO
+  tests (uuid, description, "limit", expected)
 VALUES
   (
     '88529125-c4ce-43cc-bb36-1eb4ddd7b44f',

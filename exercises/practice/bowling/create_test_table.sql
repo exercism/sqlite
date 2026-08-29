@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS tests;
+
 CREATE TABLE IF NOT EXISTS tests (
   -- uuid and description are taken from the test.toml file
   uuid TEXT PRIMARY KEY,
@@ -16,12 +17,15 @@ CREATE TABLE IF NOT EXISTS tests (
   expected_error TEXT
 );
 
-INSERT INTO tests (uuid,
-                   description,
-                   previous_rolls,
-                   roll,
-                   expected_result,
-                   expected_error)
+INSERT INTO
+  tests (
+    uuid,
+    description,
+    previous_rolls,
+    roll,
+    expected_result,
+    expected_error
+  )
 VALUES
   (
     '656ae006-25c2-438c-a549-f338e7ec7441',

@@ -14,7 +14,8 @@ CREATE TABLE IF NOT EXISTS tests (
   expected TEXT NOT NULL
 );
 
-INSERT INTO tests (uuid, description, "limit", expected)
+INSERT INTO
+  tests (uuid, description, "limit", expected)
 VALUES
 {%- for case in cases %}
   (
