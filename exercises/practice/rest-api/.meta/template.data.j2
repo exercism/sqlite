@@ -1,0 +1,3 @@
+{%- for case in cases -%}
+{{ [case["input"]["database"] | tojson, case["input"].get("payload", {}) | tojson, case["input"]["url"]] | tocsv }},""
+{% endfor %}
