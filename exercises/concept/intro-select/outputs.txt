@@ -1,0 +1,27 @@
+[{"date":"2025-10-22","location":"Portland","temperature":53.10000000000000142,"humidity":72},
+{"date":"2025-10-22","location":"Seattle","temperature":56.20000000000000284,"humidity":66},
+{"date":"2025-10-22","location":"Boise","temperature":60.39999999999999858,"humidity":55},
+{"date":"2025-10-23","location":"Portland","temperature":54.60000000000000142,"humidity":70},
+{"date":"2025-10-23","location":"Seattle","temperature":57.79999999999999716,"humidity":68},
+{"date":"2025-10-23","location":"Boise","temperature":62.0,"humidity":58}]
+[{"location":"Portland","temperature":53.10000000000000142},
+{"location":"Seattle","temperature":56.20000000000000284},
+{"location":"Boise","temperature":60.39999999999999858},
+{"location":"Portland","temperature":54.60000000000000142},
+{"location":"Seattle","temperature":57.79999999999999716},
+{"location":"Boise","temperature":62.0}]
+[{"say_hi":"Hello, world."}]
+[{"date":"2025-10-22","location":"Seattle","temperature":56.20000000000000284,"humidity":66},
+{"date":"2025-10-23","location":"Seattle","temperature":57.79999999999999716,"humidity":68}]
+[{"date":"2025-10-22","location":"Seattle","temperature":56.20000000000000284,"humidity":66},
+{"date":"2025-10-23","location":"Portland","temperature":54.60000000000000142,"humidity":70},
+{"date":"2025-10-23","location":"Seattle","temperature":57.79999999999999716,"humidity":68}]
+[{"location":"Portland"},
+{"location":"Seattle"},
+{"location":"Boise"},
+{"location":"Portland"},
+{"location":"Seattle"},
+{"location":"Boise"}]
+[{"location":"Portland"},
+{"location":"Seattle"},
+{"location":"Boise"}]
