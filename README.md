@@ -1,7 +1,5 @@
 # Exercism SQLite Track
 
-[![configlet](https://github.com/exercism/sqlite/workflows/configlet/badge.svg)](https://github.com/exercism/sqlite/actions?query=workflow%3Aconfiglet) [![tests](https://github.com/exercism/sqlite/workflows/test/badge.svg)](https://github.com/exercism/sqlite/actions?query=workflow%3Atest)
-
 Exercism exercises in SQLite.
 
 ## Testing
