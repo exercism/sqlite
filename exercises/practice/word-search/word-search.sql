@@ -1,0 +1,7 @@
+-- Schema:
+-- CREATE TABLE "word-search" (
+--   input  TEXT NOT NULL,   -- json object
+--   result TEXT             -- json object
+-- );
+--
+-- Task: update the word-search table and set the result column based on the input.
