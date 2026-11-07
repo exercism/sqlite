@@ -1,0 +1,5 @@
+SELECT '"' || LOWER(word) || '" appears ' || COUNT(*) || ' times' AS result
+FROM words
+GROUP BY LOWER(word)
+ORDER BY COUNT(*) DESC
+LIMIT 1;
