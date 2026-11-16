@@ -12,4 +12,4 @@ These resources provide a basic foundation for learning SQLite and SQL syntax, h
 
 [sqlite-tutorial]: https://www.sqlitetutorial.net/
 [sql-youtube]: https://www.youtube.com/watch?v=27axs9dO7AE
-[sqlzoo]: https://sqlzoo.net/
+[sqlzoo]: https://sqlzoo.net/wiki/SQL_Tutorial
